@@ -22,7 +22,7 @@ The server listens on this computer only. It does not download data or call outs
 The supplied workspace already has a working local environment. To run it immediately on this machine:
 
 ```powershell
-Set-Location 'D:\PROIECTE\ml-adversarial-security'
+Set-Location 'your partition here'
 .\.venv\Scripts\ml-adv-sec.exe verify-all
 .\.venv\Scripts\python.exe -m pytest
 ```
