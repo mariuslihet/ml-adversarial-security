@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-23",
+  "python": "3.11.9",
+  "pytest": "20 passed in 10.70s",
+  "full_verify_all_exit_code": 0,
+  "latest_checkpoints_verified": 28,
+  "split_sizes": {
+    "train": 2522,
+    "val": 841,
+    "test": 841
+  },
+  "report_hashes": {
+    "reports\\benchmark_results.md": "be8a45542b07b09196e05adbd25eec038a88090b94920c1b753ff75d12453724",
+    "reports\\benchmark_results.json": "de403a29e5f85e94d297b35fc5974e981910d1f5b03bd0b70f214cf68609f085"
+  },
+  "source_hashes": {
+    "__init__.py": "135d40f46c818ce0dbf5536818459ad5d5b7d83af823e984b4aaac5c48e9a532",
+    "__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "attacks\\__init__.py": "be80e58d6e6605590f32c308d4b01c3049ec5eae63685b70cf83172cd45555f5",
+    "attacks\\evasion.py": "80799c57f4567d779d845a5919e3719c59d866083b341d8f6db7bb570838fc1b",
+    "attacks\\poisoning.py": "be20ec19f11c62d588b5766d2b89bcc36d5e45ed79448a032eb7c78ae087b64a",
+    "cli.py": "11f0816924d66f90e8f2193d6155bda90755e2e1c9982f8f8e6d86e63d520ffc",
+    "common.py": "f5dcbb77896eb39c37a50b8faedc8b527c02649939d095c3746063411fd86b77",
+    "data\\__init__.py": "9b5fb9a1a20771136507dd4edc6b4961c106fc8b2b44992323e0fa6938c2128c",
+    "data\\constraints.py": "e35c6cbd38a1a902106bbc13301080538723af08e2f99d720f07812a7021e932",
+    "data\\pipeline.py": "55af1b86eeaec0505e786370fbbd53a3476e8762faddb85dc3fab156817e7820",
+    "defenses\\__init__.py": "f54fba6a6fc8533eb888840181dcef2b4d542ebe07276a1c77cca75e66f7f58e",
+    "defenses\\mitigations.py": "a4890a19a84039cfd0497eac2d33d045bd7cd2ebcf7cb43dbfbad2583a2955cd",
+    "eval\\__init__.py": "4ac0d9db9daa5fc9dedec710b36bba32c85a7dba6a30786855ce2953dd436651",
+    "eval\\metrics.py": "78e34e865784afe7690f1376082676b996c4de0f1672be0803beed0981de44e0",
+    "eval\\workflow.py": "e9c476c5b3b3e7fb94919197a4a05f4fb1308ab37cbfd948994951e501848fe5",
+    "models\\__init__.py": "bb1cde5e82aaccbf3fcde1a8dbfaaac5a49452cdeb724523b68c5630e3334922",
+    "models\\classifier.py": "291eaa43a4aaaab4d269ab206e79cfb876ef461ea2ca0e19a96d6e36b37e162d"
+  }
+}

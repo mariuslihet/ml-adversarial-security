@@ -1,0 +1,25 @@
+{
+  "tests": "25 passed in 24.59s",
+  "browser_started_job": "20261123-164954-67b1a7",
+  "job_status": "complete",
+  "exit_code": 0,
+  "report_sha256": "061742ef0cfe2d0603b5b1c8acd258c35de18b09f4b65049a5d0d4d1823682f2",
+  "report_rows": {
+    "clean": 5,
+    "transferability": 12,
+    "pareto": 20,
+    "poisoning": 24
+  },
+  "browser_checks": [
+    "desktop and narrow layouts",
+    "saved run selection",
+    "original and tree filter comparisons",
+    "training change selection",
+    "before and after saved measurements",
+    "actual model scores",
+    "full experiment started from Start run",
+    "completed results opened",
+    "JSON export"
+  ],
+  "url": "http://127.0.0.1:8873"
+}

@@ -1,0 +1,435 @@
+{
+  "checked_at_utc": "2026-11-23T17:08:25.748561+00:00",
+  "outcome": "all compared metric values matched recomputation",
+  "reports": [
+    {
+      "report_path": "D:\\PROIECTE\\ml-adversarial-security\\reports\\benchmark_results.json",
+      "report_sha256": "de403a29e5f85e94d297b35fc5974e981910d1f5b03bd0b70f214cf68609f085",
+      "outcome": "matched",
+      "clean_and_changed_training_rows": 29,
+      "transfer_rows": 12,
+      "split_sizes": {
+        "train": 2522,
+        "val": 841,
+        "test": 841
+      },
+      "actual_attacked_records": 32,
+      "requested_attack_samples": 32,
+      "checkpoints": {
+        "clean": {
+          "version": "v0004",
+          "weights_sha256": "217d98f026b44538a4e714042c39835b1cdaf037e62674a734b6c0e0ffd0da8e"
+        },
+        "tree": {
+          "version": "v0004",
+          "weights_sha256": "bdc2bc90bffb9187ec4639537b13c4f0c53538786efeba44664a10e78cd41d74"
+        },
+        "pgd": {
+          "version": "v0004",
+          "weights_sha256": "232f18636ee0f299b4177ef98d6a8123f2fec4058201eeb2f323f0f2c111e737"
+        },
+        "trades": {
+          "version": "v0004",
+          "weights_sha256": "4e2793c38fbcd07f2414c7695da80ccf63a2eeba1e5b7ac6c6e08127bd4817cf"
+        },
+        "label-flip-0.010": {
+          "version": "v0004",
+          "weights_sha256": "419cc3737df1e712ce0c39fd00d30eecae922fe0c0605b02c46f0aca09b433e1"
+        },
+        "label-flip-0.010-sanitized": {
+          "version": "v0004",
+          "weights_sha256": "c0e6d390841ea4e63dd8744a8ba5221cf1bb6266d21235f8ecc6ff6785fdfd2f"
+        },
+        "label-flip-0.030": {
+          "version": "v0004",
+          "weights_sha256": "5d19402de4f99de4d957d2ca2579ffd1717ff1c2a6bd8b2b3a0783cbfc9957f8"
+        },
+        "label-flip-0.030-sanitized": {
+          "version": "v0004",
+          "weights_sha256": "d32159a66770cefde40c68d1488cd9e7aec4e4b29c697dc09c386732aeb52568"
+        },
+        "label-flip-0.050": {
+          "version": "v0004",
+          "weights_sha256": "4a1615fcb13fbda2658c3cf2f9c3b2d90dee2cb6a0631b21be18c30c1102035e"
+        },
+        "label-flip-0.050-sanitized": {
+          "version": "v0004",
+          "weights_sha256": "0234825f32e11b2a217d1fff186d3bd3706f416594af779de9a5f2b79ae5be1a"
+        },
+        "label-flip-0.100": {
+          "version": "v0004",
+          "weights_sha256": "fea6fe12ea09a10df57e41aa70a1e0a00abe10b2da02aff29f5b9d4d11087a7a"
+        },
+        "label-flip-0.100-sanitized": {
+          "version": "v0004",
+          "weights_sha256": "7156dea6ae791797db2b63a832cce38b4c7310b2a1179e0501f1d67604f8cd81"
+        },
+        "collision-0.010": {
+          "version": "v0004",
+          "weights_sha256": "94eac0a327b27972483ba353b16cdeffedb93e8bfdc4d785a9105737da0407ec"
+        },
+        "collision-0.010-sanitized": {
+          "version": "v0004",
+          "weights_sha256": "4685a74997108d9e5aad176c25cb979c928c3cce4e8c16e92c4fa18ad4471da4"
+        },
+        "collision-0.030": {
+          "version": "v0004",
+          "weights_sha256": "ac1e6ae3b1b82aa3c8f0ce63dda9edc2ca946f62829aab065d7cfae13eb18da1"
+        },
+        "collision-0.030-sanitized": {
+          "version": "v0004",
+          "weights_sha256": "4b224c80b0238d4759f4c459514b856f220ec2f03c91d326fca48c769bbd7558"
+        },
+        "collision-0.050": {
+          "version": "v0004",
+          "weights_sha256": "3855843012700a406df9dd481a8328875274f6534ead99ad12468cb60463d645"
+        },
+        "collision-0.050-sanitized": {
+          "version": "v0004",
+          "weights_sha256": "9d719a5dab0d70903591f47cd01328f1ffebdfa30f49bf5014d3b074649b876d"
+        },
+        "collision-0.100": {
+          "version": "v0004",
+          "weights_sha256": "10d30b0345df22920e388e43f1123973693dde1ddaaf0aabd3457579ff039a6b"
+        },
+        "collision-0.100-sanitized": {
+          "version": "v0004",
+          "weights_sha256": "29408436d5d78e68f92814bbedd7c313e76363ee7d401276d0d150057c625b8c"
+        },
+        "backdoor-0.010": {
+          "version": "v0004",
+          "weights_sha256": "91a28696fe93f0221ebcb8b40a84dd1c9a3763d72e55ad5daf8ca10245a26e90"
+        },
+        "backdoor-0.010-sanitized": {
+          "version": "v0004",
+          "weights_sha256": "7432a9d05d91c66022420051eee929f8801977a53073dfb8369e92acab9ea3c1"
+        },
+        "backdoor-0.030": {
+          "version": "v0004",
+          "weights_sha256": "cb8c7b11187cb0f06cd20cf0f447779d04893ba25b84cff6674077ad888aeb16"
+        },
+        "backdoor-0.030-sanitized": {
+          "version": "v0004",
+          "weights_sha256": "3512cac29b6573a5b8d243281fcae4b9cc1084d20c5a6e8d079e2eccc942a18f"
+        },
+        "backdoor-0.050": {
+          "version": "v0004",
+          "weights_sha256": "e34b4407eabe170fd5b0ded4ffdb9b33e2919843f11ed7dab0ef2a40a58ae0cf"
+        },
+        "backdoor-0.050-sanitized": {
+          "version": "v0004",
+          "weights_sha256": "b8752b2eb0c8a0baa1df9008e16dbf072e1d603a0670238e3d3be354f84e498f"
+        },
+        "backdoor-0.100": {
+          "version": "v0004",
+          "weights_sha256": "824024f4366d7ae59b7bf5bb555bfc2728067e4da59bc2042158816737d6f4c7"
+        },
+        "backdoor-0.100-sanitized": {
+          "version": "v0004",
+          "weights_sha256": "a4b87ba63f5b880b036f7a8e0a7d450f36fc2103d3e275c8e9aa8cbaa41f4f37"
+        }
+      },
+      "dataset_files_verified": {
+        "D:\\PROIECTE\\ml-adversarial-security\\data\\spambase.data": "b1ef93de71f97714d3d7d4f58fc9f718da7bbc8ac8a150eff2778616a8097b12",
+        "D:\\PROIECTE\\ml-adversarial-security\\runs\\default\\prepared\\splits.npz": "2344c2c685039c168f21f86c4714497edcbaeb1052181a698648cc731c847e4d",
+        "D:\\PROIECTE\\ml-adversarial-security\\runs\\default\\prepared\\scaler.joblib": "385e0edd92b519db5e4c508b5eaac1f1b0dc73df05ea58e2fa0b578a21104172",
+        "D:\\PROIECTE\\ml-adversarial-security\\runs\\default\\prepared\\schema.json": "f91eebe5d7a8d30c2d4293e9016d9d63bec7a930ec39183a61651fd7928bfc1a"
+      }
+    },
+    {
+      "report_path": "D:\\PROIECTE\\ml-adversarial-security\\runs\\experiment-20261123-164954-67b1a7\\reports\\benchmark_results.json",
+      "report_sha256": "061742ef0cfe2d0603b5b1c8acd258c35de18b09f4b65049a5d0d4d1823682f2",
+      "outcome": "matched",
+      "clean_and_changed_training_rows": 29,
+      "transfer_rows": 12,
+      "split_sizes": {
+        "train": 2522,
+        "val": 841,
+        "test": 841
+      },
+      "actual_attacked_records": 32,
+      "requested_attack_samples": 32,
+      "checkpoints": {
+        "clean": {
+          "version": "v0001",
+          "weights_sha256": "255427ccdb9b1dbedb92b76401756ec37a8ae60574b4795e64ad10c4c729a626"
+        },
+        "tree": {
+          "version": "v0001",
+          "weights_sha256": "bdc2bc90bffb9187ec4639537b13c4f0c53538786efeba44664a10e78cd41d74"
+        },
+        "pgd": {
+          "version": "v0001",
+          "weights_sha256": "ec950c12113db22db0a22db43485c64684d017bca6c15e3070f2803a1c5ef9ef"
+        },
+        "trades": {
+          "version": "v0001",
+          "weights_sha256": "c0b449d273be9db2d336e7a38ea3f35d733dcb475107a2bb4699fced60c335e2"
+        },
+        "label-flip-0.010": {
+          "version": "v0001",
+          "weights_sha256": "111a668edb8593f4fc7573ba377457b15919b8d2b6b89e52a601bab04d31b776"
+        },
+        "label-flip-0.010-sanitized": {
+          "version": "v0001",
+          "weights_sha256": "1f5c3ad8584ef14207a48ad0bb0a3ff9c0a3edba181fd40c2b0233ddcc639f27"
+        },
+        "label-flip-0.030": {
+          "version": "v0001",
+          "weights_sha256": "dc9aa486d63a06dbfdba7e4576001a46359f38338f1a2fbde783f4bb1151678c"
+        },
+        "label-flip-0.030-sanitized": {
+          "version": "v0001",
+          "weights_sha256": "7cd5f136df50f8a4b4d5282daf672cf01895853207ee0439dc41ac3bf0f3e135"
+        },
+        "label-flip-0.050": {
+          "version": "v0001",
+          "weights_sha256": "5851aa6c1d10b5c9f1577d9a7ee9da30b509c85c1c91d30354fa5a744c4067dc"
+        },
+        "label-flip-0.050-sanitized": {
+          "version": "v0001",
+          "weights_sha256": "43cefd4f91b5a4344de1c0f3b6189fcee3c88201d2952f6394a80c7c7b614fb3"
+        },
+        "label-flip-0.100": {
+          "version": "v0001",
+          "weights_sha256": "bf21630bca7e34a7ac9587c2c979e627c8e20cf49b9b21ffbb91462b8384d03e"
+        },
+        "label-flip-0.100-sanitized": {
+          "version": "v0001",
+          "weights_sha256": "a18af053caada8d615860bcd8073d4d6cba6d69ccf21f9d05b2649439a02125e"
+        },
+        "collision-0.010": {
+          "version": "v0001",
+          "weights_sha256": "10c21f99ca515b2e60aec6bc96204e9f2bb3a8f308617832aeacf2860196875b"
+        },
+        "collision-0.010-sanitized": {
+          "version": "v0001",
+          "weights_sha256": "b411135b4bda18fbd4f135334b7356c1ea7c68374b909de85f49833a028750e9"
+        },
+        "collision-0.030": {
+          "version": "v0001",
+          "weights_sha256": "6b3e605f5431d6fe8f46016c9b8b37f1cc517bba7a32c25358942cdb8cbcb2ec"
+        },
+        "collision-0.030-sanitized": {
+          "version": "v0001",
+          "weights_sha256": "7e33f004df37bbb00b82e5ed2917bd08fae9ec282b2b51d13dfa03f3f2170f7c"
+        },
+        "collision-0.050": {
+          "version": "v0001",
+          "weights_sha256": "8fad3df055cb25bb8663a6bd896203c0d77541771b86c6de699c783bce06c895"
+        },
+        "collision-0.050-sanitized": {
+          "version": "v0001",
+          "weights_sha256": "48c23b4b54681d7e6bbad4c6f143299eac8e6167d966103c17619cec76cc7e6a"
+        },
+        "collision-0.100": {
+          "version": "v0001",
+          "weights_sha256": "29bede118545feeec521635cb93a64d71920c91619fd505edc2333c54b29d29f"
+        },
+        "collision-0.100-sanitized": {
+          "version": "v0001",
+          "weights_sha256": "2bff77d81954c2f99eb4b7de1febb4abf94afbf8521e2c6d9f8338917df9860b"
+        },
+        "backdoor-0.010": {
+          "version": "v0001",
+          "weights_sha256": "02332fbc5769df80bd628c214d411d965f5bc27ae7378bd989f12a52a62e5496"
+        },
+        "backdoor-0.010-sanitized": {
+          "version": "v0001",
+          "weights_sha256": "3ba8502871b5a94e4a84cbe9a52f597f8f3178371f6d2e19069ab5de139b4c58"
+        },
+        "backdoor-0.030": {
+          "version": "v0001",
+          "weights_sha256": "7d1628fc1535c2516df0eaced9fa2a0348c97eb4e0299a3dd08c8544ff3f4155"
+        },
+        "backdoor-0.030-sanitized": {
+          "version": "v0001",
+          "weights_sha256": "e8cc3d2f469a1114daf46f49fbafc2dbe2d4f5537e5825763927ebbe290c35bb"
+        },
+        "backdoor-0.050": {
+          "version": "v0001",
+          "weights_sha256": "d4b4d916a46771b227c3611287335deace57a7bf3a55e90a3ab79a17295e1f95"
+        },
+        "backdoor-0.050-sanitized": {
+          "version": "v0001",
+          "weights_sha256": "bcf30ffb14000dd59f19238d558aa508d5abd118ec4de5638d8d84d53f9949b0"
+        },
+        "backdoor-0.100": {
+          "version": "v0001",
+          "weights_sha256": "5de1eee4594cfa21415a02ffbb9e690352265a750f03d370e5ae764abead7343"
+        },
+        "backdoor-0.100-sanitized": {
+          "version": "v0001",
+          "weights_sha256": "f1ac99e212923029b36d0f4b48de87fd2489f665875bd372e9c48e6937482704"
+        }
+      },
+      "dataset_files_verified": {
+        "D:\\PROIECTE\\ml-adversarial-security\\data\\spambase.data": "b1ef93de71f97714d3d7d4f58fc9f718da7bbc8ac8a150eff2778616a8097b12",
+        "D:\\PROIECTE\\ml-adversarial-security\\runs\\experiment-20261123-164954-67b1a7\\prepared\\splits.npz": "2344c2c685039c168f21f86c4714497edcbaeb1052181a698648cc731c847e4d",
+        "D:\\PROIECTE\\ml-adversarial-security\\runs\\experiment-20261123-164954-67b1a7\\prepared\\scaler.joblib": "385e0edd92b519db5e4c508b5eaac1f1b0dc73df05ea58e2fa0b578a21104172",
+        "D:\\PROIECTE\\ml-adversarial-security\\runs\\experiment-20261123-164954-67b1a7\\prepared\\schema.json": "f91eebe5d7a8d30c2d4293e9016d9d63bec7a930ec39183a61651fd7928bfc1a"
+      }
+    },
+    {
+      "report_path": "D:\\PROIECTE\\ml-adversarial-security\\runs\\quick\\reports\\benchmark_results.json",
+      "report_sha256": "9d9eaf7d6d32b2c7f7ab647549beeefa9f8bd602651d091ca6866a54bce02900",
+      "outcome": "matched",
+      "clean_and_changed_training_rows": 29,
+      "transfer_rows": 12,
+      "split_sizes": {
+        "train": 384,
+        "val": 128,
+        "test": 128
+      },
+      "actual_attacked_records": 8,
+      "requested_attack_samples": 8,
+      "checkpoints": {
+        "clean": {
+          "version": "v0003",
+          "weights_sha256": "c301515bf410bd7f66f8f5a339c95bbd6193bfe943643858bd7713c4fe126243"
+        },
+        "tree": {
+          "version": "v0003",
+          "weights_sha256": "10787e46f80502ab425863d8d73335f745c0c757962bc83259cb749781100ef3"
+        },
+        "pgd": {
+          "version": "v0002",
+          "weights_sha256": "eda9147fe9d6a6f82c09b82e67f80e615a6fc73959aa3794146526646d99ec39"
+        },
+        "trades": {
+          "version": "v0002",
+          "weights_sha256": "1f2c88b33d7fc819802bba2fafc45de291028de0776cccd1b9453538364a20d2"
+        },
+        "label-flip-0.010": {
+          "version": "v0002",
+          "weights_sha256": "da347a1282504f5cc3004a06d33b4dcfb9db3f89c8034128f8ecdcb126abe7f7"
+        },
+        "label-flip-0.010-sanitized": {
+          "version": "v0002",
+          "weights_sha256": "fcf400ac8d1f6e5a16219b01e7fb3be546b574703342fa2c7ba8d22ab3c6276d"
+        },
+        "label-flip-0.030": {
+          "version": "v0002",
+          "weights_sha256": "0016a2f71761832cc6ee84e53f3e90d60cb78ee8aa28d596bb51e9c7b7c10985"
+        },
+        "label-flip-0.030-sanitized": {
+          "version": "v0002",
+          "weights_sha256": "8d2569098c2ae75165692f60376844b1697a27d54d4f19521baa5d9fca4c0b41"
+        },
+        "label-flip-0.050": {
+          "version": "v0002",
+          "weights_sha256": "35e2091b925554e498fdc7dcc4013cb5e692835631a3f2848ffffc9fe21a8b29"
+        },
+        "label-flip-0.050-sanitized": {
+          "version": "v0002",
+          "weights_sha256": "2ae649196d5cb7116a12554e9f8b521243f93365b395f2b53ec739a40578c20a"
+        },
+        "label-flip-0.100": {
+          "version": "v0002",
+          "weights_sha256": "01f265beb8d978017bb9fb4d1bf841961308ab02988e3c458f59e2c7c2204df9"
+        },
+        "label-flip-0.100-sanitized": {
+          "version": "v0002",
+          "weights_sha256": "0588da4409eb0161259bdcf52ed3bdffb03d9f0d0b9064d4d0e9fb61d9b60374"
+        },
+        "collision-0.010": {
+          "version": "v0002",
+          "weights_sha256": "8b62e8e7487a83eb6b552c4556c376098709a304ceae5fb3af5b8e8307a3ec4a"
+        },
+        "collision-0.010-sanitized": {
+          "version": "v0002",
+          "weights_sha256": "1e21ba4992295f2df66f93f46cd4791ca7f26590ecaaf6982c93edfdd6f5a51e"
+        },
+        "collision-0.030": {
+          "version": "v0002",
+          "weights_sha256": "0132d1903a18aebd41f7b77c95756b6776acfc452b78bf347b61d4779c45eeed"
+        },
+        "collision-0.030-sanitized": {
+          "version": "v0002",
+          "weights_sha256": "930da1afa2052e4ba388b74e68c4ff0d0a1bae160a89cfb487480cdd58577be1"
+        },
+        "collision-0.050": {
+          "version": "v0002",
+          "weights_sha256": "2746428166bd9f9f00aab946b56552cb6df708f253e5f55fd671b6b0287f72be"
+        },
+        "collision-0.050-sanitized": {
+          "version": "v0002",
+          "weights_sha256": "50fd560e1a6ef27974e909437f76cfa919f45b6a73eea56b617ebbbb062a8266"
+        },
+        "collision-0.100": {
+          "version": "v0002",
+          "weights_sha256": "557c5ded9fc19f7396e1e9a23ba3b1380e320440e68f76ea7cfbb0ec1b381e67"
+        },
+        "collision-0.100-sanitized": {
+          "version": "v0002",
+          "weights_sha256": "c28b871b1757b9bf87f995f55910b98442ad4008ce1489d2381eb4e65f06dbf0"
+        },
+        "backdoor-0.010": {
+          "version": "v0002",
+          "weights_sha256": "b3994eeb6caf8857ff4ce659da78d48cf70e412ffe4d14a394197428d3b28586"
+        },
+        "backdoor-0.010-sanitized": {
+          "version": "v0002",
+          "weights_sha256": "66ea9179f40bef7a0044dcce8f93aec6ebde260f81ee40f14342827c5448f7c7"
+        },
+        "backdoor-0.030": {
+          "version": "v0002",
+          "weights_sha256": "6f4bcf015c826b70517571500fe96fc05cfd52c2a772893e40a8ddc568691811"
+        },
+        "backdoor-0.030-sanitized": {
+          "version": "v0002",
+          "weights_sha256": "b90bf4e933af0b758260cdd4bf4c4f2003a579a002b29a941c2972dab78b368a"
+        },
+        "backdoor-0.050": {
+          "version": "v0002",
+          "weights_sha256": "185d36950e6a30c958b7f30fe0abbc2d188773e18f1c9d3ca0621764b5f527a0"
+        },
+        "backdoor-0.050-sanitized": {
+          "version": "v0002",
+          "weights_sha256": "20b0611d9676bb6aa8bb29467336ba6aec2e6ab5c761ed4e9c12f17b1c557971"
+        },
+        "backdoor-0.100": {
+          "version": "v0002",
+          "weights_sha256": "e9e20607286934f1b2e663b017bacfd539dbe8623bc0ec12a23495b51f4c465b"
+        },
+        "backdoor-0.100-sanitized": {
+          "version": "v0002",
+          "weights_sha256": "ed4a846b31aced2c1d960444f2a8b79e2b4de83b3b84f4466aee0c8e8c2fee92"
+        }
+      },
+      "dataset_files_verified": {
+        "D:\\PROIECTE\\ml-adversarial-security\\data\\spambase.data": "b1ef93de71f97714d3d7d4f58fc9f718da7bbc8ac8a150eff2778616a8097b12",
+        "D:\\PROIECTE\\ml-adversarial-security\\runs\\quick\\prepared\\splits.npz": "9896e2778a7e4f76d9d12014dedcf433949fc1e70fe0f93599d7fecd7478564b",
+        "D:\\PROIECTE\\ml-adversarial-security\\runs\\quick\\prepared\\scaler.joblib": "00262f00a4ca70b51c8890b5232f69d876f0f6e68d06822ffe4394929a4ac014",
+        "D:\\PROIECTE\\ml-adversarial-security\\runs\\quick\\prepared\\schema.json": "453edb0aec77e04eed949717362071039cc3e436a2a09155359561bd0393552e"
+      }
+    }
+  ],
+  "total_checked_metric_rows": 123,
+  "compared_fields": [
+    "threshold",
+    "n",
+    "accuracy",
+    "f1",
+    "roc_auc",
+    "pr_auc (average precision)",
+    "brier",
+    "fpr",
+    "fnr",
+    "adversarial_recall",
+    "asr",
+    "eligible",
+    "attack_n"
+  ],
+  "numeric_tolerance": {
+    "absolute": 1e-08,
+    "relative": 1e-07
+  },
+  "method": "Load each report configuration; verify the prepared data hashes; restore the real saved model weights; calculate probabilities on the actual saved test split or attack arrays; compare metrics with the recorded report.",
+  "limitations": [
+    "Historical p50/p95 latency is not reproducible as an exact value and was not re-attested.",
+    "Historical epsilon-sweep attack candidates were not saved by the original evaluator, so sweep recall/ASR values cannot be independently reconstructed from existing arrays.",
+    "This checks the report values against the checkpoint versions currently present at audit time; original reports did not pin exact target metadata versions.",
+    "Cryptographic consistency with local manifests does not establish external publisher signature or protect against a person rewriting all local evidence."
+  ]
+}

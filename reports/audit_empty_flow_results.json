@@ -1,0 +1,1094 @@
+{
+  "checked_at_utc": "2026-11-23T17:53:00.562574+00:00",
+  "report_path": "D:\\PROIECTE\\ml-adversarial-security\\runs\\audit-empty-workspace\\runs\\experiment-20261123-175107-5e5b21\\reports\\benchmark_results.json",
+  "report_sha256": "dafde1c9cd9440860b42ba617ce00c9c36f06621bcce8d9c469eda9a59eb4cf6",
+  "report_manifest_path": "D:\\PROIECTE\\ml-adversarial-security\\runs\\audit-empty-workspace\\runs\\experiment-20261123-175107-5e5b21\\reports\\benchmark_results.manifest.json",
+  "report_manifest_sha256": "d4d809445aa24dd1cf9abe4205311237a91a2aadfa44d3198745fa1cb74d3083",
+  "outcome": "passed",
+  "checks": 1626,
+  "checked_rows": {
+    "pinned_checkpoints": 10,
+    "clean_metrics": 5,
+    "transfer_metrics": 12,
+    "raw_attack_artifacts": 6,
+    "saved_sweep_metrics": 4,
+    "changed_training_metrics": 6,
+    "detector_metrics": 1,
+    "saved_score_arrays": 35
+  },
+  "numeric_tolerance": {
+    "absolute": 1e-08,
+    "relative": 1e-07,
+    "saved_scores_absolute": 1e-07,
+    "saved_scores_relative": 1e-06
+  },
+  "maximum_metric_difference": 0.0,
+  "limitations": [
+    "Historical p50/p95 latency cannot be reproduced exactly. Only finite, nonnegative, ordered timing values are checked.",
+    "Local hashes establish consistency with the recorded files, not a signed publisher attestation or protection against someone rewriting all local evidence.",
+    "Recomputing predictions proves the recorded results match the real saved weights and records; it does not certify model robustness or raw-email realizability."
+  ],
+  "schema_semantics": {
+    "definition_source": "https://archive.ics.uci.edu/dataset/94/spambase",
+    "continuous_measurements": 55,
+    "whole_number_measurements": [
+      "capital_run_length_longest",
+      "capital_run_length_total"
+    ],
+    "binary_input_measurements": 0,
+    "continuous_fields_observed_only_as_integers_in_training": [
+      "word_freq_3d"
+    ],
+    "observed_statistics_separate_from_documented_types": true
+  },
+  "source_records": {
+    "path": "D:\\PROIECTE\\ml-adversarial-security\\data\\spambase.data",
+    "sha256": "b1ef93de71f97714d3d7d4f58fc9f718da7bbc8ac8a150eff2778616a8097b12",
+    "original_rows": 4601,
+    "verified_selected_records": 128,
+    "split_sizes": {
+      "train": 76,
+      "val": 26,
+      "test": 26
+    },
+    "attacked_source_row_ids": [
+      548,
+      446,
+      592,
+      467
+    ]
+  },
+  "checkpoints": {
+    "clean": {
+      "version": "v0001",
+      "weights_sha256": "1dcde16d11a0832fbffa56d42d14c55221bab38db6dca82ca045307ce75baf43",
+      "metadata_sha256": "9c43b99fbe90462db22924b79a5691328037f6b55a503aa8f020f5a18730989e",
+      "source_files": {
+        "__init__.py": {
+          "recorded_sha256": "135d40f46c818ce0dbf5536818459ad5d5b7d83af823e984b4aaac5c48e9a532",
+          "current_sha256": "135d40f46c818ce0dbf5536818459ad5d5b7d83af823e984b4aaac5c48e9a532",
+          "matches_current_source": true
+        },
+        "__main__.py": {
+          "recorded_sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+          "current_sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+          "matches_current_source": true
+        },
+        "attacks\\__init__.py": {
+          "recorded_sha256": "be80e58d6e6605590f32c308d4b01c3049ec5eae63685b70cf83172cd45555f5",
+          "current_sha256": "be80e58d6e6605590f32c308d4b01c3049ec5eae63685b70cf83172cd45555f5",
+          "matches_current_source": true
+        },
+        "attacks\\evasion.py": {
+          "recorded_sha256": "33fe39537446ad0845c30a259cce1751ab9a879c4d4ac4684d8791257b7a323e",
+          "current_sha256": "33fe39537446ad0845c30a259cce1751ab9a879c4d4ac4684d8791257b7a323e",
+          "matches_current_source": true
+        },
+        "attacks\\poisoning.py": {
+          "recorded_sha256": "0685e531f084762d311b179f376c86b55f345b01df5e1ba8c6813e2c49e23f20",
+          "current_sha256": "0685e531f084762d311b179f376c86b55f345b01df5e1ba8c6813e2c49e23f20",
+          "matches_current_source": true
+        },
+        "cli.py": {
+          "recorded_sha256": "504a8710c893f7aebb9036cff00bf380601d7ee749a97823dff84925128398fe",
+          "current_sha256": "504a8710c893f7aebb9036cff00bf380601d7ee749a97823dff84925128398fe",
+          "matches_current_source": true
+        },
+        "common.py": {
+          "recorded_sha256": "f5dcbb77896eb39c37a50b8faedc8b527c02649939d095c3746063411fd86b77",
+          "current_sha256": "f5dcbb77896eb39c37a50b8faedc8b527c02649939d095c3746063411fd86b77",
+          "matches_current_source": true
+        },
+        "dashboard.py": {
+          "recorded_sha256": "7c330623a7b803081dbd2b0ad2b75dccd02527291c484fdd88d82fdb68cdcd64",
+          "current_sha256": "7c330623a7b803081dbd2b0ad2b75dccd02527291c484fdd88d82fdb68cdcd64",
+          "matches_current_source": true
+        },
+        "data\\__init__.py": {
+          "recorded_sha256": "9b5fb9a1a20771136507dd4edc6b4961c106fc8b2b44992323e0fa6938c2128c",
+          "current_sha256": "9b5fb9a1a20771136507dd4edc6b4961c106fc8b2b44992323e0fa6938c2128c",
+          "matches_current_source": true
+        },
+        "data\\constraints.py": {
+          "recorded_sha256": "e35c6cbd38a1a902106bbc13301080538723af08e2f99d720f07812a7021e932",
+          "current_sha256": "e35c6cbd38a1a902106bbc13301080538723af08e2f99d720f07812a7021e932",
+          "matches_current_source": true
+        },
+        "data\\pipeline.py": {
+          "recorded_sha256": "c9295f6f48c597d7ead642bba9a0cbf589fc27fd9d3136902df89b08d49b85dd",
+          "current_sha256": "c9295f6f48c597d7ead642bba9a0cbf589fc27fd9d3136902df89b08d49b85dd",
+          "matches_current_source": true
+        },
+        "defenses\\__init__.py": {
+          "recorded_sha256": "f54fba6a6fc8533eb888840181dcef2b4d542ebe07276a1c77cca75e66f7f58e",
+          "current_sha256": "f54fba6a6fc8533eb888840181dcef2b4d542ebe07276a1c77cca75e66f7f58e",
+          "matches_current_source": true
+        },
+        "defenses\\mitigations.py": {
+          "recorded_sha256": "a4890a19a84039cfd0497eac2d33d045bd7cd2ebcf7cb43dbfbad2583a2955cd",
+          "current_sha256": "a4890a19a84039cfd0497eac2d33d045bd7cd2ebcf7cb43dbfbad2583a2955cd",
+          "matches_current_source": true
+        },
+        "eval\\__init__.py": {
+          "recorded_sha256": "4ac0d9db9daa5fc9dedec710b36bba32c85a7dba6a30786855ce2953dd436651",
+          "current_sha256": "4ac0d9db9daa5fc9dedec710b36bba32c85a7dba6a30786855ce2953dd436651",
+          "matches_current_source": true
+        },
+        "eval\\metrics.py": {
+          "recorded_sha256": "78e34e865784afe7690f1376082676b996c4de0f1672be0803beed0981de44e0",
+          "current_sha256": "78e34e865784afe7690f1376082676b996c4de0f1672be0803beed0981de44e0",
+          "matches_current_source": true
+        },
+        "eval\\workflow.py": {
+          "recorded_sha256": "be313742c62460ac7a8fdc9e04c4c47e5a7bc7e8c40df9a70aef343a811d850f",
+          "current_sha256": "be313742c62460ac7a8fdc9e04c4c47e5a7bc7e8c40df9a70aef343a811d850f",
+          "matches_current_source": true
+        },
+        "models\\__init__.py": {
+          "recorded_sha256": "bb1cde5e82aaccbf3fcde1a8dbfaaac5a49452cdeb724523b68c5630e3334922",
+          "current_sha256": "bb1cde5e82aaccbf3fcde1a8dbfaaac5a49452cdeb724523b68c5630e3334922",
+          "matches_current_source": true
+        },
+        "models\\classifier.py": {
+          "recorded_sha256": "a8f0bc254dfa636836931201d9f8f483db7657de669c8f80f617c30e41431f60",
+          "current_sha256": "a8f0bc254dfa636836931201d9f8f483db7657de669c8f80f617c30e41431f60",
+          "matches_current_source": true
+        }
+      }
+    },
+    "tree": {
+      "version": "v0001",
+      "weights_sha256": "e7556a4ed2e6b6e720d29cee3379dfaad138ee76b6a365f0149394eab57a19da",
+      "metadata_sha256": "2334caaf8cf1f98d572bfb6b1f7e90adad070d7614a5d1396bb2e932a410df75",
+      "source_files": {
+        "__init__.py": {
+          "recorded_sha256": "135d40f46c818ce0dbf5536818459ad5d5b7d83af823e984b4aaac5c48e9a532",
+          "current_sha256": "135d40f46c818ce0dbf5536818459ad5d5b7d83af823e984b4aaac5c48e9a532",
+          "matches_current_source": true
+        },
+        "__main__.py": {
+          "recorded_sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+          "current_sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+          "matches_current_source": true
+        },
+        "attacks\\__init__.py": {
+          "recorded_sha256": "be80e58d6e6605590f32c308d4b01c3049ec5eae63685b70cf83172cd45555f5",
+          "current_sha256": "be80e58d6e6605590f32c308d4b01c3049ec5eae63685b70cf83172cd45555f5",
+          "matches_current_source": true
+        },
+        "attacks\\evasion.py": {
+          "recorded_sha256": "33fe39537446ad0845c30a259cce1751ab9a879c4d4ac4684d8791257b7a323e",
+          "current_sha256": "33fe39537446ad0845c30a259cce1751ab9a879c4d4ac4684d8791257b7a323e",
+          "matches_current_source": true
+        },
+        "attacks\\poisoning.py": {
+          "recorded_sha256": "0685e531f084762d311b179f376c86b55f345b01df5e1ba8c6813e2c49e23f20",
+          "current_sha256": "0685e531f084762d311b179f376c86b55f345b01df5e1ba8c6813e2c49e23f20",
+          "matches_current_source": true
+        },
+        "cli.py": {
+          "recorded_sha256": "504a8710c893f7aebb9036cff00bf380601d7ee749a97823dff84925128398fe",
+          "current_sha256": "504a8710c893f7aebb9036cff00bf380601d7ee749a97823dff84925128398fe",
+          "matches_current_source": true
+        },
+        "common.py": {
+          "recorded_sha256": "f5dcbb77896eb39c37a50b8faedc8b527c02649939d095c3746063411fd86b77",
+          "current_sha256": "f5dcbb77896eb39c37a50b8faedc8b527c02649939d095c3746063411fd86b77",
+          "matches_current_source": true
+        },
+        "dashboard.py": {
+          "recorded_sha256": "7c330623a7b803081dbd2b0ad2b75dccd02527291c484fdd88d82fdb68cdcd64",
+          "current_sha256": "7c330623a7b803081dbd2b0ad2b75dccd02527291c484fdd88d82fdb68cdcd64",
+          "matches_current_source": true
+        },
+        "data\\__init__.py": {
+          "recorded_sha256": "9b5fb9a1a20771136507dd4edc6b4961c106fc8b2b44992323e0fa6938c2128c",
+          "current_sha256": "9b5fb9a1a20771136507dd4edc6b4961c106fc8b2b44992323e0fa6938c2128c",
+          "matches_current_source": true
+        },
+        "data\\constraints.py": {
+          "recorded_sha256": "e35c6cbd38a1a902106bbc13301080538723af08e2f99d720f07812a7021e932",
+          "current_sha256": "e35c6cbd38a1a902106bbc13301080538723af08e2f99d720f07812a7021e932",
+          "matches_current_source": true
+        },
+        "data\\pipeline.py": {
+          "recorded_sha256": "c9295f6f48c597d7ead642bba9a0cbf589fc27fd9d3136902df89b08d49b85dd",
+          "current_sha256": "c9295f6f48c597d7ead642bba9a0cbf589fc27fd9d3136902df89b08d49b85dd",
+          "matches_current_source": true
+        },
+        "defenses\\__init__.py": {
+          "recorded_sha256": "f54fba6a6fc8533eb888840181dcef2b4d542ebe07276a1c77cca75e66f7f58e",
+          "current_sha256": "f54fba6a6fc8533eb888840181dcef2b4d542ebe07276a1c77cca75e66f7f58e",
+          "matches_current_source": true
+        },
+        "defenses\\mitigations.py": {
+          "recorded_sha256": "a4890a19a84039cfd0497eac2d33d045bd7cd2ebcf7cb43dbfbad2583a2955cd",
+          "current_sha256": "a4890a19a84039cfd0497eac2d33d045bd7cd2ebcf7cb43dbfbad2583a2955cd",
+          "matches_current_source": true
+        },
+        "eval\\__init__.py": {
+          "recorded_sha256": "4ac0d9db9daa5fc9dedec710b36bba32c85a7dba6a30786855ce2953dd436651",
+          "current_sha256": "4ac0d9db9daa5fc9dedec710b36bba32c85a7dba6a30786855ce2953dd436651",
+          "matches_current_source": true
+        },
+        "eval\\metrics.py": {
+          "recorded_sha256": "78e34e865784afe7690f1376082676b996c4de0f1672be0803beed0981de44e0",
+          "current_sha256": "78e34e865784afe7690f1376082676b996c4de0f1672be0803beed0981de44e0",
+          "matches_current_source": true
+        },
+        "eval\\workflow.py": {
+          "recorded_sha256": "be313742c62460ac7a8fdc9e04c4c47e5a7bc7e8c40df9a70aef343a811d850f",
+          "current_sha256": "be313742c62460ac7a8fdc9e04c4c47e5a7bc7e8c40df9a70aef343a811d850f",
+          "matches_current_source": true
+        },
+        "models\\__init__.py": {
+          "recorded_sha256": "bb1cde5e82aaccbf3fcde1a8dbfaaac5a49452cdeb724523b68c5630e3334922",
+          "current_sha256": "bb1cde5e82aaccbf3fcde1a8dbfaaac5a49452cdeb724523b68c5630e3334922",
+          "matches_current_source": true
+        },
+        "models\\classifier.py": {
+          "recorded_sha256": "a8f0bc254dfa636836931201d9f8f483db7657de669c8f80f617c30e41431f60",
+          "current_sha256": "a8f0bc254dfa636836931201d9f8f483db7657de669c8f80f617c30e41431f60",
+          "matches_current_source": true
+        }
+      }
+    },
+    "pgd": {
+      "version": "v0001",
+      "weights_sha256": "d370c67eaa372a9aa2d0a2f1e459d6a0520cc97ed063c23c1cf27a14d54bf5a7",
+      "metadata_sha256": "c4f0b41f3fd95ac26e8cb995ff58da89e7459794978037808d7d914bbee4d56d",
+      "source_files": {
+        "__init__.py": {
+          "recorded_sha256": "135d40f46c818ce0dbf5536818459ad5d5b7d83af823e984b4aaac5c48e9a532",
+          "current_sha256": "135d40f46c818ce0dbf5536818459ad5d5b7d83af823e984b4aaac5c48e9a532",
+          "matches_current_source": true
+        },
+        "__main__.py": {
+          "recorded_sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+          "current_sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+          "matches_current_source": true
+        },
+        "attacks\\__init__.py": {
+          "recorded_sha256": "be80e58d6e6605590f32c308d4b01c3049ec5eae63685b70cf83172cd45555f5",
+          "current_sha256": "be80e58d6e6605590f32c308d4b01c3049ec5eae63685b70cf83172cd45555f5",
+          "matches_current_source": true
+        },
+        "attacks\\evasion.py": {
+          "recorded_sha256": "33fe39537446ad0845c30a259cce1751ab9a879c4d4ac4684d8791257b7a323e",
+          "current_sha256": "33fe39537446ad0845c30a259cce1751ab9a879c4d4ac4684d8791257b7a323e",
+          "matches_current_source": true
+        },
+        "attacks\\poisoning.py": {
+          "recorded_sha256": "0685e531f084762d311b179f376c86b55f345b01df5e1ba8c6813e2c49e23f20",
+          "current_sha256": "0685e531f084762d311b179f376c86b55f345b01df5e1ba8c6813e2c49e23f20",
+          "matches_current_source": true
+        },
+        "cli.py": {
+          "recorded_sha256": "504a8710c893f7aebb9036cff00bf380601d7ee749a97823dff84925128398fe",
+          "current_sha256": "504a8710c893f7aebb9036cff00bf380601d7ee749a97823dff84925128398fe",
+          "matches_current_source": true
+        },
+        "common.py": {
+          "recorded_sha256": "f5dcbb77896eb39c37a50b8faedc8b527c02649939d095c3746063411fd86b77",
+          "current_sha256": "f5dcbb77896eb39c37a50b8faedc8b527c02649939d095c3746063411fd86b77",
+          "matches_current_source": true
+        },
+        "dashboard.py": {
+          "recorded_sha256": "7c330623a7b803081dbd2b0ad2b75dccd02527291c484fdd88d82fdb68cdcd64",
+          "current_sha256": "7c330623a7b803081dbd2b0ad2b75dccd02527291c484fdd88d82fdb68cdcd64",
+          "matches_current_source": true
+        },
+        "data\\__init__.py": {
+          "recorded_sha256": "9b5fb9a1a20771136507dd4edc6b4961c106fc8b2b44992323e0fa6938c2128c",
+          "current_sha256": "9b5fb9a1a20771136507dd4edc6b4961c106fc8b2b44992323e0fa6938c2128c",
+          "matches_current_source": true
+        },
+        "data\\constraints.py": {
+          "recorded_sha256": "e35c6cbd38a1a902106bbc13301080538723af08e2f99d720f07812a7021e932",
+          "current_sha256": "e35c6cbd38a1a902106bbc13301080538723af08e2f99d720f07812a7021e932",
+          "matches_current_source": true
+        },
+        "data\\pipeline.py": {
+          "recorded_sha256": "c9295f6f48c597d7ead642bba9a0cbf589fc27fd9d3136902df89b08d49b85dd",
+          "current_sha256": "c9295f6f48c597d7ead642bba9a0cbf589fc27fd9d3136902df89b08d49b85dd",
+          "matches_current_source": true
+        },
+        "defenses\\__init__.py": {
+          "recorded_sha256": "f54fba6a6fc8533eb888840181dcef2b4d542ebe07276a1c77cca75e66f7f58e",
+          "current_sha256": "f54fba6a6fc8533eb888840181dcef2b4d542ebe07276a1c77cca75e66f7f58e",
+          "matches_current_source": true
+        },
+        "defenses\\mitigations.py": {
+          "recorded_sha256": "a4890a19a84039cfd0497eac2d33d045bd7cd2ebcf7cb43dbfbad2583a2955cd",
+          "current_sha256": "a4890a19a84039cfd0497eac2d33d045bd7cd2ebcf7cb43dbfbad2583a2955cd",
+          "matches_current_source": true
+        },
+        "eval\\__init__.py": {
+          "recorded_sha256": "4ac0d9db9daa5fc9dedec710b36bba32c85a7dba6a30786855ce2953dd436651",
+          "current_sha256": "4ac0d9db9daa5fc9dedec710b36bba32c85a7dba6a30786855ce2953dd436651",
+          "matches_current_source": true
+        },
+        "eval\\metrics.py": {
+          "recorded_sha256": "78e34e865784afe7690f1376082676b996c4de0f1672be0803beed0981de44e0",
+          "current_sha256": "78e34e865784afe7690f1376082676b996c4de0f1672be0803beed0981de44e0",
+          "matches_current_source": true
+        },
+        "eval\\workflow.py": {
+          "recorded_sha256": "be313742c62460ac7a8fdc9e04c4c47e5a7bc7e8c40df9a70aef343a811d850f",
+          "current_sha256": "be313742c62460ac7a8fdc9e04c4c47e5a7bc7e8c40df9a70aef343a811d850f",
+          "matches_current_source": true
+        },
+        "models\\__init__.py": {
+          "recorded_sha256": "bb1cde5e82aaccbf3fcde1a8dbfaaac5a49452cdeb724523b68c5630e3334922",
+          "current_sha256": "bb1cde5e82aaccbf3fcde1a8dbfaaac5a49452cdeb724523b68c5630e3334922",
+          "matches_current_source": true
+        },
+        "models\\classifier.py": {
+          "recorded_sha256": "a8f0bc254dfa636836931201d9f8f483db7657de669c8f80f617c30e41431f60",
+          "current_sha256": "a8f0bc254dfa636836931201d9f8f483db7657de669c8f80f617c30e41431f60",
+          "matches_current_source": true
+        }
+      }
+    },
+    "trades": {
+      "version": "v0001",
+      "weights_sha256": "fc893a3686c99c91df608e9570538a3cbfaf8cd5eef7f13c6979e8e86ca4d142",
+      "metadata_sha256": "806cd7a8b1ba9ec6b4383b94ddab9515f6c89f09cd98b7bc1c5ad12630f8d497",
+      "source_files": {
+        "__init__.py": {
+          "recorded_sha256": "135d40f46c818ce0dbf5536818459ad5d5b7d83af823e984b4aaac5c48e9a532",
+          "current_sha256": "135d40f46c818ce0dbf5536818459ad5d5b7d83af823e984b4aaac5c48e9a532",
+          "matches_current_source": true
+        },
+        "__main__.py": {
+          "recorded_sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+          "current_sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+          "matches_current_source": true
+        },
+        "attacks\\__init__.py": {
+          "recorded_sha256": "be80e58d6e6605590f32c308d4b01c3049ec5eae63685b70cf83172cd45555f5",
+          "current_sha256": "be80e58d6e6605590f32c308d4b01c3049ec5eae63685b70cf83172cd45555f5",
+          "matches_current_source": true
+        },
+        "attacks\\evasion.py": {
+          "recorded_sha256": "33fe39537446ad0845c30a259cce1751ab9a879c4d4ac4684d8791257b7a323e",
+          "current_sha256": "33fe39537446ad0845c30a259cce1751ab9a879c4d4ac4684d8791257b7a323e",
+          "matches_current_source": true
+        },
+        "attacks\\poisoning.py": {
+          "recorded_sha256": "0685e531f084762d311b179f376c86b55f345b01df5e1ba8c6813e2c49e23f20",
+          "current_sha256": "0685e531f084762d311b179f376c86b55f345b01df5e1ba8c6813e2c49e23f20",
+          "matches_current_source": true
+        },
+        "cli.py": {
+          "recorded_sha256": "504a8710c893f7aebb9036cff00bf380601d7ee749a97823dff84925128398fe",
+          "current_sha256": "504a8710c893f7aebb9036cff00bf380601d7ee749a97823dff84925128398fe",
+          "matches_current_source": true
+        },
+        "common.py": {
+          "recorded_sha256": "f5dcbb77896eb39c37a50b8faedc8b527c02649939d095c3746063411fd86b77",
+          "current_sha256": "f5dcbb77896eb39c37a50b8faedc8b527c02649939d095c3746063411fd86b77",
+          "matches_current_source": true
+        },
+        "dashboard.py": {
+          "recorded_sha256": "7c330623a7b803081dbd2b0ad2b75dccd02527291c484fdd88d82fdb68cdcd64",
+          "current_sha256": "7c330623a7b803081dbd2b0ad2b75dccd02527291c484fdd88d82fdb68cdcd64",
+          "matches_current_source": true
+        },
+        "data\\__init__.py": {
+          "recorded_sha256": "9b5fb9a1a20771136507dd4edc6b4961c106fc8b2b44992323e0fa6938c2128c",
+          "current_sha256": "9b5fb9a1a20771136507dd4edc6b4961c106fc8b2b44992323e0fa6938c2128c",
+          "matches_current_source": true
+        },
+        "data\\constraints.py": {
+          "recorded_sha256": "e35c6cbd38a1a902106bbc13301080538723af08e2f99d720f07812a7021e932",
+          "current_sha256": "e35c6cbd38a1a902106bbc13301080538723af08e2f99d720f07812a7021e932",
+          "matches_current_source": true
+        },
+        "data\\pipeline.py": {
+          "recorded_sha256": "c9295f6f48c597d7ead642bba9a0cbf589fc27fd9d3136902df89b08d49b85dd",
+          "current_sha256": "c9295f6f48c597d7ead642bba9a0cbf589fc27fd9d3136902df89b08d49b85dd",
+          "matches_current_source": true
+        },
+        "defenses\\__init__.py": {
+          "recorded_sha256": "f54fba6a6fc8533eb888840181dcef2b4d542ebe07276a1c77cca75e66f7f58e",
+          "current_sha256": "f54fba6a6fc8533eb888840181dcef2b4d542ebe07276a1c77cca75e66f7f58e",
+          "matches_current_source": true
+        },
+        "defenses\\mitigations.py": {
+          "recorded_sha256": "a4890a19a84039cfd0497eac2d33d045bd7cd2ebcf7cb43dbfbad2583a2955cd",
+          "current_sha256": "a4890a19a84039cfd0497eac2d33d045bd7cd2ebcf7cb43dbfbad2583a2955cd",
+          "matches_current_source": true
+        },
+        "eval\\__init__.py": {
+          "recorded_sha256": "4ac0d9db9daa5fc9dedec710b36bba32c85a7dba6a30786855ce2953dd436651",
+          "current_sha256": "4ac0d9db9daa5fc9dedec710b36bba32c85a7dba6a30786855ce2953dd436651",
+          "matches_current_source": true
+        },
+        "eval\\metrics.py": {
+          "recorded_sha256": "78e34e865784afe7690f1376082676b996c4de0f1672be0803beed0981de44e0",
+          "current_sha256": "78e34e865784afe7690f1376082676b996c4de0f1672be0803beed0981de44e0",
+          "matches_current_source": true
+        },
+        "eval\\workflow.py": {
+          "recorded_sha256": "be313742c62460ac7a8fdc9e04c4c47e5a7bc7e8c40df9a70aef343a811d850f",
+          "current_sha256": "be313742c62460ac7a8fdc9e04c4c47e5a7bc7e8c40df9a70aef343a811d850f",
+          "matches_current_source": true
+        },
+        "models\\__init__.py": {
+          "recorded_sha256": "bb1cde5e82aaccbf3fcde1a8dbfaaac5a49452cdeb724523b68c5630e3334922",
+          "current_sha256": "bb1cde5e82aaccbf3fcde1a8dbfaaac5a49452cdeb724523b68c5630e3334922",
+          "matches_current_source": true
+        },
+        "models\\classifier.py": {
+          "recorded_sha256": "a8f0bc254dfa636836931201d9f8f483db7657de669c8f80f617c30e41431f60",
+          "current_sha256": "a8f0bc254dfa636836931201d9f8f483db7657de669c8f80f617c30e41431f60",
+          "matches_current_source": true
+        }
+      }
+    },
+    "label-flip-0.010": {
+      "version": "v0001",
+      "weights_sha256": "1ec858c65831b10eec86228e15a0a12dcfdde9e0ab1aa8e94ff68c0726246836",
+      "metadata_sha256": "90fc57111e11a51b78d2186dc39eaa437bcea03454bb49eba5cd98965d3c13ef",
+      "source_files": {
+        "__init__.py": {
+          "recorded_sha256": "135d40f46c818ce0dbf5536818459ad5d5b7d83af823e984b4aaac5c48e9a532",
+          "current_sha256": "135d40f46c818ce0dbf5536818459ad5d5b7d83af823e984b4aaac5c48e9a532",
+          "matches_current_source": true
+        },
+        "__main__.py": {
+          "recorded_sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+          "current_sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+          "matches_current_source": true
+        },
+        "attacks\\__init__.py": {
+          "recorded_sha256": "be80e58d6e6605590f32c308d4b01c3049ec5eae63685b70cf83172cd45555f5",
+          "current_sha256": "be80e58d6e6605590f32c308d4b01c3049ec5eae63685b70cf83172cd45555f5",
+          "matches_current_source": true
+        },
+        "attacks\\evasion.py": {
+          "recorded_sha256": "33fe39537446ad0845c30a259cce1751ab9a879c4d4ac4684d8791257b7a323e",
+          "current_sha256": "33fe39537446ad0845c30a259cce1751ab9a879c4d4ac4684d8791257b7a323e",
+          "matches_current_source": true
+        },
+        "attacks\\poisoning.py": {
+          "recorded_sha256": "0685e531f084762d311b179f376c86b55f345b01df5e1ba8c6813e2c49e23f20",
+          "current_sha256": "0685e531f084762d311b179f376c86b55f345b01df5e1ba8c6813e2c49e23f20",
+          "matches_current_source": true
+        },
+        "cli.py": {
+          "recorded_sha256": "504a8710c893f7aebb9036cff00bf380601d7ee749a97823dff84925128398fe",
+          "current_sha256": "504a8710c893f7aebb9036cff00bf380601d7ee749a97823dff84925128398fe",
+          "matches_current_source": true
+        },
+        "common.py": {
+          "recorded_sha256": "f5dcbb77896eb39c37a50b8faedc8b527c02649939d095c3746063411fd86b77",
+          "current_sha256": "f5dcbb77896eb39c37a50b8faedc8b527c02649939d095c3746063411fd86b77",
+          "matches_current_source": true
+        },
+        "dashboard.py": {
+          "recorded_sha256": "7c330623a7b803081dbd2b0ad2b75dccd02527291c484fdd88d82fdb68cdcd64",
+          "current_sha256": "7c330623a7b803081dbd2b0ad2b75dccd02527291c484fdd88d82fdb68cdcd64",
+          "matches_current_source": true
+        },
+        "data\\__init__.py": {
+          "recorded_sha256": "9b5fb9a1a20771136507dd4edc6b4961c106fc8b2b44992323e0fa6938c2128c",
+          "current_sha256": "9b5fb9a1a20771136507dd4edc6b4961c106fc8b2b44992323e0fa6938c2128c",
+          "matches_current_source": true
+        },
+        "data\\constraints.py": {
+          "recorded_sha256": "e35c6cbd38a1a902106bbc13301080538723af08e2f99d720f07812a7021e932",
+          "current_sha256": "e35c6cbd38a1a902106bbc13301080538723af08e2f99d720f07812a7021e932",
+          "matches_current_source": true
+        },
+        "data\\pipeline.py": {
+          "recorded_sha256": "c9295f6f48c597d7ead642bba9a0cbf589fc27fd9d3136902df89b08d49b85dd",
+          "current_sha256": "c9295f6f48c597d7ead642bba9a0cbf589fc27fd9d3136902df89b08d49b85dd",
+          "matches_current_source": true
+        },
+        "defenses\\__init__.py": {
+          "recorded_sha256": "f54fba6a6fc8533eb888840181dcef2b4d542ebe07276a1c77cca75e66f7f58e",
+          "current_sha256": "f54fba6a6fc8533eb888840181dcef2b4d542ebe07276a1c77cca75e66f7f58e",
+          "matches_current_source": true
+        },
+        "defenses\\mitigations.py": {
+          "recorded_sha256": "a4890a19a84039cfd0497eac2d33d045bd7cd2ebcf7cb43dbfbad2583a2955cd",
+          "current_sha256": "a4890a19a84039cfd0497eac2d33d045bd7cd2ebcf7cb43dbfbad2583a2955cd",
+          "matches_current_source": true
+        },
+        "eval\\__init__.py": {
+          "recorded_sha256": "4ac0d9db9daa5fc9dedec710b36bba32c85a7dba6a30786855ce2953dd436651",
+          "current_sha256": "4ac0d9db9daa5fc9dedec710b36bba32c85a7dba6a30786855ce2953dd436651",
+          "matches_current_source": true
+        },
+        "eval\\metrics.py": {
+          "recorded_sha256": "78e34e865784afe7690f1376082676b996c4de0f1672be0803beed0981de44e0",
+          "current_sha256": "78e34e865784afe7690f1376082676b996c4de0f1672be0803beed0981de44e0",
+          "matches_current_source": true
+        },
+        "eval\\workflow.py": {
+          "recorded_sha256": "be313742c62460ac7a8fdc9e04c4c47e5a7bc7e8c40df9a70aef343a811d850f",
+          "current_sha256": "be313742c62460ac7a8fdc9e04c4c47e5a7bc7e8c40df9a70aef343a811d850f",
+          "matches_current_source": true
+        },
+        "models\\__init__.py": {
+          "recorded_sha256": "bb1cde5e82aaccbf3fcde1a8dbfaaac5a49452cdeb724523b68c5630e3334922",
+          "current_sha256": "bb1cde5e82aaccbf3fcde1a8dbfaaac5a49452cdeb724523b68c5630e3334922",
+          "matches_current_source": true
+        },
+        "models\\classifier.py": {
+          "recorded_sha256": "a8f0bc254dfa636836931201d9f8f483db7657de669c8f80f617c30e41431f60",
+          "current_sha256": "a8f0bc254dfa636836931201d9f8f483db7657de669c8f80f617c30e41431f60",
+          "matches_current_source": true
+        }
+      }
+    },
+    "label-flip-0.010-sanitized": {
+      "version": "v0001",
+      "weights_sha256": "f0f59b285a282667ad56bef7fec1cefddd82d5e12d91bc5221c39fc6a96e1799",
+      "metadata_sha256": "e412dae00692f60cee901cc4ca3910ca1e78bcc68717d0c010e89b4fb66243f5",
+      "source_files": {
+        "__init__.py": {
+          "recorded_sha256": "135d40f46c818ce0dbf5536818459ad5d5b7d83af823e984b4aaac5c48e9a532",
+          "current_sha256": "135d40f46c818ce0dbf5536818459ad5d5b7d83af823e984b4aaac5c48e9a532",
+          "matches_current_source": true
+        },
+        "__main__.py": {
+          "recorded_sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+          "current_sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+          "matches_current_source": true
+        },
+        "attacks\\__init__.py": {
+          "recorded_sha256": "be80e58d6e6605590f32c308d4b01c3049ec5eae63685b70cf83172cd45555f5",
+          "current_sha256": "be80e58d6e6605590f32c308d4b01c3049ec5eae63685b70cf83172cd45555f5",
+          "matches_current_source": true
+        },
+        "attacks\\evasion.py": {
+          "recorded_sha256": "33fe39537446ad0845c30a259cce1751ab9a879c4d4ac4684d8791257b7a323e",
+          "current_sha256": "33fe39537446ad0845c30a259cce1751ab9a879c4d4ac4684d8791257b7a323e",
+          "matches_current_source": true
+        },
+        "attacks\\poisoning.py": {
+          "recorded_sha256": "0685e531f084762d311b179f376c86b55f345b01df5e1ba8c6813e2c49e23f20",
+          "current_sha256": "0685e531f084762d311b179f376c86b55f345b01df5e1ba8c6813e2c49e23f20",
+          "matches_current_source": true
+        },
+        "cli.py": {
+          "recorded_sha256": "504a8710c893f7aebb9036cff00bf380601d7ee749a97823dff84925128398fe",
+          "current_sha256": "504a8710c893f7aebb9036cff00bf380601d7ee749a97823dff84925128398fe",
+          "matches_current_source": true
+        },
+        "common.py": {
+          "recorded_sha256": "f5dcbb77896eb39c37a50b8faedc8b527c02649939d095c3746063411fd86b77",
+          "current_sha256": "f5dcbb77896eb39c37a50b8faedc8b527c02649939d095c3746063411fd86b77",
+          "matches_current_source": true
+        },
+        "dashboard.py": {
+          "recorded_sha256": "7c330623a7b803081dbd2b0ad2b75dccd02527291c484fdd88d82fdb68cdcd64",
+          "current_sha256": "7c330623a7b803081dbd2b0ad2b75dccd02527291c484fdd88d82fdb68cdcd64",
+          "matches_current_source": true
+        },
+        "data\\__init__.py": {
+          "recorded_sha256": "9b5fb9a1a20771136507dd4edc6b4961c106fc8b2b44992323e0fa6938c2128c",
+          "current_sha256": "9b5fb9a1a20771136507dd4edc6b4961c106fc8b2b44992323e0fa6938c2128c",
+          "matches_current_source": true
+        },
+        "data\\constraints.py": {
+          "recorded_sha256": "e35c6cbd38a1a902106bbc13301080538723af08e2f99d720f07812a7021e932",
+          "current_sha256": "e35c6cbd38a1a902106bbc13301080538723af08e2f99d720f07812a7021e932",
+          "matches_current_source": true
+        },
+        "data\\pipeline.py": {
+          "recorded_sha256": "c9295f6f48c597d7ead642bba9a0cbf589fc27fd9d3136902df89b08d49b85dd",
+          "current_sha256": "c9295f6f48c597d7ead642bba9a0cbf589fc27fd9d3136902df89b08d49b85dd",
+          "matches_current_source": true
+        },
+        "defenses\\__init__.py": {
+          "recorded_sha256": "f54fba6a6fc8533eb888840181dcef2b4d542ebe07276a1c77cca75e66f7f58e",
+          "current_sha256": "f54fba6a6fc8533eb888840181dcef2b4d542ebe07276a1c77cca75e66f7f58e",
+          "matches_current_source": true
+        },
+        "defenses\\mitigations.py": {
+          "recorded_sha256": "a4890a19a84039cfd0497eac2d33d045bd7cd2ebcf7cb43dbfbad2583a2955cd",
+          "current_sha256": "a4890a19a84039cfd0497eac2d33d045bd7cd2ebcf7cb43dbfbad2583a2955cd",
+          "matches_current_source": true
+        },
+        "eval\\__init__.py": {
+          "recorded_sha256": "4ac0d9db9daa5fc9dedec710b36bba32c85a7dba6a30786855ce2953dd436651",
+          "current_sha256": "4ac0d9db9daa5fc9dedec710b36bba32c85a7dba6a30786855ce2953dd436651",
+          "matches_current_source": true
+        },
+        "eval\\metrics.py": {
+          "recorded_sha256": "78e34e865784afe7690f1376082676b996c4de0f1672be0803beed0981de44e0",
+          "current_sha256": "78e34e865784afe7690f1376082676b996c4de0f1672be0803beed0981de44e0",
+          "matches_current_source": true
+        },
+        "eval\\workflow.py": {
+          "recorded_sha256": "be313742c62460ac7a8fdc9e04c4c47e5a7bc7e8c40df9a70aef343a811d850f",
+          "current_sha256": "be313742c62460ac7a8fdc9e04c4c47e5a7bc7e8c40df9a70aef343a811d850f",
+          "matches_current_source": true
+        },
+        "models\\__init__.py": {
+          "recorded_sha256": "bb1cde5e82aaccbf3fcde1a8dbfaaac5a49452cdeb724523b68c5630e3334922",
+          "current_sha256": "bb1cde5e82aaccbf3fcde1a8dbfaaac5a49452cdeb724523b68c5630e3334922",
+          "matches_current_source": true
+        },
+        "models\\classifier.py": {
+          "recorded_sha256": "a8f0bc254dfa636836931201d9f8f483db7657de669c8f80f617c30e41431f60",
+          "current_sha256": "a8f0bc254dfa636836931201d9f8f483db7657de669c8f80f617c30e41431f60",
+          "matches_current_source": true
+        }
+      }
+    },
+    "collision-0.010": {
+      "version": "v0001",
+      "weights_sha256": "b2e564108c21bc56976113136e3b8cf387d7c5c27a993bcb5164d225aeff0f3d",
+      "metadata_sha256": "717868d8d9d1ea3dfeda50593cf899b094a02416565199c588a95ca4f090281e",
+      "source_files": {
+        "__init__.py": {
+          "recorded_sha256": "135d40f46c818ce0dbf5536818459ad5d5b7d83af823e984b4aaac5c48e9a532",
+          "current_sha256": "135d40f46c818ce0dbf5536818459ad5d5b7d83af823e984b4aaac5c48e9a532",
+          "matches_current_source": true
+        },
+        "__main__.py": {
+          "recorded_sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+          "current_sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+          "matches_current_source": true
+        },
+        "attacks\\__init__.py": {
+          "recorded_sha256": "be80e58d6e6605590f32c308d4b01c3049ec5eae63685b70cf83172cd45555f5",
+          "current_sha256": "be80e58d6e6605590f32c308d4b01c3049ec5eae63685b70cf83172cd45555f5",
+          "matches_current_source": true
+        },
+        "attacks\\evasion.py": {
+          "recorded_sha256": "33fe39537446ad0845c30a259cce1751ab9a879c4d4ac4684d8791257b7a323e",
+          "current_sha256": "33fe39537446ad0845c30a259cce1751ab9a879c4d4ac4684d8791257b7a323e",
+          "matches_current_source": true
+        },
+        "attacks\\poisoning.py": {
+          "recorded_sha256": "0685e531f084762d311b179f376c86b55f345b01df5e1ba8c6813e2c49e23f20",
+          "current_sha256": "0685e531f084762d311b179f376c86b55f345b01df5e1ba8c6813e2c49e23f20",
+          "matches_current_source": true
+        },
+        "cli.py": {
+          "recorded_sha256": "504a8710c893f7aebb9036cff00bf380601d7ee749a97823dff84925128398fe",
+          "current_sha256": "504a8710c893f7aebb9036cff00bf380601d7ee749a97823dff84925128398fe",
+          "matches_current_source": true
+        },
+        "common.py": {
+          "recorded_sha256": "f5dcbb77896eb39c37a50b8faedc8b527c02649939d095c3746063411fd86b77",
+          "current_sha256": "f5dcbb77896eb39c37a50b8faedc8b527c02649939d095c3746063411fd86b77",
+          "matches_current_source": true
+        },
+        "dashboard.py": {
+          "recorded_sha256": "7c330623a7b803081dbd2b0ad2b75dccd02527291c484fdd88d82fdb68cdcd64",
+          "current_sha256": "7c330623a7b803081dbd2b0ad2b75dccd02527291c484fdd88d82fdb68cdcd64",
+          "matches_current_source": true
+        },
+        "data\\__init__.py": {
+          "recorded_sha256": "9b5fb9a1a20771136507dd4edc6b4961c106fc8b2b44992323e0fa6938c2128c",
+          "current_sha256": "9b5fb9a1a20771136507dd4edc6b4961c106fc8b2b44992323e0fa6938c2128c",
+          "matches_current_source": true
+        },
+        "data\\constraints.py": {
+          "recorded_sha256": "e35c6cbd38a1a902106bbc13301080538723af08e2f99d720f07812a7021e932",
+          "current_sha256": "e35c6cbd38a1a902106bbc13301080538723af08e2f99d720f07812a7021e932",
+          "matches_current_source": true
+        },
+        "data\\pipeline.py": {
+          "recorded_sha256": "c9295f6f48c597d7ead642bba9a0cbf589fc27fd9d3136902df89b08d49b85dd",
+          "current_sha256": "c9295f6f48c597d7ead642bba9a0cbf589fc27fd9d3136902df89b08d49b85dd",
+          "matches_current_source": true
+        },
+        "defenses\\__init__.py": {
+          "recorded_sha256": "f54fba6a6fc8533eb888840181dcef2b4d542ebe07276a1c77cca75e66f7f58e",
+          "current_sha256": "f54fba6a6fc8533eb888840181dcef2b4d542ebe07276a1c77cca75e66f7f58e",
+          "matches_current_source": true
+        },
+        "defenses\\mitigations.py": {
+          "recorded_sha256": "a4890a19a84039cfd0497eac2d33d045bd7cd2ebcf7cb43dbfbad2583a2955cd",
+          "current_sha256": "a4890a19a84039cfd0497eac2d33d045bd7cd2ebcf7cb43dbfbad2583a2955cd",
+          "matches_current_source": true
+        },
+        "eval\\__init__.py": {
+          "recorded_sha256": "4ac0d9db9daa5fc9dedec710b36bba32c85a7dba6a30786855ce2953dd436651",
+          "current_sha256": "4ac0d9db9daa5fc9dedec710b36bba32c85a7dba6a30786855ce2953dd436651",
+          "matches_current_source": true
+        },
+        "eval\\metrics.py": {
+          "recorded_sha256": "78e34e865784afe7690f1376082676b996c4de0f1672be0803beed0981de44e0",
+          "current_sha256": "78e34e865784afe7690f1376082676b996c4de0f1672be0803beed0981de44e0",
+          "matches_current_source": true
+        },
+        "eval\\workflow.py": {
+          "recorded_sha256": "be313742c62460ac7a8fdc9e04c4c47e5a7bc7e8c40df9a70aef343a811d850f",
+          "current_sha256": "be313742c62460ac7a8fdc9e04c4c47e5a7bc7e8c40df9a70aef343a811d850f",
+          "matches_current_source": true
+        },
+        "models\\__init__.py": {
+          "recorded_sha256": "bb1cde5e82aaccbf3fcde1a8dbfaaac5a49452cdeb724523b68c5630e3334922",
+          "current_sha256": "bb1cde5e82aaccbf3fcde1a8dbfaaac5a49452cdeb724523b68c5630e3334922",
+          "matches_current_source": true
+        },
+        "models\\classifier.py": {
+          "recorded_sha256": "a8f0bc254dfa636836931201d9f8f483db7657de669c8f80f617c30e41431f60",
+          "current_sha256": "a8f0bc254dfa636836931201d9f8f483db7657de669c8f80f617c30e41431f60",
+          "matches_current_source": true
+        }
+      }
+    },
+    "collision-0.010-sanitized": {
+      "version": "v0001",
+      "weights_sha256": "ee78b350f280f01ce42ff8de75519be9913bfd74f5eda5a6acee97649062cca9",
+      "metadata_sha256": "7e162238c4ade4cfd972abcf0984f4eb71fcaa7de70fbb04519429a4b30249e3",
+      "source_files": {
+        "__init__.py": {
+          "recorded_sha256": "135d40f46c818ce0dbf5536818459ad5d5b7d83af823e984b4aaac5c48e9a532",
+          "current_sha256": "135d40f46c818ce0dbf5536818459ad5d5b7d83af823e984b4aaac5c48e9a532",
+          "matches_current_source": true
+        },
+        "__main__.py": {
+          "recorded_sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+          "current_sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+          "matches_current_source": true
+        },
+        "attacks\\__init__.py": {
+          "recorded_sha256": "be80e58d6e6605590f32c308d4b01c3049ec5eae63685b70cf83172cd45555f5",
+          "current_sha256": "be80e58d6e6605590f32c308d4b01c3049ec5eae63685b70cf83172cd45555f5",
+          "matches_current_source": true
+        },
+        "attacks\\evasion.py": {
+          "recorded_sha256": "33fe39537446ad0845c30a259cce1751ab9a879c4d4ac4684d8791257b7a323e",
+          "current_sha256": "33fe39537446ad0845c30a259cce1751ab9a879c4d4ac4684d8791257b7a323e",
+          "matches_current_source": true
+        },
+        "attacks\\poisoning.py": {
+          "recorded_sha256": "0685e531f084762d311b179f376c86b55f345b01df5e1ba8c6813e2c49e23f20",
+          "current_sha256": "0685e531f084762d311b179f376c86b55f345b01df5e1ba8c6813e2c49e23f20",
+          "matches_current_source": true
+        },
+        "cli.py": {
+          "recorded_sha256": "504a8710c893f7aebb9036cff00bf380601d7ee749a97823dff84925128398fe",
+          "current_sha256": "504a8710c893f7aebb9036cff00bf380601d7ee749a97823dff84925128398fe",
+          "matches_current_source": true
+        },
+        "common.py": {
+          "recorded_sha256": "f5dcbb77896eb39c37a50b8faedc8b527c02649939d095c3746063411fd86b77",
+          "current_sha256": "f5dcbb77896eb39c37a50b8faedc8b527c02649939d095c3746063411fd86b77",
+          "matches_current_source": true
+        },
+        "dashboard.py": {
+          "recorded_sha256": "7c330623a7b803081dbd2b0ad2b75dccd02527291c484fdd88d82fdb68cdcd64",
+          "current_sha256": "7c330623a7b803081dbd2b0ad2b75dccd02527291c484fdd88d82fdb68cdcd64",
+          "matches_current_source": true
+        },
+        "data\\__init__.py": {
+          "recorded_sha256": "9b5fb9a1a20771136507dd4edc6b4961c106fc8b2b44992323e0fa6938c2128c",
+          "current_sha256": "9b5fb9a1a20771136507dd4edc6b4961c106fc8b2b44992323e0fa6938c2128c",
+          "matches_current_source": true
+        },
+        "data\\constraints.py": {
+          "recorded_sha256": "e35c6cbd38a1a902106bbc13301080538723af08e2f99d720f07812a7021e932",
+          "current_sha256": "e35c6cbd38a1a902106bbc13301080538723af08e2f99d720f07812a7021e932",
+          "matches_current_source": true
+        },
+        "data\\pipeline.py": {
+          "recorded_sha256": "c9295f6f48c597d7ead642bba9a0cbf589fc27fd9d3136902df89b08d49b85dd",
+          "current_sha256": "c9295f6f48c597d7ead642bba9a0cbf589fc27fd9d3136902df89b08d49b85dd",
+          "matches_current_source": true
+        },
+        "defenses\\__init__.py": {
+          "recorded_sha256": "f54fba6a6fc8533eb888840181dcef2b4d542ebe07276a1c77cca75e66f7f58e",
+          "current_sha256": "f54fba6a6fc8533eb888840181dcef2b4d542ebe07276a1c77cca75e66f7f58e",
+          "matches_current_source": true
+        },
+        "defenses\\mitigations.py": {
+          "recorded_sha256": "a4890a19a84039cfd0497eac2d33d045bd7cd2ebcf7cb43dbfbad2583a2955cd",
+          "current_sha256": "a4890a19a84039cfd0497eac2d33d045bd7cd2ebcf7cb43dbfbad2583a2955cd",
+          "matches_current_source": true
+        },
+        "eval\\__init__.py": {
+          "recorded_sha256": "4ac0d9db9daa5fc9dedec710b36bba32c85a7dba6a30786855ce2953dd436651",
+          "current_sha256": "4ac0d9db9daa5fc9dedec710b36bba32c85a7dba6a30786855ce2953dd436651",
+          "matches_current_source": true
+        },
+        "eval\\metrics.py": {
+          "recorded_sha256": "78e34e865784afe7690f1376082676b996c4de0f1672be0803beed0981de44e0",
+          "current_sha256": "78e34e865784afe7690f1376082676b996c4de0f1672be0803beed0981de44e0",
+          "matches_current_source": true
+        },
+        "eval\\workflow.py": {
+          "recorded_sha256": "be313742c62460ac7a8fdc9e04c4c47e5a7bc7e8c40df9a70aef343a811d850f",
+          "current_sha256": "be313742c62460ac7a8fdc9e04c4c47e5a7bc7e8c40df9a70aef343a811d850f",
+          "matches_current_source": true
+        },
+        "models\\__init__.py": {
+          "recorded_sha256": "bb1cde5e82aaccbf3fcde1a8dbfaaac5a49452cdeb724523b68c5630e3334922",
+          "current_sha256": "bb1cde5e82aaccbf3fcde1a8dbfaaac5a49452cdeb724523b68c5630e3334922",
+          "matches_current_source": true
+        },
+        "models\\classifier.py": {
+          "recorded_sha256": "a8f0bc254dfa636836931201d9f8f483db7657de669c8f80f617c30e41431f60",
+          "current_sha256": "a8f0bc254dfa636836931201d9f8f483db7657de669c8f80f617c30e41431f60",
+          "matches_current_source": true
+        }
+      }
+    },
+    "backdoor-0.010": {
+      "version": "v0001",
+      "weights_sha256": "1a4aad31992a7f88edf9ffb558c4a7c8629fe1c1bce1bdbc34a9d42fef9841e0",
+      "metadata_sha256": "c6ba5b294f54d1e5459ccef5c851c30ab83b02eccf5a1d109a3d1a9ddc863c02",
+      "source_files": {
+        "__init__.py": {
+          "recorded_sha256": "135d40f46c818ce0dbf5536818459ad5d5b7d83af823e984b4aaac5c48e9a532",
+          "current_sha256": "135d40f46c818ce0dbf5536818459ad5d5b7d83af823e984b4aaac5c48e9a532",
+          "matches_current_source": true
+        },
+        "__main__.py": {
+          "recorded_sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+          "current_sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+          "matches_current_source": true
+        },
+        "attacks\\__init__.py": {
+          "recorded_sha256": "be80e58d6e6605590f32c308d4b01c3049ec5eae63685b70cf83172cd45555f5",
+          "current_sha256": "be80e58d6e6605590f32c308d4b01c3049ec5eae63685b70cf83172cd45555f5",
+          "matches_current_source": true
+        },
+        "attacks\\evasion.py": {
+          "recorded_sha256": "33fe39537446ad0845c30a259cce1751ab9a879c4d4ac4684d8791257b7a323e",
+          "current_sha256": "33fe39537446ad0845c30a259cce1751ab9a879c4d4ac4684d8791257b7a323e",
+          "matches_current_source": true
+        },
+        "attacks\\poisoning.py": {
+          "recorded_sha256": "0685e531f084762d311b179f376c86b55f345b01df5e1ba8c6813e2c49e23f20",
+          "current_sha256": "0685e531f084762d311b179f376c86b55f345b01df5e1ba8c6813e2c49e23f20",
+          "matches_current_source": true
+        },
+        "cli.py": {
+          "recorded_sha256": "504a8710c893f7aebb9036cff00bf380601d7ee749a97823dff84925128398fe",
+          "current_sha256": "504a8710c893f7aebb9036cff00bf380601d7ee749a97823dff84925128398fe",
+          "matches_current_source": true
+        },
+        "common.py": {
+          "recorded_sha256": "f5dcbb77896eb39c37a50b8faedc8b527c02649939d095c3746063411fd86b77",
+          "current_sha256": "f5dcbb77896eb39c37a50b8faedc8b527c02649939d095c3746063411fd86b77",
+          "matches_current_source": true
+        },
+        "dashboard.py": {
+          "recorded_sha256": "7c330623a7b803081dbd2b0ad2b75dccd02527291c484fdd88d82fdb68cdcd64",
+          "current_sha256": "7c330623a7b803081dbd2b0ad2b75dccd02527291c484fdd88d82fdb68cdcd64",
+          "matches_current_source": true
+        },
+        "data\\__init__.py": {
+          "recorded_sha256": "9b5fb9a1a20771136507dd4edc6b4961c106fc8b2b44992323e0fa6938c2128c",
+          "current_sha256": "9b5fb9a1a20771136507dd4edc6b4961c106fc8b2b44992323e0fa6938c2128c",
+          "matches_current_source": true
+        },
+        "data\\constraints.py": {
+          "recorded_sha256": "e35c6cbd38a1a902106bbc13301080538723af08e2f99d720f07812a7021e932",
+          "current_sha256": "e35c6cbd38a1a902106bbc13301080538723af08e2f99d720f07812a7021e932",
+          "matches_current_source": true
+        },
+        "data\\pipeline.py": {
+          "recorded_sha256": "c9295f6f48c597d7ead642bba9a0cbf589fc27fd9d3136902df89b08d49b85dd",
+          "current_sha256": "c9295f6f48c597d7ead642bba9a0cbf589fc27fd9d3136902df89b08d49b85dd",
+          "matches_current_source": true
+        },
+        "defenses\\__init__.py": {
+          "recorded_sha256": "f54fba6a6fc8533eb888840181dcef2b4d542ebe07276a1c77cca75e66f7f58e",
+          "current_sha256": "f54fba6a6fc8533eb888840181dcef2b4d542ebe07276a1c77cca75e66f7f58e",
+          "matches_current_source": true
+        },
+        "defenses\\mitigations.py": {
+          "recorded_sha256": "a4890a19a84039cfd0497eac2d33d045bd7cd2ebcf7cb43dbfbad2583a2955cd",
+          "current_sha256": "a4890a19a84039cfd0497eac2d33d045bd7cd2ebcf7cb43dbfbad2583a2955cd",
+          "matches_current_source": true
+        },
+        "eval\\__init__.py": {
+          "recorded_sha256": "4ac0d9db9daa5fc9dedec710b36bba32c85a7dba6a30786855ce2953dd436651",
+          "current_sha256": "4ac0d9db9daa5fc9dedec710b36bba32c85a7dba6a30786855ce2953dd436651",
+          "matches_current_source": true
+        },
+        "eval\\metrics.py": {
+          "recorded_sha256": "78e34e865784afe7690f1376082676b996c4de0f1672be0803beed0981de44e0",
+          "current_sha256": "78e34e865784afe7690f1376082676b996c4de0f1672be0803beed0981de44e0",
+          "matches_current_source": true
+        },
+        "eval\\workflow.py": {
+          "recorded_sha256": "be313742c62460ac7a8fdc9e04c4c47e5a7bc7e8c40df9a70aef343a811d850f",
+          "current_sha256": "be313742c62460ac7a8fdc9e04c4c47e5a7bc7e8c40df9a70aef343a811d850f",
+          "matches_current_source": true
+        },
+        "models\\__init__.py": {
+          "recorded_sha256": "bb1cde5e82aaccbf3fcde1a8dbfaaac5a49452cdeb724523b68c5630e3334922",
+          "current_sha256": "bb1cde5e82aaccbf3fcde1a8dbfaaac5a49452cdeb724523b68c5630e3334922",
+          "matches_current_source": true
+        },
+        "models\\classifier.py": {
+          "recorded_sha256": "a8f0bc254dfa636836931201d9f8f483db7657de669c8f80f617c30e41431f60",
+          "current_sha256": "a8f0bc254dfa636836931201d9f8f483db7657de669c8f80f617c30e41431f60",
+          "matches_current_source": true
+        }
+      }
+    },
+    "backdoor-0.010-sanitized": {
+      "version": "v0001",
+      "weights_sha256": "818fa0fcb75cec1da6a7ca7e8de5116994184f872c16c4befb79bdb7af95d7b0",
+      "metadata_sha256": "0f497112c15ef9b2c90febaca0d5fa972ce98acc2f6aab03804510774e6c1266",
+      "source_files": {
+        "__init__.py": {
+          "recorded_sha256": "135d40f46c818ce0dbf5536818459ad5d5b7d83af823e984b4aaac5c48e9a532",
+          "current_sha256": "135d40f46c818ce0dbf5536818459ad5d5b7d83af823e984b4aaac5c48e9a532",
+          "matches_current_source": true
+        },
+        "__main__.py": {
+          "recorded_sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+          "current_sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+          "matches_current_source": true
+        },
+        "attacks\\__init__.py": {
+          "recorded_sha256": "be80e58d6e6605590f32c308d4b01c3049ec5eae63685b70cf83172cd45555f5",
+          "current_sha256": "be80e58d6e6605590f32c308d4b01c3049ec5eae63685b70cf83172cd45555f5",
+          "matches_current_source": true
+        },
+        "attacks\\evasion.py": {
+          "recorded_sha256": "33fe39537446ad0845c30a259cce1751ab9a879c4d4ac4684d8791257b7a323e",
+          "current_sha256": "33fe39537446ad0845c30a259cce1751ab9a879c4d4ac4684d8791257b7a323e",
+          "matches_current_source": true
+        },
+        "attacks\\poisoning.py": {
+          "recorded_sha256": "0685e531f084762d311b179f376c86b55f345b01df5e1ba8c6813e2c49e23f20",
+          "current_sha256": "0685e531f084762d311b179f376c86b55f345b01df5e1ba8c6813e2c49e23f20",
+          "matches_current_source": true
+        },
+        "cli.py": {
+          "recorded_sha256": "504a8710c893f7aebb9036cff00bf380601d7ee749a97823dff84925128398fe",
+          "current_sha256": "504a8710c893f7aebb9036cff00bf380601d7ee749a97823dff84925128398fe",
+          "matches_current_source": true
+        },
+        "common.py": {
+          "recorded_sha256": "f5dcbb77896eb39c37a50b8faedc8b527c02649939d095c3746063411fd86b77",
+          "current_sha256": "f5dcbb77896eb39c37a50b8faedc8b527c02649939d095c3746063411fd86b77",
+          "matches_current_source": true
+        },
+        "dashboard.py": {
+          "recorded_sha256": "7c330623a7b803081dbd2b0ad2b75dccd02527291c484fdd88d82fdb68cdcd64",
+          "current_sha256": "7c330623a7b803081dbd2b0ad2b75dccd02527291c484fdd88d82fdb68cdcd64",
+          "matches_current_source": true
+        },
+        "data\\__init__.py": {
+          "recorded_sha256": "9b5fb9a1a20771136507dd4edc6b4961c106fc8b2b44992323e0fa6938c2128c",
+          "current_sha256": "9b5fb9a1a20771136507dd4edc6b4961c106fc8b2b44992323e0fa6938c2128c",
+          "matches_current_source": true
+        },
+        "data\\constraints.py": {
+          "recorded_sha256": "e35c6cbd38a1a902106bbc13301080538723af08e2f99d720f07812a7021e932",
+          "current_sha256": "e35c6cbd38a1a902106bbc13301080538723af08e2f99d720f07812a7021e932",
+          "matches_current_source": true
+        },
+        "data\\pipeline.py": {
+          "recorded_sha256": "c9295f6f48c597d7ead642bba9a0cbf589fc27fd9d3136902df89b08d49b85dd",
+          "current_sha256": "c9295f6f48c597d7ead642bba9a0cbf589fc27fd9d3136902df89b08d49b85dd",
+          "matches_current_source": true
+        },
+        "defenses\\__init__.py": {
+          "recorded_sha256": "f54fba6a6fc8533eb888840181dcef2b4d542ebe07276a1c77cca75e66f7f58e",
+          "current_sha256": "f54fba6a6fc8533eb888840181dcef2b4d542ebe07276a1c77cca75e66f7f58e",
+          "matches_current_source": true
+        },
+        "defenses\\mitigations.py": {
+          "recorded_sha256": "a4890a19a84039cfd0497eac2d33d045bd7cd2ebcf7cb43dbfbad2583a2955cd",
+          "current_sha256": "a4890a19a84039cfd0497eac2d33d045bd7cd2ebcf7cb43dbfbad2583a2955cd",
+          "matches_current_source": true
+        },
+        "eval\\__init__.py": {
+          "recorded_sha256": "4ac0d9db9daa5fc9dedec710b36bba32c85a7dba6a30786855ce2953dd436651",
+          "current_sha256": "4ac0d9db9daa5fc9dedec710b36bba32c85a7dba6a30786855ce2953dd436651",
+          "matches_current_source": true
+        },
+        "eval\\metrics.py": {
+          "recorded_sha256": "78e34e865784afe7690f1376082676b996c4de0f1672be0803beed0981de44e0",
+          "current_sha256": "78e34e865784afe7690f1376082676b996c4de0f1672be0803beed0981de44e0",
+          "matches_current_source": true
+        },
+        "eval\\workflow.py": {
+          "recorded_sha256": "be313742c62460ac7a8fdc9e04c4c47e5a7bc7e8c40df9a70aef343a811d850f",
+          "current_sha256": "be313742c62460ac7a8fdc9e04c4c47e5a7bc7e8c40df9a70aef343a811d850f",
+          "matches_current_source": true
+        },
+        "models\\__init__.py": {
+          "recorded_sha256": "bb1cde5e82aaccbf3fcde1a8dbfaaac5a49452cdeb724523b68c5630e3334922",
+          "current_sha256": "bb1cde5e82aaccbf3fcde1a8dbfaaac5a49452cdeb724523b68c5630e3334922",
+          "matches_current_source": true
+        },
+        "models\\classifier.py": {
+          "recorded_sha256": "a8f0bc254dfa636836931201d9f8f483db7657de669c8f80f617c30e41431f60",
+          "current_sha256": "a8f0bc254dfa636836931201d9f8f483db7657de669c8f80f617c30e41431f60",
+          "matches_current_source": true
+        }
+      }
+    }
+  },
+  "training_selections": {
+    "label-flip-0.010": {
+      "selected_count": 1,
+      "modified_count": 1,
+      "actual_selected_share": 0.013157894736842105,
+      "selected_source_row_ids": [
+        433
+      ],
+      "modified_source_row_ids": [
+        433
+      ]
+    },
+    "collision-0.010": {
+      "selected_count": 1,
+      "modified_count": 1,
+      "actual_selected_share": 0.013157894736842105,
+      "selected_source_row_ids": [
+        433
+      ],
+      "modified_source_row_ids": [
+        433
+      ]
+    },
+    "backdoor-0.010": {
+      "selected_count": 1,
+      "modified_count": 1,
+      "actual_selected_share": 0.013157894736842105,
+      "selected_source_row_ids": [
+        433
+      ],
+      "modified_source_row_ids": [
+        433
+      ]
+    }
+  },
+  "verified_evidence_files": 59,
+  "checked_fields": [
+    "threshold",
+    "n",
+    "accuracy",
+    "f1",
+    "roc_auc",
+    "pr_auc (average precision)",
+    "brier",
+    "fpr",
+    "fnr",
+    "adversarial_recall",
+    "asr",
+    "eligible",
+    "attack_n",
+    "raw and final validity",
+    "change distances",
+    "documented input types and separate observed statistics",
+    "actual selected and modified record counts and shares",
+    "cleanup counts",
+    "subgroup missed-spam rates",
+    "score/decision shifts",
+    "pattern escape rates",
+    "detector outcomes",
+    "saved prediction scores"
+  ]
+}

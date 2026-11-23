@@ -1,0 +1,399 @@
+{
+  "checked_at_utc": "2026-11-23T17:45:41.685424+00:00",
+  "outcome": "all five strict audits passed",
+  "auditor_script": "D:\\PROIECTE\\ml-adversarial-security\\scripts\\audit_results.py",
+  "auditor_script_sha256": "7cd71cc96a12cafb94148a57907d9992554114d8f4afef55b3d29ff65b5bb143",
+  "require_current_source": true,
+  "reports": [
+    {
+      "audit_path": "D:\\PROIECTE\\ml-adversarial-security\\reports\\audit_default_results.json",
+      "audit_sha256": "a45e4acd2fd2ee0da1f79eb82c9d706e87c4fe5a12b426b27442d597b1c50fc3",
+      "report_path": "D:\\PROIECTE\\ml-adversarial-security\\reports\\benchmark_results.json",
+      "report_sha256": "34b85ca3f19df23eb32216ddf233a7c845031f5a4a076bedab5f627ff6e53313",
+      "report_manifest_sha256": "d80946a3a9b2722b167369e6dad24c2fa05faa4122c8c0206689c4d381346253",
+      "outcome": "passed",
+      "checks": 4201,
+      "checked_rows": {
+        "pinned_checkpoints": 28,
+        "clean_metrics": 5,
+        "transfer_metrics": 12,
+        "raw_attack_artifacts": 6,
+        "saved_sweep_metrics": 20,
+        "changed_training_metrics": 24,
+        "detector_metrics": 1,
+        "saved_score_arrays": 53
+      },
+      "verified_evidence_files": 163,
+      "all_recorded_source_hashes_match_current": true,
+      "maximum_metric_difference": 0.0,
+      "source_rows": {
+        "path": "D:\\PROIECTE\\ml-adversarial-security\\data\\spambase.data",
+        "sha256": "b1ef93de71f97714d3d7d4f58fc9f718da7bbc8ac8a150eff2778616a8097b12",
+        "original_rows": 4601,
+        "verified_selected_records": 4204,
+        "split_sizes": {
+          "train": 2522,
+          "val": 841,
+          "test": 841
+        },
+        "attacked_source_row_ids": [
+          1599,
+          1798,
+          979,
+          137,
+          1727,
+          593,
+          1478,
+          707,
+          648,
+          1246,
+          1235,
+          1657,
+          92,
+          1608,
+          116,
+          369,
+          555,
+          1227,
+          297,
+          18,
+          1580,
+          780,
+          1038,
+          925,
+          1178,
+          1668,
+          160,
+          1692,
+          513,
+          1013,
+          1061,
+          440
+        ]
+      },
+      "schema_semantics": {
+        "definition_source": "https://archive.ics.uci.edu/dataset/94/spambase",
+        "continuous_measurements": 55,
+        "whole_number_measurements": [
+          "capital_run_length_longest",
+          "capital_run_length_total"
+        ],
+        "binary_input_measurements": 0,
+        "continuous_fields_observed_only_as_integers_in_training": [],
+        "observed_statistics_separate_from_documented_types": true
+      }
+    },
+    {
+      "audit_path": "D:\\PROIECTE\\ml-adversarial-security\\reports\\audit_quick_results.json",
+      "audit_sha256": "9eedde6e96579879cd11d64dce4808fbb0f5af341388b164e69977d6fd2b8b51",
+      "report_path": "D:\\PROIECTE\\ml-adversarial-security\\runs\\quick\\reports\\benchmark_results.json",
+      "report_sha256": "cfa471579acdf1de0921b4982c7fc5dad9bddd44162048cc8734b919af179093",
+      "report_manifest_sha256": "c7df45b9feb93fc280c06d37272aa0a4cc715701ba597e7bcc9824f8767f5b6a",
+      "outcome": "passed",
+      "checks": 4175,
+      "checked_rows": {
+        "pinned_checkpoints": 28,
+        "clean_metrics": 5,
+        "transfer_metrics": 12,
+        "raw_attack_artifacts": 6,
+        "saved_sweep_metrics": 20,
+        "changed_training_metrics": 24,
+        "detector_metrics": 1,
+        "saved_score_arrays": 53
+      },
+      "verified_evidence_files": 163,
+      "all_recorded_source_hashes_match_current": true,
+      "maximum_metric_difference": 0.0,
+      "source_rows": {
+        "path": "D:\\PROIECTE\\ml-adversarial-security\\data\\spambase.data",
+        "sha256": "b1ef93de71f97714d3d7d4f58fc9f718da7bbc8ac8a150eff2778616a8097b12",
+        "original_rows": 4601,
+        "verified_selected_records": 640,
+        "split_sizes": {
+          "train": 384,
+          "val": 128,
+          "test": 128
+        },
+        "attacked_source_row_ids": [
+          690,
+          1007,
+          858,
+          776,
+          1757,
+          1116,
+          719,
+          823
+        ]
+      },
+      "schema_semantics": {
+        "definition_source": "https://archive.ics.uci.edu/dataset/94/spambase",
+        "continuous_measurements": 55,
+        "whole_number_measurements": [
+          "capital_run_length_longest",
+          "capital_run_length_total"
+        ],
+        "binary_input_measurements": 0,
+        "continuous_fields_observed_only_as_integers_in_training": [],
+        "observed_statistics_separate_from_documented_types": true
+      }
+    },
+    {
+      "audit_path": "D:\\PROIECTE\\ml-adversarial-security\\reports\\audit_dashboard_live_check.json",
+      "audit_sha256": "7ba9dd863b4696835b535612b9da079716e0f68bcb15e00fdd80dfb257681af4",
+      "report_path": "D:\\PROIECTE\\ml-adversarial-security\\runs\\experiment-20261123-164954-67b1a7\\reports\\benchmark_results.json",
+      "report_sha256": "bb8dfea53fcc0355f065290df1cc525ba83375b1ff6dfc7c3322b0f2c2a1a95f",
+      "report_manifest_sha256": "e622ae1110c40d71f5e1912737423b3d98884ca0cef8e4ec1de8a48280e7b7b9",
+      "outcome": "passed",
+      "checks": 4201,
+      "checked_rows": {
+        "pinned_checkpoints": 28,
+        "clean_metrics": 5,
+        "transfer_metrics": 12,
+        "raw_attack_artifacts": 6,
+        "saved_sweep_metrics": 20,
+        "changed_training_metrics": 24,
+        "detector_metrics": 1,
+        "saved_score_arrays": 53
+      },
+      "verified_evidence_files": 163,
+      "all_recorded_source_hashes_match_current": true,
+      "maximum_metric_difference": 0.0,
+      "source_rows": {
+        "path": "D:\\PROIECTE\\ml-adversarial-security\\data\\spambase.data",
+        "sha256": "b1ef93de71f97714d3d7d4f58fc9f718da7bbc8ac8a150eff2778616a8097b12",
+        "original_rows": 4601,
+        "verified_selected_records": 4204,
+        "split_sizes": {
+          "train": 2522,
+          "val": 841,
+          "test": 841
+        },
+        "attacked_source_row_ids": [
+          1599,
+          1798,
+          979,
+          137,
+          1727,
+          593,
+          1478,
+          707,
+          648,
+          1246,
+          1235,
+          1657,
+          92,
+          1608,
+          116,
+          369,
+          555,
+          1227,
+          297,
+          18,
+          1580,
+          780,
+          1038,
+          925,
+          1178,
+          1668,
+          160,
+          1692,
+          513,
+          1013,
+          1061,
+          440
+        ]
+      },
+      "schema_semantics": {
+        "definition_source": "https://archive.ics.uci.edu/dataset/94/spambase",
+        "continuous_measurements": 55,
+        "whole_number_measurements": [
+          "capital_run_length_longest",
+          "capital_run_length_total"
+        ],
+        "binary_input_measurements": 0,
+        "continuous_fields_observed_only_as_integers_in_training": [],
+        "observed_statistics_separate_from_documented_types": true
+      }
+    },
+    {
+      "audit_path": "D:\\PROIECTE\\ml-adversarial-security\\reports\\audit_seed73_full_run.json",
+      "audit_sha256": "d9696987ced5afa6d6f42f27d78bdb9e375e0f2670b4296b0ebd4f8aac626d03",
+      "report_path": "D:\\PROIECTE\\ml-adversarial-security\\runs\\experiment-20261123-172805-418805\\reports\\benchmark_results.json",
+      "report_sha256": "3d7c79c591b6453ac8785aced93d369f5915bbe1a7c3d15aeaae99b864af480d",
+      "report_manifest_sha256": "e430bfaa88eab0e6c4e04a97aa7ba958f41cb5a1eb5ac3faa3948f441382c7c0",
+      "outcome": "passed",
+      "checks": 4061,
+      "checked_rows": {
+        "pinned_checkpoints": 28,
+        "clean_metrics": 5,
+        "transfer_metrics": 12,
+        "raw_attack_artifacts": 6,
+        "saved_sweep_metrics": 16,
+        "changed_training_metrics": 24,
+        "detector_metrics": 1,
+        "saved_score_arrays": 53
+      },
+      "verified_evidence_files": 155,
+      "all_recorded_source_hashes_match_current": true,
+      "maximum_metric_difference": 0.0,
+      "source_rows": {
+        "path": "D:\\PROIECTE\\ml-adversarial-security\\data\\spambase.data",
+        "sha256": "b1ef93de71f97714d3d7d4f58fc9f718da7bbc8ac8a150eff2778616a8097b12",
+        "original_rows": 4601,
+        "verified_selected_records": 4204,
+        "split_sizes": {
+          "train": 2522,
+          "val": 841,
+          "test": 841
+        },
+        "attacked_source_row_ids": [
+          1254,
+          1418,
+          1316,
+          955,
+          301,
+          933,
+          1784,
+          516,
+          1152,
+          1753,
+          1392,
+          1200,
+          1759,
+          297,
+          399,
+          1484,
+          226,
+          281,
+          1077,
+          1648,
+          683,
+          499,
+          1207,
+          1323,
+          1345,
+          558,
+          982,
+          763,
+          1320,
+          1208,
+          473,
+          486,
+          937,
+          145,
+          833,
+          597,
+          1416,
+          1741,
+          567,
+          1403
+        ]
+      },
+      "schema_semantics": {
+        "definition_source": "https://archive.ics.uci.edu/dataset/94/spambase",
+        "continuous_measurements": 55,
+        "whole_number_measurements": [
+          "capital_run_length_longest",
+          "capital_run_length_total"
+        ],
+        "binary_input_measurements": 0,
+        "continuous_fields_observed_only_as_integers_in_training": [],
+        "observed_statistics_separate_from_documented_types": true
+      }
+    },
+    {
+      "audit_path": "D:\\PROIECTE\\ml-adversarial-security\\reports\\audit_record_limit_run.json",
+      "audit_sha256": "80221ddaa359e3331cdb0d0df1fb82e78003caaab70f8c56c7a6c3c8097fd9fe",
+      "report_path": "D:\\PROIECTE\\ml-adversarial-security\\runs\\experiment-20261123-173614-c76f40\\reports\\benchmark_results.json",
+      "report_sha256": "7cd18f7241a42d64249b6e7d9f415a055e6089a92115005caadcccacd79e4b81",
+      "report_manifest_sha256": "fc36e7bd139498b66ea4f9be7399522971ed3a9b8ade3c33cab7ed88fbc8ec4e",
+      "outcome": "passed",
+      "checks": 2439,
+      "checked_rows": {
+        "pinned_checkpoints": 16,
+        "clean_metrics": 5,
+        "transfer_metrics": 12,
+        "raw_attack_artifacts": 6,
+        "saved_sweep_metrics": 8,
+        "changed_training_metrics": 12,
+        "detector_metrics": 1,
+        "saved_score_arrays": 41
+      },
+      "verified_evidence_files": 91,
+      "all_recorded_source_hashes_match_current": true,
+      "maximum_metric_difference": 0.0,
+      "source_rows": {
+        "path": "D:\\PROIECTE\\ml-adversarial-security\\data\\spambase.data",
+        "sha256": "b1ef93de71f97714d3d7d4f58fc9f718da7bbc8ac8a150eff2778616a8097b12",
+        "original_rows": 4601,
+        "verified_selected_records": 128,
+        "split_sizes": {
+          "train": 76,
+          "val": 26,
+          "test": 26
+        },
+        "attacked_source_row_ids": [
+          1375,
+          522,
+          736,
+          287,
+          1315,
+          409,
+          794,
+          1539,
+          869,
+          1197,
+          428
+        ]
+      },
+      "schema_semantics": {
+        "definition_source": "https://archive.ics.uci.edu/dataset/94/spambase",
+        "continuous_measurements": 55,
+        "whole_number_measurements": [
+          "capital_run_length_longest",
+          "capital_run_length_total"
+        ],
+        "binary_input_measurements": 0,
+        "continuous_fields_observed_only_as_integers_in_training": [
+          "word_freq_3d",
+          "word_freq_table"
+        ],
+        "observed_statistics_separate_from_documented_types": true
+      }
+    }
+  ],
+  "totals": {
+    "reports": 5,
+    "checks": 19077,
+    "checked_rows": {
+      "pinned_checkpoints": 128,
+      "clean_metrics": 25,
+      "transfer_metrics": 60,
+      "raw_attack_artifacts": 30,
+      "saved_sweep_metrics": 84,
+      "changed_training_metrics": 108,
+      "detector_metrics": 5,
+      "saved_score_arrays": 253
+    },
+    "unique_bound_evidence_files": 731,
+    "source_hash_comparisons": 2304,
+    "source_hash_mismatches": 0,
+    "distinct_original_UCI_rows_used": 4204,
+    "selected_record_occurrences_verified": 13380,
+    "maximum_metric_difference": 0.0
+  },
+  "preserved_previous_failure": {
+    "path": "D:\\PROIECTE\\ml-adversarial-security\\reports\\audit_record_limit_run.failed_before_schema_fix.json",
+    "sha256": "cc840ac1a85697ddac74e55095f9c89e90837a4a44f5641db339f3aeca713aa4",
+    "outcome": "failed",
+    "error": "evasion-cleverhans-fgsm-linf: whole-number measurements",
+    "same_pinned_source_file": true,
+    "same_attacked_original_source_row_ids": true,
+    "resolution": "The schema now keeps documented field types separate from statistics observed in a small training selection. The same authentic source selection was rerun and passed strict checks; count constraints were not relaxed."
+  },
+  "limitations": [
+    "Historical p50/p95 latency cannot be reproduced exactly. Only finite, nonnegative, ordered timing values are checked.",
+    "Local hashes establish consistency with the recorded files, not a signed publisher attestation or protection against someone rewriting all local evidence.",
+    "Recomputing predictions proves the recorded results match the real saved weights and records; it does not certify model robustness or raw-email realizability."
+  ]
+}

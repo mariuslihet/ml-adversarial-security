@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ml-adversarial-security"
+version = "0.1.0"
+description = "Local, reproducible adversarial robustness experiments on real security data"
+requires-python = ">=3.11,<3.13"
+dependencies = ["numpy>=1.26,<2", "scipy>=1.11,<2", "scikit-learn>=1.4,<1.6", "torch>=2.2,<2.7", "xgboost>=2,<3", "adversarial-robustness-toolbox>=1.18,<1.21", "cleverhans==4.0.0", "PyYAML>=6,<7", "joblib>=1.3,<2", "pytest>=8,<9"]
+
+[project.scripts]
+ml-adv-sec = "ml_adv_sec.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ml_adv_sec = ["web/*.html", "web/*.css", "web/*.js"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

@@ -1,0 +1,973 @@
+{
+  "checkedAt": "2026-11-23T17:57:21.407Z",
+  "url": "http://127.0.0.1:8873/#overview",
+  "events": [
+    {
+      "control": "Keyboard skip link",
+      "observed": {
+        "page": "Run an experiment",
+        "focus": "main"
+      }
+    },
+    {
+      "control": "Navigation: Overview",
+      "observed": "Test results"
+    },
+    {
+      "control": "Navigation: Attack tests",
+      "observed": "Attack tests"
+    },
+    {
+      "control": "Navigation: Training changes",
+      "observed": "Training changes"
+    },
+    {
+      "control": "Navigation: Run details",
+      "observed": "About this run"
+    },
+    {
+      "control": "Navigation: Run experiments",
+      "observed": "Run an experiment"
+    },
+    {
+      "control": "Invalid settings rejected",
+      "observed": "Use at least 128 records, or 0 for the full dataset"
+    },
+    {
+      "control": "Real failed run and process output",
+      "observed": "Running prepare\nError: The training change selects 37 spam records, but this training set has only 30. Choose a smaller share.\n"
+    },
+    {
+      "control": "Stop an actual training process",
+      "observed": "Audit: stop during training\n\nStopped · 6 seconds · started 11/23/2026, 7:27:19 PM\n\ncancelled\nProcess output\nRunning prepare\nRunning train\n"
+    },
+    {
+      "control": "Active-run banner and duplicate-run prevention",
+      "observed": "View run opened the active job; Start run was disabled"
+    },
+    {
+      "control": "Native number validation",
+      "observed": {
+        "invalid": true,
+        "message": "Value must be greater than or equal to 1."
+      }
+    },
+    {
+      "control": "All run settings, advanced toggle, refresh and navigation",
+      "observed": {
+        "attack_samples": "40",
+        "batch_size": "64",
+        "collision_steps": "8",
+        "cw_steps": "12",
+        "epochs": "10",
+        "epsilon": "0.08",
+        "epsilons": "0.0001, 0.01, 0.08, 0.16",
+        "fpr_percent": "1",
+        "hidden": "48",
+        "hsj_steps": "3",
+        "learning_rate": "0.002",
+        "max_rows": "0",
+        "name": "Audit: full run · seed 73",
+        "poison_ratios": "0.01, 0.0101, 0.0104, 0.05",
+        "quantum": "0.025",
+        "restarts": "1",
+        "seed": "73",
+        "steps": "12"
+      }
+    },
+    {
+      "control": "Glance filter: clean",
+      "observed": "Spam missed\n22.7%\nFalse alarms\n2.4%\nAccuracy\n89.5%\nProcessing time\n0.63 ms\n\n841 test emails. Processing time covers 95% of measured requests."
+    },
+    {
+      "control": "Glance filter: tree",
+      "observed": "Spam missed\n16.4%\nFalse alarms\n2.2%\nAccuracy\n92.2%\nProcessing time\n0.98 ms\n\n841 test emails. Processing time covers 95% of measured requests."
+    },
+    {
+      "control": "Glance filter: pgd",
+      "observed": "Spam missed\n21.2%\nFalse alarms\n2.8%\nAccuracy\n89.9%\nProcessing time\n0.27 ms\n\n841 test emails. Processing time covers 95% of measured requests."
+    },
+    {
+      "control": "Glance filter: trades",
+      "observed": "Spam missed\n20.9%\nFalse alarms\n2.6%\nAccuracy\n90.1%\nProcessing time\n0.25 ms\n\n841 test emails. Processing time covers 95% of measured requests."
+    },
+    {
+      "control": "Glance filter: squeezed",
+      "observed": "Spam missed\n23.3%\nFalse alarms\n2.2%\nAccuracy\n89.4%\nProcessing time\n0.28 ms\n\n841 test emails. Processing time covers 95% of measured requests."
+    },
+    {
+      "control": "Chart point keyboard tooltips",
+      "observed": "20 actual chart points checked"
+    },
+    {
+      "control": "Fresh full run, summary and real process completion",
+      "observed": {
+        "output": "Running prepare\nRunning train\nRunning attack-evasion\nRunning attack-poison\nRunning defend\nRunning evaluate\nD:\\PROIECTE\\ml-adversarial-security\\runs\\experiment-20261123-172805-418805\\reports\\benchmark_results.md\nVerification completed on checksum-verified real data.\n",
+        "cards": [
+          "74.3%",
+          "2.4%",
+          "29.0%"
+        ]
+      }
+    },
+    {
+      "control": "Numeric chart spacing",
+      "observed": {
+        "actualFraction": 0.06191369606003752,
+        "expectedFraction": 0.06191369606003752,
+        "levels": [
+          0.0001,
+          0.01,
+          0.08,
+          0.16
+        ]
+      }
+    },
+    {
+      "control": "Show/hide unchanged measurements",
+      "observed": "57 actual measurements"
+    },
+    {
+      "control": "Inspect clean / evasion-fgsm-linf",
+      "observed": {
+        "records": 40,
+        "lastIndex": 39,
+        "sourceRow": "Source record 1,404"
+      }
+    },
+    {
+      "control": "Inspect clean / evasion-pgd-linf",
+      "observed": {
+        "records": 40,
+        "lastIndex": 39,
+        "sourceRow": "Source record 1,404"
+      }
+    },
+    {
+      "control": "Inspect clean / evasion-pgd-l2",
+      "observed": {
+        "records": 40,
+        "lastIndex": 39,
+        "sourceRow": "Source record 1,404"
+      }
+    },
+    {
+      "control": "Inspect clean / evasion-cw-l2",
+      "observed": {
+        "records": 40,
+        "lastIndex": 39,
+        "sourceRow": "Source record 1,404"
+      }
+    },
+    {
+      "control": "Inspect clean / evasion-hsj-linf",
+      "observed": {
+        "records": 40,
+        "lastIndex": 39,
+        "sourceRow": "Source record 1,404"
+      }
+    },
+    {
+      "control": "Inspect clean / evasion-cleverhans-fgsm-linf",
+      "observed": {
+        "records": 40,
+        "lastIndex": 39,
+        "sourceRow": "Source record 1,404"
+      }
+    },
+    {
+      "control": "Inspect tree / evasion-fgsm-linf",
+      "observed": {
+        "records": 40,
+        "lastIndex": 39,
+        "sourceRow": "Source record 1,404"
+      }
+    },
+    {
+      "control": "Inspect tree / evasion-pgd-linf",
+      "observed": {
+        "records": 40,
+        "lastIndex": 39,
+        "sourceRow": "Source record 1,404"
+      }
+    },
+    {
+      "control": "Inspect tree / evasion-pgd-l2",
+      "observed": {
+        "records": 40,
+        "lastIndex": 39,
+        "sourceRow": "Source record 1,404"
+      }
+    },
+    {
+      "control": "Inspect tree / evasion-cw-l2",
+      "observed": {
+        "records": 40,
+        "lastIndex": 39,
+        "sourceRow": "Source record 1,404"
+      }
+    },
+    {
+      "control": "Inspect tree / evasion-hsj-linf",
+      "observed": {
+        "records": 40,
+        "lastIndex": 39,
+        "sourceRow": "Source record 1,404"
+      }
+    },
+    {
+      "control": "Inspect tree / evasion-cleverhans-fgsm-linf",
+      "observed": {
+        "records": 40,
+        "lastIndex": 39,
+        "sourceRow": "Source record 1,404"
+      }
+    },
+    {
+      "control": "Every record option in the repeated-step inspector",
+      "observed": [
+        {
+          "index": 0,
+          "scores": [
+            0.9469207525253296,
+            0.8960713744163513
+          ],
+          "source": "Source record 1,255"
+        },
+        {
+          "index": 1,
+          "scores": [
+            0.7221042513847351,
+            0.4384254813194275
+          ],
+          "source": "Source record 1,419"
+        },
+        {
+          "index": 2,
+          "scores": [
+            0.9607592225074768,
+            0.8877923488616943
+          ],
+          "source": "Source record 1,317"
+        },
+        {
+          "index": 3,
+          "scores": [
+            0.99173766374588,
+            0.9807426929473876
+          ],
+          "source": "Source record 956"
+        },
+        {
+          "index": 4,
+          "scores": [
+            0.9958570599555968,
+            0.9889495372772216
+          ],
+          "source": "Source record 302"
+        },
+        {
+          "index": 5,
+          "scores": [
+            0.9928268194198608,
+            0.9826479554176332
+          ],
+          "source": "Source record 934"
+        },
+        {
+          "index": 6,
+          "scores": [
+            0.9990369081497192,
+            0.9973760843276978
+          ],
+          "source": "Source record 1,785"
+        },
+        {
+          "index": 7,
+          "scores": [
+            0.9824601411819458,
+            0.8056808710098267
+          ],
+          "source": "Source record 517"
+        },
+        {
+          "index": 8,
+          "scores": [
+            0.9633909463882446,
+            0.3696679770946502
+          ],
+          "source": "Source record 1,153"
+        },
+        {
+          "index": 9,
+          "scores": [
+            0.9929794669151306,
+            0.9892499446868896
+          ],
+          "source": "Source record 1,754"
+        },
+        {
+          "index": 10,
+          "scores": [
+            0.9814924597740172,
+            0.9505426287651062
+          ],
+          "source": "Source record 1,393"
+        },
+        {
+          "index": 11,
+          "scores": [
+            0.9991315007209778,
+            0.9967984557151794
+          ],
+          "source": "Source record 1,201"
+        },
+        {
+          "index": 12,
+          "scores": [
+            0.8682185411453247,
+            0.46404364705085754
+          ],
+          "source": "Source record 1,760"
+        },
+        {
+          "index": 13,
+          "scores": [
+            0.9883553981781006,
+            0.9718390107154846
+          ],
+          "source": "Source record 298"
+        },
+        {
+          "index": 14,
+          "scores": [
+            0.684680163860321,
+            0.1741505265235901
+          ],
+          "source": "Source record 400"
+        },
+        {
+          "index": 15,
+          "scores": [
+            0.33561843633651733,
+            0.06872018426656723
+          ],
+          "source": "Source record 1,485"
+        },
+        {
+          "index": 16,
+          "scores": [
+            0.910503387451172,
+            0.5826586484909058
+          ],
+          "source": "Source record 227"
+        },
+        {
+          "index": 17,
+          "scores": [
+            0.9795696139335632,
+            0.9591736793518066
+          ],
+          "source": "Source record 282"
+        },
+        {
+          "index": 18,
+          "scores": [
+            0.9928775429725648,
+            0.9787572026252748
+          ],
+          "source": "Source record 1,078"
+        },
+        {
+          "index": 19,
+          "scores": [
+            0.9527574181556702,
+            0.7747852802276611
+          ],
+          "source": "Source record 1,649"
+        },
+        {
+          "index": 20,
+          "scores": [
+            0.7010878920555115,
+            0.5072529315948486
+          ],
+          "source": "Source record 684"
+        },
+        {
+          "index": 21,
+          "scores": [
+            0.9876701831817628,
+            0.9427725076675416
+          ],
+          "source": "Source record 500"
+        },
+        {
+          "index": 22,
+          "scores": [
+            0.48045092821121216,
+            0.2541236877441406
+          ],
+          "source": "Source record 1,208"
+        },
+        {
+          "index": 23,
+          "scores": [
+            0.974724054336548,
+            0.8970035910606384
+          ],
+          "source": "Source record 1,324"
+        },
+        {
+          "index": 24,
+          "scores": [
+            0.9976425766944884,
+            0.9942411184310912
+          ],
+          "source": "Source record 1,346"
+        },
+        {
+          "index": 25,
+          "scores": [
+            0.9934631586074828,
+            0.9847041368484496
+          ],
+          "source": "Source record 559"
+        },
+        {
+          "index": 26,
+          "scores": [
+            0.959725022315979,
+            0.3745976686477661
+          ],
+          "source": "Source record 983"
+        },
+        {
+          "index": 27,
+          "scores": [
+            0.9963052272796632,
+            0.9891780614852904
+          ],
+          "source": "Source record 764"
+        },
+        {
+          "index": 28,
+          "scores": [
+            0.9969995617866516,
+            0.9919812679290771
+          ],
+          "source": "Source record 1,321"
+        },
+        {
+          "index": 29,
+          "scores": [
+            0.9993823766708374,
+            0.9977362155914308
+          ],
+          "source": "Source record 1,209"
+        },
+        {
+          "index": 30,
+          "scores": [
+            0.9349532127380372,
+            0.7448272109031677
+          ],
+          "source": "Source record 474"
+        },
+        {
+          "index": 31,
+          "scores": [
+            0.9900230765342712,
+            0.963596761226654
+          ],
+          "source": "Source record 487"
+        },
+        {
+          "index": 32,
+          "scores": [
+            0.945743978023529,
+            0.76750648021698
+          ],
+          "source": "Source record 938"
+        },
+        {
+          "index": 33,
+          "scores": [
+            0.9847042560577391,
+            0.9756826162338256
+          ],
+          "source": "Source record 146"
+        },
+        {
+          "index": 34,
+          "scores": [
+            0.9925742149353028,
+            0.965595841407776
+          ],
+          "source": "Source record 834"
+        },
+        {
+          "index": 35,
+          "scores": [
+            0.9823680520057678,
+            0.9562199711799622
+          ],
+          "source": "Source record 598"
+        },
+        {
+          "index": 36,
+          "scores": [
+            0.021328380331397057,
+            0.004031606484204531
+          ],
+          "source": "Source record 1,417"
+        },
+        {
+          "index": 37,
+          "scores": [
+            0.9942046999931335,
+            0.988456964492798
+          ],
+          "source": "Source record 1,742"
+        },
+        {
+          "index": 38,
+          "scores": [
+            0.9819954633712769,
+            0.9583802223205566
+          ],
+          "source": "Source record 568"
+        },
+        {
+          "index": 39,
+          "scores": [
+            0.7976111173629761,
+            0.2363408654928207
+          ],
+          "source": "Source record 1,404"
+        }
+      ]
+    },
+    {
+      "control": "Inspector backdrop dismissal",
+      "observed": "Closed without changing the selected run"
+    },
+    {
+      "control": "Training change selector: label-flip",
+      "observed": {
+        "rows": 9,
+        "shares": [
+          {
+            "requested": 0.01,
+            "selected": 25,
+            "modified": 25
+          },
+          {
+            "requested": 0.0101,
+            "selected": 25,
+            "modified": 25
+          },
+          {
+            "requested": 0.0104,
+            "selected": 26,
+            "modified": 26
+          },
+          {
+            "requested": 0.05,
+            "selected": 126,
+            "modified": 126
+          }
+        ]
+      }
+    },
+    {
+      "control": "Training change selector: collision",
+      "observed": {
+        "rows": 9,
+        "shares": [
+          {
+            "requested": 0.01,
+            "selected": 25,
+            "modified": 25
+          },
+          {
+            "requested": 0.0101,
+            "selected": 25,
+            "modified": 25
+          },
+          {
+            "requested": 0.0104,
+            "selected": 26,
+            "modified": 26
+          },
+          {
+            "requested": 0.05,
+            "selected": 126,
+            "modified": 126
+          }
+        ]
+      }
+    },
+    {
+      "control": "Training change selector: backdoor",
+      "observed": {
+        "rows": 9,
+        "shares": [
+          {
+            "requested": 0.01,
+            "selected": 25,
+            "modified": 25
+          },
+          {
+            "requested": 0.0101,
+            "selected": 25,
+            "modified": 25
+          },
+          {
+            "requested": 0.0104,
+            "selected": 26,
+            "modified": 26
+          },
+          {
+            "requested": 0.05,
+            "selected": 126,
+            "modified": 126
+          }
+        ]
+      }
+    },
+    {
+      "control": "Run details",
+      "observed": "The email records\nSource\nUCI Spambase\nSource records\n4,601\nUnique records available\n4,204\nRecords used in this run\n4,204\nTraining set\n2,522\nValidation set\n841\nTest set\n841\nMeasurements per email\n57\nRun settings\nTraining rounds\n10\nSpam emails attacked\n40\nSpam emails requested\n40\nAttack steps\n12\nChange limit\n0.08\nFalse-alarm target\n1.0%\nRepeatable starting seed\n73\nProcessing\nLocal CPU\nWhat this run tells you\n\nThese are saved measurements from 841 test emails. Attack results use a smaller set of 40 spam emails.\n\nThe corpus is historical. These results do not establish how well the filter will handle today's mail.\n\nThe attacks change email measurements. A valid change in a table does not prove that a matching email can be written.\n\nRun record\n\nWindows-10-10.0.26200-SP0\n\nSaved 11/23/2026, 7:28:49 PM\n\nDataset file fingerprint\n\nb1ef93de71f97714d3d7d4f58fc9f718da7bbc8ac8a150eff2778616a8097b12\n\nExport results to keep the full settings and measurements.\n\nInstalled tools\nTool\tVersion\ntorch\t2.6.0\nnumpy\t1.26.4\nscikit-learn\t1.5.2\nxgboost\t2.1.4\nadversarial-robustness-toolbox\t1.20.1\ncleverhans\t4.0.0"
+    },
+    {
+      "control": "More requested attack records than available, and close training shares",
+      "observed": "The email records\nSource\nUCI Spambase\nSource records\n4,601\nUnique records available\n4,204\nRecords used in this run\n128\nTraining set\n76\nValidation set\n26\nTest set\n26\nMeasurements per email\n57\nRun settings\nTraining rounds\n2\nSpam emails attacked\n11\nSpam emails requested\n512\nAttack steps\n2\nChange limit\n0.05\nFalse-alarm target\n0.0%\nRepeatable starting seed\n19\nProcessing\nLocal CPU\nWhat this run tells you\n\nThese are saved measurements from 26 test emails. Attack results use a smaller set of 11 spam emails.\n\nThe corpus is historical. These results do not establish how well the filter will handle today's mail.\n\nThe attacks change email measurements. A valid change in a table does not prove that a matching email can be written.\n\nThis run uses a selected part of the available dataset.\n\nRun record\n\nWindows-10-10.0.26200-SP0\n\nSaved 11/23/2026, 7:36:22 PM\n\nDataset file fingerprint\n\nb1ef93de71f97714d3d7d4f58fc9f718da7bbc8ac8a150eff2778616a8097b12\n\nExport results to keep the full settings and measurements.\n\nInstalled tools\nTool\tVersion\ntorch\t2.6.0\nnumpy\t1.26.4\nscikit-learn\t1.5.2\nxgboost\t2.1.4\nadversarial-robustness-toolbox\t1.20.1\ncleverhans\t4.0.0"
+    },
+    {
+      "control": "Small numeric chart labels",
+      "observed": [
+        "0%",
+        "25%",
+        "50%",
+        "75%",
+        "100%",
+        "0.0001",
+        "0.0002"
+      ]
+    },
+    {
+      "control": "Every saved-run option and rapid switching",
+      "observed": {
+        "options": [
+          "Full dataset",
+          "Dashboard live check",
+          "Audit: full run · seed 73",
+          "Audit: available records",
+          "640-record check"
+        ],
+        "finalSelection": "Audit: full run · seed 73",
+        "subtitle": "Spambase · 841 test emails · 40 spam emails attacked"
+      }
+    },
+    {
+      "control": "Export rechecks evidence and removes stale results",
+      "observed": {
+        "message": "The result file changed. Run the evaluation again before using it.",
+        "cards": 0,
+        "exportDisabled": true
+      }
+    },
+    {
+      "control": "Reload after evidence restoration",
+      "observed": "Measured results returned and export re-enabled"
+    },
+    {
+      "control": "Open updated results",
+      "observed": "Audit: full run · seed 73"
+    },
+    {
+      "control": "Export verified results",
+      "observed": "C:\\Users\\drago\\Downloads\\filter-results (1).json"
+    },
+    {
+      "control": "Empty workspace: reload, disabled controls, start experiment, open measured results",
+      "observed": {
+        "initial": {
+          "cards": 0,
+          "exportDisabled": true,
+          "runDisabled": true
+        },
+        "results": "Spam caught\n40.0%\nBefore attacks\nOriginal filter · all test emails\nRegular email flagged\n0.0%\nWithin target\nTarget: 1.0% · checked on unseen emails\nSlipped past the filter\n0.0%\nUnder attack\n0 of 1 initially caught spam emails · repeated-step attack"
+      }
+    },
+    {
+      "control": "Independent overview target and retained attack-page selection",
+      "observed": {
+        "overviewTarget": "Original filter",
+        "retainedTarget": "tree"
+      }
+    },
+    {
+      "control": "Final inspector routing regression",
+      "observed": "All 12 attack buttons inspected the correct pinned filter"
+    },
+    {
+      "control": "Responsive layout, navigation and button labels",
+      "observed": [
+        {
+          "requestedWidth": 375,
+          "page": "overview",
+          "scrollWidth": 371,
+          "title": "Test results",
+          "unlabelledButtons": 0,
+          "width": 371
+        },
+        {
+          "requestedWidth": 375,
+          "page": "attacks",
+          "scrollWidth": 371,
+          "title": "Attack tests",
+          "unlabelledButtons": 0,
+          "width": 371
+        },
+        {
+          "requestedWidth": 375,
+          "page": "training",
+          "scrollWidth": 371,
+          "title": "Training changes",
+          "unlabelledButtons": 0,
+          "width": 371
+        },
+        {
+          "requestedWidth": 375,
+          "page": "details",
+          "scrollWidth": 371,
+          "title": "About this run",
+          "unlabelledButtons": 0,
+          "width": 371
+        },
+        {
+          "requestedWidth": 375,
+          "page": "runs",
+          "scrollWidth": 371,
+          "title": "Run an experiment",
+          "unlabelledButtons": 0,
+          "width": 371
+        },
+        {
+          "requestedWidth": 768,
+          "page": "overview",
+          "scrollWidth": 776,
+          "title": "Test results",
+          "unlabelledButtons": 0,
+          "width": 776
+        },
+        {
+          "requestedWidth": 768,
+          "page": "attacks",
+          "scrollWidth": 776,
+          "title": "Attack tests",
+          "unlabelledButtons": 0,
+          "width": 776
+        },
+        {
+          "requestedWidth": 768,
+          "page": "training",
+          "scrollWidth": 776,
+          "title": "Training changes",
+          "unlabelledButtons": 0,
+          "width": 776
+        },
+        {
+          "requestedWidth": 768,
+          "page": "details",
+          "scrollWidth": 776,
+          "title": "About this run",
+          "unlabelledButtons": 0,
+          "width": 776
+        },
+        {
+          "requestedWidth": 768,
+          "page": "runs",
+          "scrollWidth": 776,
+          "title": "Run an experiment",
+          "unlabelledButtons": 0,
+          "width": 776
+        },
+        {
+          "requestedWidth": 1440,
+          "page": "overview",
+          "scrollWidth": 1469,
+          "title": "Test results",
+          "unlabelledButtons": 0,
+          "width": 1469
+        },
+        {
+          "requestedWidth": 1440,
+          "page": "attacks",
+          "scrollWidth": 1469,
+          "title": "Attack tests",
+          "unlabelledButtons": 0,
+          "width": 1469
+        },
+        {
+          "requestedWidth": 1440,
+          "page": "training",
+          "scrollWidth": 1469,
+          "title": "Training changes",
+          "unlabelledButtons": 0,
+          "width": 1469
+        },
+        {
+          "requestedWidth": 1440,
+          "page": "details",
+          "scrollWidth": 1469,
+          "title": "About this run",
+          "unlabelledButtons": 0,
+          "width": 1469
+        },
+        {
+          "requestedWidth": 1440,
+          "page": "runs",
+          "scrollWidth": 1469,
+          "title": "Run an experiment",
+          "unlabelledButtons": 0,
+          "width": 1469
+        }
+      ]
+    },
+    {
+      "control": "Browser console review",
+      "observed": []
+    }
+  ],
+  "responsive": [
+    {
+      "requestedWidth": 375,
+      "page": "overview",
+      "scrollWidth": 371,
+      "title": "Test results",
+      "unlabelledButtons": 0,
+      "width": 371
+    },
+    {
+      "requestedWidth": 375,
+      "page": "attacks",
+      "scrollWidth": 371,
+      "title": "Attack tests",
+      "unlabelledButtons": 0,
+      "width": 371
+    },
+    {
+      "requestedWidth": 375,
+      "page": "training",
+      "scrollWidth": 371,
+      "title": "Training changes",
+      "unlabelledButtons": 0,
+      "width": 371
+    },
+    {
+      "requestedWidth": 375,
+      "page": "details",
+      "scrollWidth": 371,
+      "title": "About this run",
+      "unlabelledButtons": 0,
+      "width": 371
+    },
+    {
+      "requestedWidth": 375,
+      "page": "runs",
+      "scrollWidth": 371,
+      "title": "Run an experiment",
+      "unlabelledButtons": 0,
+      "width": 371
+    },
+    {
+      "requestedWidth": 768,
+      "page": "overview",
+      "scrollWidth": 776,
+      "title": "Test results",
+      "unlabelledButtons": 0,
+      "width": 776
+    },
+    {
+      "requestedWidth": 768,
+      "page": "attacks",
+      "scrollWidth": 776,
+      "title": "Attack tests",
+      "unlabelledButtons": 0,
+      "width": 776
+    },
+    {
+      "requestedWidth": 768,
+      "page": "training",
+      "scrollWidth": 776,
+      "title": "Training changes",
+      "unlabelledButtons": 0,
+      "width": 776
+    },
+    {
+      "requestedWidth": 768,
+      "page": "details",
+      "scrollWidth": 776,
+      "title": "About this run",
+      "unlabelledButtons": 0,
+      "width": 776
+    },
+    {
+      "requestedWidth": 768,
+      "page": "runs",
+      "scrollWidth": 776,
+      "title": "Run an experiment",
+      "unlabelledButtons": 0,
+      "width": 776
+    },
+    {
+      "requestedWidth": 1440,
+      "page": "overview",
+      "scrollWidth": 1469,
+      "title": "Test results",
+      "unlabelledButtons": 0,
+      "width": 1469
+    },
+    {
+      "requestedWidth": 1440,
+      "page": "attacks",
+      "scrollWidth": 1469,
+      "title": "Attack tests",
+      "unlabelledButtons": 0,
+      "width": 1469
+    },
+    {
+      "requestedWidth": 1440,
+      "page": "training",
+      "scrollWidth": 1469,
+      "title": "Training changes",
+      "unlabelledButtons": 0,
+      "width": 1469
+    },
+    {
+      "requestedWidth": 1440,
+      "page": "details",
+      "scrollWidth": 1469,
+      "title": "About this run",
+      "unlabelledButtons": 0,
+      "width": 1469
+    },
+    {
+      "requestedWidth": 1440,
+      "page": "runs",
+      "scrollWidth": 1469,
+      "title": "Run an experiment",
+      "unlabelledButtons": 0,
+      "width": 1469
+    }
+  ],
+  "consoleErrors": [],
+  "coverageLimits": [
+    "Historical timings are recorded measurements, not exact repeatability claims.",
+    "No approved screenshot baselines were available for pixel regression.",
+    "Accessibility checks covered labels, main-content entry, dialog controls and keyboard chart points; no full screen-reader review was performed."
+  ]
+}
