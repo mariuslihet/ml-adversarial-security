@@ -9,7 +9,7 @@ This is a feature-space research harness. A valid vector is **not proof that a c
 ### Local dashboard
 
 ```powershell
-Set-Location 'D:\PROIECTE\ml-adversarial-security'
+Set-Location to your partition'
 .\.venv\Scripts\ml-adv-sec.exe dashboard
 ```
 
