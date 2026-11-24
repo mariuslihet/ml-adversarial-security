@@ -9,6 +9,12 @@ try {const draft = JSON.parse(sessionStorage.getItem("filter-run-draft") || "{}"
 const modelNames = {clean: "Original filter", tree: "Tree filter", pgd: "Attack-trained", trades: "Stability-trained", squeezed: "Rounded inputs", "squeezed-bpda": "Rounded inputs"};
 const pages = {overview: ["Overview", "Test results"], attacks: ["Attack tests", "Attack tests"], training: ["Training changes", "Training changes"], details: ["Run details", "About this run"]};
 pages.runs = ["Run experiments", "Run an experiment"];
+pages.records = ["Record explorer", "Record explorer"];
+pages.compare = ["Compare runs", "Compare runs"];
+pages.decision = ["Decision lab", "Decision lab"];
+pages.disagreements = ["Filter disagreements", "Filter disagreements"];
+pages.importance = ["Input importance", "Input importance"];
+pages.overlap = ["Attack overlap", "Attack overlap"];
 const series = [{id: "clean", color: "#335ce8"}, {id: "pgd", color: "#278775"}, {id: "trades", color: "#bd7545"}, {id: "squeezed-bpda", color: "#8d6bc6"}];
 const number = new Intl.NumberFormat("en");
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
@@ -113,7 +119,7 @@ function trainingPage() {
   const rows = state.report.poisoning.filter(r => r.kind === state.kind);
   const baseline = state.report.clean.find(r => r.model === "clean");
   const detector = state.report.detector;
-  return `<section class="panel table-panel"><div class="panel-head"><div><h2>When the training data changes</h2><p class="panel-description">Compare the affected filter with the same filter trained after suspicious records were removed.</p></div><div class="row-actions"><label class="sr-only" for="change-kind">Training change</label><select id="change-kind">${Object.entries(kinds).map(([id, name]) => `<option value="${id}" ${state.kind === id ? "selected" : ""}>${name}</option>`).join("")}</select></div></div><div class="table-wrap"><table><thead><tr><th>Training set</th><th>Selected</th><th>Spam caught</th><th>Regular email flagged</th><th>F1 score</th>${state.kind === "backdoor" ? "<th>Pattern slips through</th>" : ""}</tr></thead><tbody><tr><td><span class="method-name">Original training data</span><span class="method-sub">Reference result</span></td><td>—</td><td>${pct(1 - baseline.fnr)}</td><td>${pct(baseline.fpr)}</td><td>${Number(baseline.f1).toFixed(3)}</td>${state.kind === "backdoor" ? "<td>—</td>" : ""}</tr>${rows.map(r => `<tr><td><span class="method-name">${r.sanitized ? "After cleanup" : "Changed training data"}</span><span class="method-sub">${r.sanitized ? `${num(r.filter?.quarantined)} records removed · ${num(r.filter?.poison_detected)} selected records found` : `${kinds[state.kind]} · ${num(r.selected_count)} selected · ${num(r.modified_count)} changed · requested ${pct(r.ratio, 3)}`}</span></td><td>${pct(r.actual_ratio)}</td><td>${meter(1 - r.fnr)}</td><td>${pct(r.fpr)}</td><td>${Number(r.f1).toFixed(3)}</td>${state.kind === "backdoor" ? `<td>${pct(r.trigger_asr)}</td>` : ""}</tr>`).join("")}</tbody></table></div><div class="table-foot">${esc(descriptions[state.kind])} Cleanup can also remove unchanged records; it is not assumed to be correct.</div></section>
+  return `<section class="panel table-panel"><div class="panel-head"><div><h2>When the training data changes</h2><p class="panel-description">Compare the affected filter with the same filter trained after suspicious records were removed.</p></div><div class="row-actions"><label class="sr-only" for="change-kind">Training change</label><select id="change-kind">${Object.entries(kinds).map(([id, name]) => `<option value="${id}" ${state.kind === id ? "selected" : ""}>${name}</option>`).join("")}</select></div></div><div class="table-wrap"><table><thead><tr><th>Training set</th><th>Selected</th><th>Spam caught</th><th>Regular email flagged</th><th>F1 score</th><th>Records</th>${state.kind === "backdoor" ? "<th>Pattern slips through</th>" : ""}</tr></thead><tbody><tr><td><span class="method-name">Original training data</span><span class="method-sub">Reference result</span></td><td>—</td><td>${pct(1 - baseline.fnr)}</td><td>${pct(baseline.fpr)}</td><td>${Number(baseline.f1).toFixed(3)}</td><td>—</td>${state.kind === "backdoor" ? "<td>—</td>" : ""}</tr>${rows.map(r => `<tr><td><span class="method-name">${r.sanitized ? "After cleanup" : "Changed training data"}</span><span class="method-sub">${r.sanitized ? `${num(r.filter?.quarantined)} records removed · ${num(r.filter?.poison_detected)} selected records found` : `${kinds[state.kind]} · ${num(r.selected_count)} selected · ${num(r.modified_count)} changed · requested ${pct(r.ratio, 3)}`}</span></td><td>${pct(r.actual_ratio)}</td><td>${meter(1 - r.fnr)}</td><td>${pct(r.fpr)}</td><td>${Number(r.f1).toFixed(3)}</td><td><button class="text-button inspect-training" data-model="${esc(r.model)}">Inspect records</button></td>${state.kind === "backdoor" ? `<td>${pct(r.trigger_asr)}</td>` : ""}</tr>`).join("")}</tbody></table></div><div class="table-foot">${esc(descriptions[state.kind])} Cleanup can also remove unchanged records; it is not assumed to be correct.</div></section>
     <div class="details-grid section-spacer"><section class="panel"><div class="panel-head"><div><h2>Extra input checks</h2><p class="panel-description">Flag unusual inputs and treat them as spam.</p></div></div><dl class="detail-list"><div class="detail-row"><dt>Emails flagged</dt><dd>${num(detector.flagged)} <span class="method-sub">${pct(detector.flag_rate)} of test emails</span></dd></div><div class="detail-row"><dt>Spam caught with these checks</dt><dd>${pct(1 - detector.fnr)}</dd></div><div class="detail-row"><dt>Regular email flagged</dt><dd>${pct(detector.fpr)}</dd></div></dl></section><section class="panel"><div class="panel-head"><h2>How to read this</h2></div><div class="plain-list"><p>“Selected” is the measured share of the original training set chosen for changes. The record counts also show how many actually changed.</p><p>Every filter is checked on the same untouched test emails. F1 combines how much spam was caught with how often the filter was right when it flagged an email.</p><p>Removing records or adding extra checks can make results worse. These tables show what actually happened.</p></div></section></div>`;
 }
 
@@ -139,6 +145,7 @@ function bindContent() {
     advanced.addEventListener("toggle", () => state.advancedOpen = advanced.open);
   }
   bindJobActions();
+  bindFeatureContent();
   const tip = $("#tooltip");
   for (const point of document.querySelectorAll("[data-tip]")) {
     const show = () => {const rect = point.getBoundingClientRect(); tip.textContent = point.dataset.tip; tip.hidden = false; tip.style.left = Math.max(10, Math.min(rect.x - 80, window.innerWidth - 250)) + "px"; tip.style.top = Math.max(10, rect.y - 52) + "px";};
@@ -162,7 +169,7 @@ function render() {
     content.setAttribute("aria-busy", String(state.loading)); return;
   }
   $("#subtitle").textContent = state.page === "runs" ? "Train the filters, run the attacks, and measure the results on this computer." : `Spambase · ${num(state.report.dataset.split_sizes.test)} test emails · ${num(state.report.counts.attack_samples)} spam emails attacked`;
-  content.innerHTML = ({overview, attacks: attackPage, training: trainingPage, details: detailsPage, runs: runPage}[state.page] || overview)();
+  content.innerHTML = ({overview, attacks: attackPage, training: trainingPage, details: detailsPage, runs: runPage, records: recordsPage, compare: comparisonPage, decision: decisionLabPage, disagreements: disagreementPage, importance: importancePage, overlap: overlapPage}[state.page] || overview)();
   content.setAttribute("aria-busy", "false");
   $("#updated").textContent = state.updated ? `Results saved ${new Date(state.updated).toLocaleString(undefined, {month: "short", day: "numeric", hour: "2-digit", minute: "2-digit"})}` : "";
   bindContent();
@@ -181,6 +188,7 @@ function clearReport(loading = false) {
   $("#updated").textContent = "";
   inspectionRequest++;
   if ($("#inspector").open) $("#inspector").close();
+  closeFeatureDialog();
   render();
 }
 
@@ -215,6 +223,7 @@ async function reload(preferred = null) {
   try {
     const runs = await readJSON("/api/reports");
     if (request !== reportsRequest) return false;
+    fx.available = runs;
     const select = $("#run-select");
     select.innerHTML = runs.map(r => `<option value="${esc(r.id)}">${esc(r.name)}</option>`).join("");
     select.disabled = !runs.length;
@@ -241,7 +250,7 @@ $("#download").addEventListener("click", async () => {
   } catch (e) {clearReport(false); showError(e.message);}
   finally {$("#download").disabled = !state.report;}
 });
-window.addEventListener("hashchange", () => {const hash = location.hash.slice(1); if (hash === "main") return; state.page = Object.hasOwn(pages, hash) ? hash : "overview"; render(); window.scrollTo(0, 0);});
+window.addEventListener("hashchange", () => {const hash = location.hash.slice(1); if (hash === "main") return; closeFeatureDialog(); state.page = Object.hasOwn(pages, hash) ? hash : "overview"; render(); window.scrollTo(0, 0);});
 window.addEventListener("keydown", e => {if (e.key === "Escape") $("#tooltip").hidden = true;});
 state.page = Object.hasOwn(pages, location.hash.slice(1)) ? location.hash.slice(1) : "overview";
 render();

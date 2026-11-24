@@ -1,0 +1,160 @@
+{
+  "checked_at": "2026-11-24T16:49:33.564481+00:00",
+  "base": "http://127.0.0.1:8873",
+  "runs": 5,
+  "score_recalculations": [
+    {
+      "run": "f6f1b255335e9446",
+      "model": "clean",
+      "tested": 841,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "f6f1b255335e9446",
+      "model": "tree",
+      "tested": 841,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "f6f1b255335e9446",
+      "model": "pgd",
+      "tested": 841,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "f6f1b255335e9446",
+      "model": "trades",
+      "tested": 841,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "f6f1b255335e9446",
+      "model": "squeezed",
+      "tested": 841,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "00622d683c96cb18",
+      "model": "clean",
+      "tested": 841,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "00622d683c96cb18",
+      "model": "tree",
+      "tested": 841,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "00622d683c96cb18",
+      "model": "pgd",
+      "tested": 841,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "00622d683c96cb18",
+      "model": "trades",
+      "tested": 841,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "00622d683c96cb18",
+      "model": "squeezed",
+      "tested": 841,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "0e82a2302cbb4450",
+      "model": "clean",
+      "tested": 841,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "0e82a2302cbb4450",
+      "model": "tree",
+      "tested": 841,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "0e82a2302cbb4450",
+      "model": "pgd",
+      "tested": 841,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "0e82a2302cbb4450",
+      "model": "trades",
+      "tested": 841,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "0e82a2302cbb4450",
+      "model": "squeezed",
+      "tested": 841,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "a9ce694092b8a708",
+      "model": "clean",
+      "tested": 26,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "a9ce694092b8a708",
+      "model": "tree",
+      "tested": 26,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "a9ce694092b8a708",
+      "model": "pgd",
+      "tested": 26,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "a9ce694092b8a708",
+      "model": "trades",
+      "tested": 26,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "a9ce694092b8a708",
+      "model": "squeezed",
+      "tested": 26,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "08ca4b14891ad302",
+      "model": "clean",
+      "tested": 128,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "08ca4b14891ad302",
+      "model": "tree",
+      "tested": 128,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "08ca4b14891ad302",
+      "model": "pgd",
+      "tested": 128,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "08ca4b14891ad302",
+      "model": "trades",
+      "tested": 128,
+      "maximum_score_difference": 0.0
+    },
+    {
+      "run": "08ca4b14891ad302",
+      "model": "squeezed",
+      "tested": 128,
+      "maximum_score_difference": 0.0
+    }
+  ],
+  "csv_exports": "all test rows plus original measurements",
+  "training_inspection": "every changed and cleaned model, four actual scores per inspected record",
+  "browser_clicks": "not performed: Windows browser tool startup failed"
+}

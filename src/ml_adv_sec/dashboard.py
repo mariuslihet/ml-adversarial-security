@@ -103,11 +103,15 @@ class Reports:
         if metadata["details"]["source_checkpoint"] != clean_meta["weights_sha256"]:
             raise ValueError("The model changed after these attacks were saved")
         model, threshold = (clean, clean_threshold) if target == "clean" else restore(report["config"], target, payload["evidence"]["checkpoints"][target])[:2]
-        p = score(model, np.stack([originals[sample], attacks[sample]]))
+        # Match the evaluation's batch shapes: tiny rounding differences from a
+        # two-record batch can otherwise disagree at a decision boundary.
+        fresh_before, fresh_after = score(model, originals), score(model, attacks)
         with np.load(root / "artifacts/evaluation-scores.npz", allow_pickle=False) as recorded:
-            expected = [recorded[attack + "-" + target + "-before"][sample], recorded[attack + "-" + target + "-after"][sample]]
-        if not np.allclose(p, expected, atol=1e-6, rtol=1e-5):
+            expected_before = recorded[attack + "-" + target + "-before"]
+            expected_after = recorded[attack + "-" + target + "-after"]
+        if not np.allclose(fresh_before, expected_before, atol=1e-6, rtol=1e-5) or not np.allclose(fresh_after, expected_after, atol=1e-6, rtol=1e-5):
             raise ValueError("The current model scores differ from the saved evaluation. Re-evaluate this run.")
+        p = [fresh_before[sample], fresh_after[sample]]
         before = originals[sample] * np.asarray(schema["scale"]) + np.asarray(schema["center"])
         after = attacks[sample] * np.asarray(schema["scale"]) + np.asarray(schema["center"])
         features = [{"name": name, "before": float(before[i]), "after": float(after[i]), "change": float(after[i] - before[i]), "scaled_change": float(attacks[sample, i] - originals[sample, i]), "locked": i in schema["immutable"], "changed": bool(abs(attacks[sample, i] - originals[sample, i]) > 1e-6)} for i, name in enumerate(schema["names"])]
@@ -254,17 +258,52 @@ class Jobs:
 
 
 def handler_for(reports, jobs=None):
+    from .dashboard_research import ResearchViews
     assets = Path(__file__).with_name("web")
+    views = ResearchViews(reports)
     jobs = jobs or Jobs(reports)
     token = secrets.token_urlsafe(32)
-    static = {"/": ("index.html", "text/html"), "/app.js": ("app.js", "text/javascript"), "/style.css": ("style.css", "text/css")}
+    static = {"/": ("index.html", "text/html"), "/app.js": ("app.js", "text/javascript"), "/features.js": ("features.js", "text/javascript"), "/analysis.js": ("analysis.js", "text/javascript"), "/research.js": ("research.js", "text/javascript"), "/style.css": ("style.css", "text/css")}
 
     class Handler(BaseHTTPRequestHandler):
         def do_GET(self):
             if self.headers.get("Host") != f"127.0.0.1:{self.server.server_port}":
                 return self.send_error(403, "Use the dashboard's local address")
             route = urlsplit(self.path).path
+            query = parse_qs(urlsplit(self.path).query)
+            def q(name, default=""):
+                return query.get(name, [default])[0]
             try:
+                if route in {"/api/importance", "/api/importance.csv"}:
+                    exporting = route.endswith(".csv")
+                    result = views.importance(q("run"), q("model", "clean"), q("partition", "test"), int(q("repeats", "3")), int(q("seed", "42")), q("report_sha256"), exporting)
+                    return self.respond(result if exporting else json.dumps(result, allow_nan=False).encode(), "text/csv" if exporting else "application/json", filename="input-importance.csv" if exporting else None)
+                if route in {"/api/attack-overlap", "/api/attack-overlap.csv"}:
+                    exporting = route.endswith(".csv")
+                    result = views.attack_overlap(q("run"), q("target", "clean"), q("category", "all"), int(q("page", "1")), int(q("size", "25")), q("report_sha256"), exporting)
+                    return self.respond(result if exporting else json.dumps(result, allow_nan=False).encode(), "text/csv" if exporting else "application/json", filename="attack-overlap.csv" if exporting else None)
+                if route in {"/api/decision-lab", "/api/decision-lab.csv"}:
+                    exporting = route.endswith(".csv")
+                    result = views.decision_lab(q("run"), q("model", "clean"), q("mode", "saved"), float(q("threshold", "0.5")), float(q("target_fpr", "0.01")), q("report_sha256"), exporting)
+                    return self.respond(result if exporting else json.dumps(result, allow_nan=False).encode(), "text/csv" if exporting else "application/json", filename="decision-preview.csv" if exporting else None)
+                if route in {"/api/disagreements", "/api/disagreements.csv"}:
+                    exporting = route.endswith(".csv")
+                    result = views.disagreements(q("left"), q("right"), q("left_model", "clean"), q("right_model", "tree"), q("category", "disagree"), int(q("page", "1")), int(q("size", "25")), q("left_sha"), q("right_sha"), exporting)
+                    return self.respond(result if exporting else json.dumps(result, allow_nan=False).encode(), "text/csv" if exporting else "application/json", filename="filter-disagreements.csv" if exporting else None)
+                if route == "/api/record-detail":
+                    result = views.record_detail(q("run"), int(q("source_row", "0")), q("model", "clean"), q("report_sha256"))
+                    return self.respond(json.dumps(result, allow_nan=False).encode(), "application/json")
+                if route in {"/api/records", "/api/records.csv"}:
+                    exporting = route.endswith(".csv")
+                    result = views.records(q("run"), q("model", "clean"), q("label", "all"), q("outcome", "all"), q("search"), q("sort", "score-desc"), int(q("page", "1")), int(q("size", "25")), q("report_sha256"), q("recheck") == "1", exporting, q("features") == "1")
+                    return self.respond(result if exporting else json.dumps(result, allow_nan=False).encode(), "text/csv" if exporting else "application/json", filename="filter-records.csv" if exporting else None)
+                if route in {"/api/compare", "/api/compare.csv"}:
+                    exporting = route.endswith(".csv")
+                    result = views.compare(q("left"), q("right"), q("left_sha"), q("right_sha"), exporting)
+                    return self.respond(result if exporting else json.dumps(result, allow_nan=False).encode(), "text/csv" if exporting else "application/json", filename="run-comparison.csv" if exporting else None)
+                if route in {"/api/training-records", "/api/training-record"}:
+                    result = views.training(q("run"), q("model"), q("mode", "selected"), int(q("page", "1")), int(q("size", "25")), q("report_sha256"), int(q("position", "-1")) if route.endswith("/training-record") else None)
+                    return self.respond(json.dumps(result, allow_nan=False).encode(), "application/json")
                 if route == "/api/reports":
                     return self.respond(json.dumps(reports.list()).encode(), "application/json")
                 if route == "/api/settings":
@@ -316,11 +355,13 @@ def handler_for(reports, jobs=None):
             except OSError:
                 self.respond(json.dumps({"error": "The local process could not start. Its saved output contains the error."}).encode(), "application/json", 503)
 
-        def respond(self, body, mime, status=200):
+        def respond(self, body, mime, status=200, filename=None):
             self.send_response(status)
             self.send_header("Content-Type", mime + "; charset=utf-8")
             self.send_header("Content-Length", str(len(body)))
             self.send_header("Cache-Control", "no-store")
+            if filename:
+                self.send_header("Content-Disposition", f'attachment; filename="{filename}"')
             self.send_header("X-Content-Type-Options", "nosniff")
             self.send_header("Content-Security-Policy", "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'")
             self.end_headers()

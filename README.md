@@ -195,6 +195,34 @@ model | f1 | fpr | fnr | fnr_delta | brier_delta | decision_disagreement | trigg
 
 No benchmark performance values are embedded in this README. Run evidence and limitations are recorded in `VERIFICATION.md`; measured tables belong in the generated reports.
 
+## Explore the results locally
+
+Open `http://127.0.0.1:8873` while the dashboard is running.
+
+- **Record explorer:** select any original, hardened, changed-data, or cleaned model. Find missed spam and regular email flagged by mistake; filter by actual label and decision, search the original source row, sort scores, and page through every held-out record. Counts always cover the full test set. **Recalculate scores** restores the run's pinned model and checks every saved score against a fresh prediction. CSV exports contain every matching row, the decision threshold, and report hash; original measurements are optional.
+- **Compare runs:** place two measured runs side by side. Compare spam caught, false alarms, F1, and attack escape rates. The view checks original source IDs separately for the complete test set and attacked subset, so equal test-set sizes cannot hide different records. Attack limits and eligible counts remain visible. Export paired model measurements and processing times as CSV.
+- **Training changes → Inspect records:** inspect the actual selected, changed, removed, or complete training records for every change type and share. Open a record to see its original and changed labels, all changed measurements, locked fields, and four fresh scores: original and changed inputs through both the original and selected models. Removal marks identify the matching cleanup trial; the view explains whether the selected model was trained before or after cleanup.
+
+Every analysis request verifies the saved evidence. Open views carry the report hash and reject an updated report rather than mixing results from different versions. The original dataset contains numeric measurements, not the email message text.
+
+### Decision lab and record-level comparisons
+
+**Decision lab** recalculates validation and test scores from the selected run's pinned model. Keep the saved decision rule, enter a score threshold, or choose a false-alarm target calibrated on validation records only. The preview shows actual confusion counts for both partitions, changes versus the saved decisions, score-band counts and observed spam shares, up to 101 measured validation boundaries, and changed test records. **Preview flag none** measures the extreme where no email is flagged. CSV export includes every validation/test record, both thresholds, both decisions, scores, source IDs, and the report hash. Previews do not modify checkpoints or saved results. Test results help assess consequences; they should not be used to tune a rule and then claimed as an independent evaluation of that rule.
+
+**Filter disagreements** compares two filters within a run or across saved runs. Both sides can use original, hardened, changed-data, or cleaned models. Matching requires identical source-data bytes and intersects actual held-out source IDs; records outside the intersection are counted explicitly and never treated as paired observations. Review different decisions, records only one side gets right, shared mistakes, or the entire intersection. Pagination and CSV export use the complete selected category. Each side's threshold and report fingerprint are included in the export.
+
+**Inspect record** is available from the explorer, changed-decision list, and either side of the disagreement view. It recalculates the five original/hardened models plus the selected training-change model when applicable, checks their complete test-score vectors against the saved evidence, and displays that record's actual scores and decisions. It also shows all 57 exact original source measurements, scaled dataset values, and locked-field rules. In a cross-run comparison, the inspector identifies which run supplied the model weights and scaler.
+
+### Input importance and attack overlap
+
+**Input importance** runs repeatable column-shuffle checks for any original, hardened, changed-data, or cleaned model. Choose held-out test or validation records, one to ten repeats, and a seed. For each of the 57 measurements, the model runs on a copy with that column reassigned among actual records. The view reports changes in squared prediction error, accuracy, spam caught, false alarms, mean score movement, and decision counts. Sort by any measured quantity and inspect every repeat. Spread is the sample standard deviation across repeats, not a confidence interval; one repeat cannot estimate variability. CSV export repeats the exact seeded calculation and includes individual trials, model, partition, threshold, and report hash.
+
+Shuffling uses observed values but breaks their relationships with other measurements. This is a model-dependence diagnostic, not a causal explanation or a feasible attack. Fields locked during attacks remain eligible for this diagnostic. Constant columns and negative importance values are kept rather than replaced with invented positive rankings.
+
+**Attack overlap** recalculates before/after scores for all six saved attack variants against the original or tree filter. It verifies original measurements and source IDs, intersects actual attacked record sets, and compares outcomes only on that shared cohort. The matrix shows the number escaping both attacks and that count divided by the number escaping either. The share is undefined when neither attack has escapes. Originally missed spam never counts as an attack escape or resistance success. Filter records escaping any attack, exactly one, or none while originally caught; page through every matched record and open each exact saved attack from its score. The CSV includes every matching source-record/attack pair and its actual score and threshold. Different attack settings prevent interpreting overlap as an equal-strength ranking.
+
+The attack table and inspector use the same full inference batch shapes as the saved evaluation. This avoids tiny batch-dependent rounding differences and checks complete score vectors before presenting an inspected record.
+
 ## Verification coverage
 
 The real-data pytest suite verifies authentic source bytes, split isolation, training-only scaling, deterministic splits/predictions, tamper detection, checkpoint round trips, all six attack/norm variants, integer/immutable preservation, perturbation bounds, actual poisoning changes, clean-label preservation, both robust training modes, ART sanitization, detector fallback, BPDA execution, and full report generation. No test patches library behavior, uses dummy models, or substitutes synthetic samples. Use the full default run to study behavior and tune attack budgets; passing tests establishes execution and checked invariants, not security efficacy.
