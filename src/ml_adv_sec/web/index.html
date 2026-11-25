@@ -12,6 +12,9 @@
   <script src="/features.js" defer></script>
   <script src="/analysis.js" defer></script>
   <script src="/research.js" defer></script>
+  <script src="/segments.js" defer></script>
+  <script src="/investigations.js" defer></script>
+  <script src="/campaigns.js" defer></script>
   <script src="/app.js" defer></script>
 </head>
 <body>
@@ -27,6 +30,11 @@
       <a href="#compare" data-page="compare"><svg viewBox="0 0 24 24"><path d="M4 4h6v16H4zM14 8h6v12h-6z"/></svg>Compare runs</a>
       <a href="#decision" data-page="decision"><svg viewBox="0 0 24 24"><path d="M3 18h18M7 4v14M17 4v14M3 10h18"/></svg>Decision lab</a>
       <a href="#importance" data-page="importance"><svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V4M16 19v-7M22 19H2"/></svg>Input importance</a>
+      <a href="#slices" data-page="slices"><svg viewBox="0 0 24 24"><path d="M3 4h18v5H3zM3 12h8v8H3zM14 12h7v8h-7z"/></svg>Error breakdowns</a>
+      <a href="#budgets" data-page="budgets"><svg viewBox="0 0 24 24"><path d="M4 19h16M6 16v-4M12 16V8M18 16V4"/></svg>Attack budgets</a>
+      <a href="#notebook" data-page="notebook"><svg viewBox="0 0 24 24"><path d="M5 3h15v18H5zM2 7h6M2 12h6M2 17h6M11 8h5M11 12h5"/></svg>Case notebook</a>
+      <a href="#campaigns" data-page="campaigns"><svg viewBox="0 0 24 24"><path d="M3 5h12M3 12h12M3 19h12M18 8l4 4-4 4"/></svg>Experiment campaigns</a>
+      <a href="#shift" data-page="shift"><svg viewBox="0 0 24 24"><path d="M3 19h18M5 15l4-8 4 5 6-8M5 8l4 7 4-2 6 4"/></svg>Data differences</a>
       <a href="#overlap" data-page="overlap"><svg viewBox="0 0 24 24"><circle cx="9" cy="12" r="7"/><circle cx="15" cy="12" r="7"/></svg>Attack overlap</a>
       <a href="#disagreements" data-page="disagreements"><svg viewBox="0 0 24 24"><path d="M4 4h6v16H4zM14 4h6v16h-6zM10 8h4M10 16h4"/></svg>Filter disagreements</a>
       <a href="#details" data-page="details"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h7M9 16h7"/></svg>Run details</a>
@@ -46,6 +54,6 @@
   </div>
   <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
   <dialog id="inspector" aria-labelledby="inspector-title"><div class="dialog-heading"><div><div class="eyebrow">SAVED ATTACK EVIDENCE</div><h2 id="inspector-title">What changed in this email</h2></div><button class="button icon-button" id="inspector-close" aria-label="Close email details">×</button></div><div id="inspector-content"></div></dialog>
-  <dialog id="feature-dialog" aria-labelledby="feature-dialog-title"><div class="dialog-heading"><div><div class="eyebrow">TRAINING RECORDS</div><h2 id="feature-dialog-title">Inspect training changes</h2></div><button class="button icon-button" id="feature-dialog-close" aria-label="Close record details">×</button></div><div id="feature-dialog-body"></div></dialog>
+  <dialog id="feature-dialog" aria-labelledby="feature-dialog-title"><div class="dialog-heading"><div><div class="eyebrow">LOCAL RECORD DETAILS</div><h2 id="feature-dialog-title">Inspect training changes</h2></div><button class="button icon-button" id="feature-dialog-close" aria-label="Close record details">×</button></div><div id="feature-dialog-body"></div></dialog>
 </body>
 </html>

@@ -616,3 +616,168 @@ def test_research_routes_reject_invalid_or_stale_evidence(view_run, view_http, r
 def test_research_script_is_served(view_http):
     with urlopen(view_http+"/research.js") as response:
         assert response.status == 200 and b"function importancePage" in response.read()
+
+
+@pytest.mark.parametrize("model", ["clean", "tree", "pgd", "trades", "squeezed", "changed", "cleaned"])
+def test_error_segments_use_fresh_pinned_scores_and_actual_source_groups(view_run, view_http, model):
+    if model in {"changed", "cleaned"}:
+        model = next(r["model"] for r in view_run["payload"]["report"]["poisoning"] if r["sanitized"] == (model == "cleaned"))
+    result = json_get(view_http, "/api/error-slices", run=view_run["id"], model=model, feature=54, bands=5, size=100)
+    probabilities, threshold = direct_predictions(view_run, model)
+    raw = np.loadtxt(view_run["cfg"]["data_path"], delimiter=",")
+    ids, y = view_run["data"]["id_test"], view_run["data"]["y_test"]
+    groups = np.searchsorted(result["cuts"], raw[ids, 54], side="right")
+    assert result["threshold"] == threshold and result["overall"]["tested"] == len(y)
+    assert sum(r["tested"] for r in result["bands"]) == len(y)
+    assert sum(r["training_records"] for r in result["bands"]) == len(view_run["data"]["y_train"])
+    for row in result["bands"]:
+        mask = groups == row["band"]
+        p, labels = probabilities[mask], y[mask]
+        counts = confusion_counts(labels, p, threshold)
+        assert [row["caught"], row["missed"], row["false_alarms"], row["clear"]] == [counts["caught"], counts["missed"], counts["false-alarm"], counts["clear"]]
+        assert row["error_rate"] == ((counts["missed"]+counts["false-alarm"])/len(labels) if len(labels) else None)
+        assert row["fpr"] == (counts["false-alarm"]/int((labels == 0).sum()) if (labels == 0).any() else None)
+    expected_order = sorted(range(len(ids)), key=lambda i: ids[i])[:100]
+    for row, i in zip(result["rows"], expected_order):
+        assert row["source_row"] == int(ids[i])+1 and row["value"] == float(raw[ids[i], 54])
+        assert row["score"] == float(probabilities[i]) and row["band"] == int(groups[i])
+
+
+@pytest.mark.parametrize("feature", [0, 7, 54, 55, 56])
+@pytest.mark.parametrize("bands", [4, 5, 10])
+def test_error_segment_boundaries_come_only_from_training_values(view_run, view_http, feature, bands):
+    raw = np.loadtxt(view_run["cfg"]["data_path"], delimiter=",")
+    values = raw[view_run["data"]["id_train"], feature]
+    result = json_get(view_http, "/api/error-slices", run=view_run["id"], feature=feature, bands=bands)
+    candidates = np.quantile(values, np.arange(1, bands)/bands)
+    expected = sorted(set(float(x) for x in candidates if values.min() < x < values.max()))
+    np.testing.assert_allclose(result["cuts"], expected, atol=1e-12, rtol=1e-12)
+    assert len(result["bands"]) == len(expected)+1 and result["requested_bands"] == bands
+
+
+@pytest.mark.parametrize("outcome", ["all", "missed", "false-alarm", "correct"])
+def test_error_segment_record_filters_pagination_and_exports(view_run, view_http, outcome):
+    result = json_get(view_http, "/api/error-slices", run=view_run["id"], feature=56, band=0, outcome=outcome, size=10)
+    p, threshold = direct_predictions(view_run, "clean")
+    y, ids = view_run["data"]["y_test"], view_run["data"]["id_test"]
+    raw = np.loadtxt(view_run["cfg"]["data_path"], delimiter=",")
+    mask = np.searchsorted(result["cuts"], raw[ids, 56], side="right") == 0
+    if outcome == "missed":
+        mask &= (y == 1) & (p < threshold)
+    elif outcome == "false-alarm":
+        mask &= (y == 0) & (p >= threshold)
+    elif outcome == "correct":
+        mask &= (p >= threshold) == y
+    expected_ids = sorted((ids[mask]+1).tolist())
+    assert result["total"] == len(expected_ids)
+    assert [r["source_row"] for r in result["rows"]] == expected_ids[:10]
+    exported = csv_get(view_http, "/api/error-slices.csv", run=view_run["id"], feature=56, band=0, outcome=outcome, scope="records", size=10)
+    assert [int(r["source_row"]) for r in exported] == expected_ids
+    summary = csv_get(view_http, "/api/error-slices.csv", run=view_run["id"], feature=56, band=0, outcome=outcome, scope="summary")
+    assert sum(int(r["tested"]) for r in summary) == len(y), "Record filters must not alter the band metrics"
+    last = json_get(view_http, "/api/error-slices", run=view_run["id"], feature=56, band=0, outcome=outcome, size=10, page=99999)
+    assert last["page"] == last["pages"]
+    if result["rows"]:
+        row = result["rows"][0]
+        detail = json_get(view_http, "/api/record-detail", run=view_run["id"], source_row=row["source_row"])
+        assert detail["models"][0]["score"] == row["score"]
+
+
+@pytest.mark.parametrize("partition", ["test", "val"])
+@pytest.mark.parametrize("label", ["all", "spam", "regular"])
+def test_partition_shift_stats_equal_independent_empirical_distributions(view_run, view_http, partition, label):
+    result = json_get(view_http, "/api/data-shift", run=view_run["id"], partition=partition, label=label, feature=55)
+    raw = np.loadtxt(view_run["cfg"]["data_path"], delimiter=",")
+    ia, ib = view_run["data"]["id_train"], view_run["data"]["id_"+partition]
+    if label != "all":
+        ia, ib = ia[raw[ia, -1] == int(label == "spam")], ib[raw[ib, -1] == int(label == "spam")]
+    assert result["training_records"] == len(ia) and result["comparison_records"] == len(ib)
+    assert len(result["rows"]) == 57
+    for row in result["rows"]:
+        a, b = raw[ia, row["column"]], raw[ib, row["column"]]
+        support = np.union1d(a, b)
+        fa = np.searchsorted(np.sort(a), support, side="right")/len(a)
+        fb = np.searchsorted(np.sort(b), support, side="right")/len(b)
+        assert row["cdf_distance"] == pytest.approx(float(np.max(np.abs(fa-fb))), abs=1e-12)
+        distance = float(np.sum(np.abs(fa[:-1]-fb[:-1])*np.diff(support)))
+        assert row["raw_distance"] == pytest.approx(distance, abs=1e-10)
+        assert row["reference"]["median"] == float(np.median(a))
+        assert row["comparison"]["mean"] == float(b.mean())
+        assert row["outside_count"] == int(((b < a.min()) | (b > a.max())).sum())
+        scale = np.quantile(a, 0.75)-np.quantile(a, 0.25)
+        if scale == 0:
+            scale = float(a.std())
+        assert row["scaled_distance"] == pytest.approx(distance/scale) if scale else row["scaled_distance"] is None
+    assert sum(r["reference_count"] for r in result["histogram"]) == len(ia)
+    assert sum(r["comparison_count"] for r in result["histogram"]) == len(ib)
+    assert sum(r["reference_share"] for r in result["histogram"]) == pytest.approx(1)
+    assert sum(r["comparison_share"] for r in result["histogram"]) == pytest.approx(1)
+    for band in result["histogram"]:
+        for values, key in [(raw[ia, 55], "reference_count"), (raw[ib, 55], "comparison_count")]:
+            mask = np.ones(len(values), dtype=bool)
+            if band["lower"] is not None:
+                mask &= values >= band["lower"]
+            if band["upper"] is not None:
+                mask &= values < band["upper"]
+            assert band[key] == int(mask.sum())
+
+
+@pytest.mark.parametrize("partition", ["test", "val"])
+@pytest.mark.parametrize("outside", [False, True])
+def test_partition_shift_exports_exact_raw_values_and_all_matching_rows(view_run, view_http, partition, outside):
+    overview = json_get(view_http, "/api/data-shift", run=view_run["id"], partition=partition)
+    feature = max(overview["rows"], key=lambda r: r["outside_count"])["column"]
+    result = json_get(view_http, "/api/data-shift", run=view_run["id"], partition=partition, feature=feature, outside=int(outside), size=10)
+    exported = csv_get(view_http, "/api/data-shift.csv", run=view_run["id"], partition=partition, feature=feature, outside=int(outside), scope="records", size=10)
+    assert len(exported) == result["total"]
+    raw = np.loadtxt(view_run["cfg"]["data_path"], delimiter=",")
+    expected_ids = view_run["data"]["id_"+partition]
+    training = raw[view_run["data"]["id_train"], feature]
+    if outside:
+        expected_ids = expected_ids[(raw[expected_ids, feature] < training.min()) | (raw[expected_ids, feature] > training.max())]
+    assert [int(row["source_row"])-1 for row in exported] == sorted(map(int, expected_ids))
+    for row in exported:
+        source = int(row["source_row"])-1
+        np.testing.assert_array_equal([float(row[name]) for name in result["features"]], raw[source, :-1])
+        assert row["report_sha256"] == view_run["payload"]["evidence"]["report_sha256"]
+    summary = csv_get(view_http, "/api/data-shift.csv", run=view_run["id"], partition=partition, scope="summary")
+    assert len(summary) == 57
+
+
+@pytest.mark.parametrize("route,query", [
+    ("/api/error-slices", {"feature": -1}),
+    ("/api/error-slices", {"feature": 57}),
+    ("/api/error-slices", {"bands": 7}),
+    ("/api/error-slices", {"band": 999}),
+    ("/api/error-slices", {"outcome": "unknown"}),
+    ("/api/error-slices", {"model": "unknown"}),
+    ("/api/error-slices", {"report_sha256": "outdated"}),
+    ("/api/error-slices.csv", {"scope": "unknown"}),
+    ("/api/data-shift", {"partition": "train"}),
+    ("/api/data-shift", {"label": "unknown"}),
+    ("/api/data-shift", {"feature": 57}),
+    ("/api/data-shift", {"size": 7}),
+    ("/api/data-shift", {"report_sha256": "outdated"}),
+    ("/api/data-shift.csv", {"scope": "unknown"}),
+])
+def test_segment_routes_reject_invalid_or_outdated_requests(view_run, view_http, route, query):
+    with pytest.raises(HTTPError) as error:
+        json_get(view_http, route, run=view_run["id"], **query)
+    assert "error" in json.load(error.value)
+
+
+def test_segment_script_is_served(view_http):
+    with urlopen(view_http+"/segments.js") as response:
+        assert response.status == 200 and b"function slicesPage" in response.read()
+
+
+def test_constant_nonzero_source_values_have_exactly_zero_spread(view_run):
+    from ml_adv_sec.dashboard_segments import SegmentViews
+    raw = np.loadtxt(view_run["cfg"]["data_path"], delimiter=",")
+    values, counts = np.unique(raw[:, 0], return_counts=True)
+    observed = values[(values > 0) & (counts > 2)][0]
+    actual_records = raw[raw[:, 0] == observed, 0]
+    result = SegmentViews.describe(actual_records)
+    assert result["count"] == len(actual_records)
+    assert result["minimum"] == result["maximum"] == float(observed)
+    assert result["std"] == 0

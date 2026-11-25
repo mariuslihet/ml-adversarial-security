@@ -15,6 +15,11 @@ pages.decision = ["Decision lab", "Decision lab"];
 pages.disagreements = ["Filter disagreements", "Filter disagreements"];
 pages.importance = ["Input importance", "Input importance"];
 pages.overlap = ["Attack overlap", "Attack overlap"];
+pages.slices = ["Error breakdowns", "Error breakdowns"];
+pages.shift = ["Data differences", "Training vs held-out data"];
+pages.budgets = ["Attack budgets", "Attack budgets"];
+pages.notebook = ["Case notebook", "Case notebook"];
+pages.campaigns = ["Experiment campaigns", "Experiment campaigns"];
 const series = [{id: "clean", color: "#335ce8"}, {id: "pgd", color: "#278775"}, {id: "trades", color: "#bd7545"}, {id: "squeezed-bpda", color: "#8d6bc6"}];
 const number = new Intl.NumberFormat("en");
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
@@ -163,13 +168,13 @@ function render() {
   $("#breadcrumb-page").textContent = page[0];
   $("#page-title").textContent = page[1];
   document.querySelectorAll("nav a").forEach(a => {a.classList.toggle("active", a.dataset.page === state.page); if (a.dataset.page === state.page) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");});
-  if (!state.report && state.page !== "runs") {
+  if (!state.report && !["runs", "notebook", "campaigns"].includes(state.page)) {
     $("#subtitle").textContent = state.loading ? "Checking the saved results and their evidence…" : "Choose a verified saved run or start an experiment.";
     content.innerHTML = state.loading ? '<section class="empty"><p>Checking the saved data, models, and results…</p></section>' : '<section class="empty"><h2>No verified results selected</h2><p>Choose a saved run above, or start a new experiment.</p><a class="button primary" href="#runs">Run an experiment</a></section>';
     content.setAttribute("aria-busy", String(state.loading)); return;
   }
-  $("#subtitle").textContent = state.page === "runs" ? "Train the filters, run the attacks, and measure the results on this computer." : `Spambase · ${num(state.report.dataset.split_sizes.test)} test emails · ${num(state.report.counts.attack_samples)} spam emails attacked`;
-  content.innerHTML = ({overview, attacks: attackPage, training: trainingPage, details: detailsPage, runs: runPage, records: recordsPage, compare: comparisonPage, decision: decisionLabPage, disagreements: disagreementPage, importance: importancePage, overlap: overlapPage}[state.page] || overview)();
+  $("#subtitle").textContent = state.page === "campaigns" ? "Queue actual local experiments and compare their verified results." : state.page === "notebook" ? "Local notes bound to actual records and saved model results." : state.page === "runs" ? "Train the filters, run the attacks, and measure the results on this computer." : `Spambase · ${num(state.report.dataset.split_sizes.test)} test emails · ${num(state.report.counts.attack_samples)} spam emails attacked`;
+  content.innerHTML = ({overview, attacks: attackPage, training: trainingPage, details: detailsPage, runs: runPage, records: recordsPage, compare: comparisonPage, decision: decisionLabPage, disagreements: disagreementPage, importance: importancePage, overlap: overlapPage, slices: slicesPage, shift: shiftPage, budgets: budgetPage, notebook: notebookPage, campaigns: campaignPage}[state.page] || overview)();
   content.setAttribute("aria-busy", "false");
   $("#updated").textContent = state.updated ? `Results saved ${new Date(state.updated).toLocaleString(undefined, {month: "short", day: "numeric", hour: "2-digit", minute: "2-digit"})}` : "";
   bindContent();
@@ -381,6 +386,6 @@ async function inspectAttack(attack, index, target = state.target) {
 $("#inspector").addEventListener("close", () => {if (!$("#inspector").open) inspectionRequest++;});
 $("#inspector-close").addEventListener("click", () => $("#inspector").close());
 $("#inspector").addEventListener("click", e => {if (e.target === e.currentTarget) {const rect = e.currentTarget.getBoundingClientRect(); if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) e.currentTarget.close();}});
-readJSON("/api/settings").then(cfg => {state.settings = cfg; if (state.page === "runs") render();}).catch(e => showError(e.message));
+readJSON("/api/settings").then(cfg => {state.settings = cfg; if (["runs","campaigns"].includes(state.page)) render();}).catch(e => showError(e.message));
 pollJobs();
 setInterval(pollJobs, 3000);

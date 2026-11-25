@@ -135,6 +135,7 @@ class Jobs:
         self.lock = threading.Lock()
         self.process = None
         self.active = None
+        self.campaign_manager = None
 
     @staticmethod
     def _save(directory, job):
@@ -165,9 +166,8 @@ class Jobs:
                 continue
         return jobs[:30]
 
-    def launch(self, values):
+    def validate(self, values):
         import math
-        import yaml
         if not isinstance(values, dict):
             raise ValueError("Run settings must be an object")
         allowed = set(self.integer_limits) | set(self.float_limits) | {"name", "poison_ratios", "epsilons"}
@@ -194,6 +194,11 @@ class Jobs:
         name = values.get("name", "Local experiment")
         if not isinstance(name, str) or not 1 <= len(name.strip()) <= 80:
             raise ValueError("Use a run name with 1–80 characters")
+        return cfg, name.strip()
+
+    def launch(self, values, *, campaign=None):
+        import yaml
+        cfg, name = self.validate(values)
         with self.lock:
             if self.active:
                 raise RuntimeError("A run is already in progress")
@@ -207,6 +212,8 @@ class Jobs:
             config_path = directory / "config.yaml"
             config_path.write_text(yaml.safe_dump(cfg), encoding="utf-8")
             job = {"id": run_id, "name": name.strip(), "status": "running", "started": datetime.now(timezone.utc).isoformat(), "finished": None, "exit_code": None, "settings": cfg}
+            if campaign is not None:
+                job["campaign"] = campaign
             self._save(directory, job)
             try:
                 with (directory / "output.log").open("wb") as output:
@@ -249,6 +256,8 @@ class Jobs:
             self.process.terminate()
 
     def close(self):
+        if self.campaign_manager is not None:
+            self.campaign_manager.close()
         active = self.active
         if active:
             try:
@@ -258,12 +267,16 @@ class Jobs:
 
 
 def handler_for(reports, jobs=None):
-    from .dashboard_research import ResearchViews
+    from .dashboard_investigations import InvestigationViews, CaseNotebook
     assets = Path(__file__).with_name("web")
-    views = ResearchViews(reports)
+    views = InvestigationViews(reports)
+    notebook = CaseNotebook(views)
     jobs = jobs or Jobs(reports)
+    from .dashboard_campaigns import Campaigns
+    campaigns = jobs.campaign_manager or Campaigns(jobs)
+    jobs.campaign_manager = campaigns
     token = secrets.token_urlsafe(32)
-    static = {"/": ("index.html", "text/html"), "/app.js": ("app.js", "text/javascript"), "/features.js": ("features.js", "text/javascript"), "/analysis.js": ("analysis.js", "text/javascript"), "/research.js": ("research.js", "text/javascript"), "/style.css": ("style.css", "text/css")}
+    static = {"/": ("index.html", "text/html"), "/app.js": ("app.js", "text/javascript"), "/features.js": ("features.js", "text/javascript"), "/analysis.js": ("analysis.js", "text/javascript"), "/research.js": ("research.js", "text/javascript"), "/segments.js": ("segments.js", "text/javascript"), "/investigations.js": ("investigations.js", "text/javascript"), "/campaigns.js": ("campaigns.js", "text/javascript"), "/style.css": ("style.css", "text/css")}
 
     class Handler(BaseHTTPRequestHandler):
         def do_GET(self):
@@ -274,6 +287,42 @@ def handler_for(reports, jobs=None):
             def q(name, default=""):
                 return query.get(name, [default])[0]
             try:
+                if route == "/api/campaigns":
+                    return self.respond(json.dumps(campaigns.listing(), allow_nan=False).encode(), "application/json")
+                if route == "/api/campaign-entry":
+                    return self.respond(json.dumps(campaigns.entry(q("id"), int(q("index", "-1"))), allow_nan=False).encode(), "application/json")
+                if route in {"/api/campaign-results", "/api/campaign-results.csv"}:
+                    result = campaigns.results(q("id"))
+                    if route.endswith(".csv"):
+                        scope = q("scope", "utility")
+                        if scope not in {"utility", "attacks"}:
+                            raise ValueError("Choose utility or attack results for export")
+                        columns = ["entry", "seed", "variant", "model", "spam_caught", "false_alarms", "f1", "brier", "tested", "report_id", "report_sha256"] if scope == "utility" else ["entry", "seed", "variant", "target", "attack", "epsilon", "eligible", "asr", "adversarial_recall", "attack_n", "report_id", "report_sha256"]
+                        values = result["rows"] if scope == "utility" else result["attack_rows"]
+                        return self.respond(views.csv_bytes(columns, [[r[key] for key in columns] for r in values]), "text/csv", filename="campaign-results.csv")
+                    return self.respond(json.dumps(result, allow_nan=False).encode(), "application/json")
+                if route in {"/api/budgets", "/api/budgets.csv"}:
+                    exporting = route.endswith(".csv")
+                    result = views.budgets(q("run"), q("model", "clean"), q("category", "all"), int(q("page", "1")), int(q("size", "25")), q("report_sha256"), q("scope", "records") if exporting else None)
+                    return self.respond(result if exporting else json.dumps(result, allow_nan=False).encode(), "text/csv" if exporting else "application/json", filename="attack-budgets.csv" if exporting else None)
+                if route == "/api/budget-record":
+                    result = views.budget_record(q("run"), q("model", "clean"), int(q("level", "0")), int(q("source_row", "0")), q("report_sha256"))
+                    return self.respond(json.dumps(result, allow_nan=False).encode(), "application/json")
+                if route in {"/api/cases", "/api/cases.csv"}:
+                    exporting = route.endswith(".csv")
+                    result = notebook.listing(q("run"), q("status", "all"), q("search"), int(q("page", "1")), int(q("size", "25")), exporting)
+                    return self.respond(result if exporting else json.dumps(result).encode(), "text/csv" if exporting else "application/json", filename="case-notebook.csv" if exporting else None)
+                if route in {"/api/case", "/api/case-export"}:
+                    result = notebook.get(q("id"))
+                    return self.respond(json.dumps(result, allow_nan=False).encode(), "application/json", filename="case-evidence.json" if route.endswith("export") else None)
+                if route in {"/api/error-slices", "/api/error-slices.csv"}:
+                    exporting = route.endswith(".csv")
+                    result = views.slices(q("run"), q("model", "clean"), int(q("feature", "0")), int(q("bands", "4")), int(q("band", "-1")), q("outcome", "all"), int(q("page", "1")), int(q("size", "25")), q("report_sha256"), q("scope", "records") if exporting else None)
+                    return self.respond(result if exporting else json.dumps(result, allow_nan=False).encode(), "text/csv" if exporting else "application/json", filename="error-slices.csv" if exporting else None)
+                if route in {"/api/data-shift", "/api/data-shift.csv"}:
+                    exporting = route.endswith(".csv")
+                    result = views.shift(q("run"), q("partition", "test"), q("label", "all"), int(q("feature", "0")), q("outside") == "1", int(q("page", "1")), int(q("size", "25")), q("report_sha256"), q("scope", "summary") if exporting else None)
+                    return self.respond(result if exporting else json.dumps(result, allow_nan=False).encode(), "text/csv" if exporting else "application/json", filename="data-shift.csv" if exporting else None)
                 if route in {"/api/importance", "/api/importance.csv"}:
                     exporting = route.endswith(".csv")
                     result = views.importance(q("run"), q("model", "clean"), q("partition", "test"), int(q("repeats", "3")), int(q("seed", "42")), q("report_sha256"), exporting)
@@ -332,17 +381,30 @@ def handler_for(reports, jobs=None):
         def do_POST(self):
             origin = self.headers.get("Origin")
             host = self.headers.get("Host", "")
-            if host != f"127.0.0.1:{self.server.server_port}" or (origin and origin != "http://" + host) or not secrets.compare_digest(self.headers.get("X-Dashboard-Token", ""), token):
-                return self.send_error(403, "Open the dashboard on this computer to start a run")
+            authorized = host == f"127.0.0.1:{self.server.server_port}" and (not origin or origin == "http://" + host) and secrets.compare_digest(self.headers.get("X-Dashboard-Token", "").encode("utf-8"), token.encode("ascii"))
             try:
+                self.connection.settimeout(10)
                 length = int(self.headers.get("Content-Length", "0"))
                 if not 0 < length <= 16384 or self.headers.get("Content-Type") != "application/json":
                     return self.send_error(400, "Send run settings as JSON")
-                values = json.loads(self.rfile.read(length))
+                # Drain bounded request bytes before rejecting a local write so
+                # Windows does not reset the connection before its 403 arrives.
+                body = self.rfile.read(length)
+                if not authorized:
+                    return self.send_error(403, "Reload this local dashboard before saving or starting a run")
+                values = json.loads(body)
                 if not isinstance(values, dict):
                     raise ValueError("Send run settings as an object")
                 route = urlsplit(self.path).path
-                if route == "/api/jobs":
+                if route == "/api/campaigns/create":
+                    result = campaigns.create(values)
+                elif route == "/api/campaigns/action":
+                    result = campaigns.action(values.get("id"), values.get("action"))
+                elif route == "/api/cases/create":
+                    result = notebook.create(values)
+                elif route == "/api/cases/update":
+                    result = notebook.update(values)
+                elif route == "/api/jobs":
                     result = jobs.launch(values)
                 elif route == "/api/jobs/cancel":
                     jobs.cancel(values.get("id"))
@@ -352,6 +414,8 @@ def handler_for(reports, jobs=None):
                 self.respond(json.dumps(result).encode(), "application/json")
             except (ValueError, KeyError, RuntimeError) as exc:
                 self.respond(json.dumps({"error": str(exc)}).encode(), "application/json", 400)
+            except FileNotFoundError:
+                self.respond(json.dumps({"error": "The saved report or data file could not be found. Reload the saved runs before trying again."}).encode(), "application/json", 503)
             except OSError:
                 self.respond(json.dumps({"error": "The local process could not start. Its saved output contains the error."}).encode(), "application/json", 503)
 

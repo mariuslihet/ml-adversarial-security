@@ -67,6 +67,7 @@ async function rxLoadOverlap() {
 }
 
 function bindResearchContent() {
+  bindSegmentContent();
   ++rx.importanceSeq;++rx.overlapSeq;rx.importanceResult=null;rx.overlapResult=null;
   if(state.page==="importance") {
     const form=document.querySelector("#importance-form");

@@ -1,0 +1,44 @@
+{
+  "started": "2026-11-25T13:49:19.617465+00:00",
+  "campaign_id": "04f280961b594f3c8b8c9767acfc7428",
+  "paused_first_job": "20261125-134910-ac94d2",
+  "settings": {
+    "epochs": 1,
+    "max_rows": 128,
+    "hidden": 16,
+    "batch_size": 16,
+    "attack_samples": 2,
+    "steps": 1,
+    "cw_steps": 1,
+    "hsj_steps": 1,
+    "collision_steps": 1,
+    "restarts": 0,
+    "epsilons": [
+      0.01,
+      0.1
+    ],
+    "poison_ratios": [
+      0.01
+    ]
+  },
+  "paused_after_real_completion": true,
+  "status": "passed",
+  "completed": "2026-11-25T13:51:18.876890+00:00",
+  "server_restart_recovered_without_duplicate": true,
+  "process_ids": [
+    "20261125-134910-ac94d2",
+    "20261125-135049-3dd2a1",
+    "20261125-135058-1ee77b",
+    "20261125-135107-f7270a"
+  ],
+  "verified_runs": 4,
+  "utility_rows": 20,
+  "attack_rows": 48,
+  "utility_groups": 10,
+  "attack_groups": 24,
+  "archived_measured_case": "0787292f0e7346c68a54fd2582530cb5",
+  "case_revisions": 3,
+  "browser": "Blocked before page access: Windows browser-control startup error 1920",
+  "case_persisted_across_server_restart": true,
+  "final_campaign_reports_reverified": 4
+}
