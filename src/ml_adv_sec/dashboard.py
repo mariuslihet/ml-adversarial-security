@@ -196,7 +196,7 @@ class Jobs:
             raise ValueError("Use a run name with 1–80 characters")
         return cfg, name.strip()
 
-    def launch(self, values, *, campaign=None):
+    def launch(self, values, *, campaign=None, origin=None):
         import yaml
         cfg, name = self.validate(values)
         with self.lock:
@@ -214,6 +214,8 @@ class Jobs:
             job = {"id": run_id, "name": name.strip(), "status": "running", "started": datetime.now(timezone.utc).isoformat(), "finished": None, "exit_code": None, "settings": cfg}
             if campaign is not None:
                 job["campaign"] = campaign
+            if origin is not None:
+                job["origin"] = origin
             self._save(directory, job)
             try:
                 with (directory / "output.log").open("wb") as output:
@@ -267,16 +269,19 @@ class Jobs:
 
 
 def handler_for(reports, jobs=None):
-    from .dashboard_investigations import InvestigationViews, CaseNotebook
+    from .dashboard_investigations import CaseNotebook
     assets = Path(__file__).with_name("web")
-    views = InvestigationViews(reports)
+    from .dashboard_lab import ModelLabViews
+    views = ModelLabViews(reports)
     notebook = CaseNotebook(views)
     jobs = jobs or Jobs(reports)
     from .dashboard_campaigns import Campaigns
     campaigns = jobs.campaign_manager or Campaigns(jobs)
     jobs.campaign_manager = campaigns
+    from .dashboard_presets import ExperimentPresets
+    presets = ExperimentPresets(jobs, campaigns, views)
     token = secrets.token_urlsafe(32)
-    static = {"/": ("index.html", "text/html"), "/app.js": ("app.js", "text/javascript"), "/features.js": ("features.js", "text/javascript"), "/analysis.js": ("analysis.js", "text/javascript"), "/research.js": ("research.js", "text/javascript"), "/segments.js": ("segments.js", "text/javascript"), "/investigations.js": ("investigations.js", "text/javascript"), "/campaigns.js": ("campaigns.js", "text/javascript"), "/style.css": ("style.css", "text/css")}
+    static = {"/": ("index.html", "text/html"), "/app.js": ("app.js", "text/javascript"), "/features.js": ("features.js", "text/javascript"), "/analysis.js": ("analysis.js", "text/javascript"), "/research.js": ("research.js", "text/javascript"), "/segments.js": ("segments.js", "text/javascript"), "/investigations.js": ("investigations.js", "text/javascript"), "/campaigns.js": ("campaigns.js", "text/javascript"), "/presets.js": ("presets.js", "text/javascript"), "/replay.js": ("replay.js", "text/javascript"), "/lab.js": ("lab.js", "text/javascript"), "/style.css": ("style.css", "text/css")}
 
     class Handler(BaseHTTPRequestHandler):
         def do_GET(self):
@@ -287,6 +292,34 @@ def handler_for(reports, jobs=None):
             def q(name, default=""):
                 return query.get(name, [default])[0]
             try:
+                if route == "/api/model-lab-options":
+                    return self.respond(json.dumps(views.lab_options(q("run"), q("report_sha256")), allow_nan=False).encode(), "application/json")
+                if route in {"/api/model-lab", "/api/model-lab.csv", "/api/model-lab-recipe"}:
+                    exporting = route.endswith(".csv")
+                    try:
+                        members = q("members").split(",") if q("members") else []
+                        columns = [int(value) for value in q("columns").split(",")] if q("columns") else []
+                        result = views.model_lab(q("run"), q("tool"), q("report_sha256"), q("model", "clean"), members, q("mode", "fit"), q("method", "sigmoid"), float(q("fpr", "0.01")), int(q("bins", "10")), columns, q("replacement", "median"), q("attack"), "recipe" if route.endswith("-recipe") else q("scope", "records") if exporting else None, q("trial"))
+                    except ValueError as exc:
+                        return self.respond(json.dumps({"error": str(exc)}).encode(), "application/json", 400)
+                    return self.respond(result if exporting else json.dumps(result, allow_nan=False).encode(), "text/csv" if exporting else "application/json", filename="model-lab.csv" if exporting else "model-lab-recipe.json" if route.endswith("-recipe") else None)
+                if route in {"/api/attack-replay", "/api/attack-replay.csv", "/api/attack-replay-record"}:
+                    exporting = route.endswith(".csv")
+                    try:
+                        if route.endswith("-record") and not q("source_row"):
+                            raise ValueError("Choose a source row to inspect")
+                        result = views.attack_replay(q("run"), q("attack"), q("model", "clean"), q("other"), q("other_attack"), q("category", "all"), int(q("page", "1")), int(q("size", "25")), q("report_sha256"), q("other_sha256"), q("scope", "records") if exporting else None, int(q("source_row")) if q("source_row") else None)
+                    except ValueError as exc:
+                        return self.respond(json.dumps({"error": str(exc)}).encode(), "application/json", 400)
+                    return self.respond(result if exporting else json.dumps(result, allow_nan=False).encode(), "text/csv" if exporting else "application/json", filename="attack-replay.csv" if exporting else None)
+                if route == "/api/presets":
+                    return self.respond(json.dumps(presets.listing(q("archived") == "1"), allow_nan=False).encode(), "application/json")
+                if route in {"/api/preset", "/api/preset-export"}:
+                    result = presets.get(q("id"), int(q("revision")) if q("revision") else None)
+                    return self.respond(json.dumps(result, allow_nan=False).encode(), "application/json", filename="experiment-preset.json" if route.endswith("export") else None)
+                if route == "/api/replay-settings":
+                    result = presets.replay_settings(q("run"), q("job_id"), q("report_sha256"))
+                    return self.respond(json.dumps(result, allow_nan=False).encode(), "application/json")
                 if route == "/api/campaigns":
                     return self.respond(json.dumps(campaigns.listing(), allow_nan=False).encode(), "application/json")
                 if route == "/api/campaign-entry":
@@ -396,7 +429,15 @@ def handler_for(reports, jobs=None):
                 if not isinstance(values, dict):
                     raise ValueError("Send run settings as an object")
                 route = urlsplit(self.path).path
-                if route == "/api/campaigns/create":
+                if route == "/api/presets/save":
+                    result = presets.save(values)
+                elif route == "/api/presets/run":
+                    result = presets.run(values)
+                elif route == "/api/replay":
+                    result = presets.replay(values)
+                elif route == "/api/campaigns/retry":
+                    result = campaigns.retry(values)
+                elif route == "/api/campaigns/create":
                     result = campaigns.create(values)
                 elif route == "/api/campaigns/action":
                     result = campaigns.action(values.get("id"), values.get("action"))

@@ -1,0 +1,378 @@
+{
+  "checked": "2026-11-26T12:52:04.907584+00:00",
+  "checks": [
+    {
+      "run": "f6f1b255335e9446",
+      "plan": {
+        "tool": "ensemble",
+        "members": "clean,tree,pgd",
+        "mode": "fit",
+        "attack": "evasion-cleverhans-fgsm-linf"
+      },
+      "test_records": 841,
+      "report_sha256": "34b85ca3f19df23eb32216ddf233a7c845031f5a4a076bedab5f627ff6e53313"
+    },
+    {
+      "run": "f6f1b255335e9446",
+      "plan": {
+        "tool": "ensemble",
+        "members": "clean,tree,pgd",
+        "mode": "equal",
+        "attack": "evasion-cleverhans-fgsm-linf"
+      },
+      "test_records": 841,
+      "report_sha256": "34b85ca3f19df23eb32216ddf233a7c845031f5a4a076bedab5f627ff6e53313"
+    },
+    {
+      "run": "f6f1b255335e9446",
+      "plan": {
+        "tool": "calibration",
+        "model": "tree",
+        "method": "sigmoid",
+        "bins": 20
+      },
+      "test_records": 841,
+      "report_sha256": "34b85ca3f19df23eb32216ddf233a7c845031f5a4a076bedab5f627ff6e53313"
+    },
+    {
+      "run": "f6f1b255335e9446",
+      "plan": {
+        "tool": "calibration",
+        "model": "tree",
+        "method": "isotonic",
+        "bins": 20
+      },
+      "test_records": 841,
+      "report_sha256": "34b85ca3f19df23eb32216ddf233a7c845031f5a4a076bedab5f627ff6e53313"
+    },
+    {
+      "run": "f6f1b255335e9446",
+      "plan": {
+        "tool": "calibration",
+        "model": "squeezed",
+        "method": "sigmoid",
+        "bins": 20
+      },
+      "test_records": 841,
+      "report_sha256": "34b85ca3f19df23eb32216ddf233a7c845031f5a4a076bedab5f627ff6e53313"
+    },
+    {
+      "run": "f6f1b255335e9446",
+      "plan": {
+        "tool": "calibration",
+        "model": "squeezed",
+        "method": "isotonic",
+        "bins": 20
+      },
+      "test_records": 841,
+      "report_sha256": "34b85ca3f19df23eb32216ddf233a7c845031f5a4a076bedab5f627ff6e53313"
+    },
+    {
+      "run": "f6f1b255335e9446",
+      "plan": {
+        "tool": "stress",
+        "model": "clean",
+        "columns": "0,20,55",
+        "replacement": "median"
+      },
+      "test_records": 841,
+      "report_sha256": "34b85ca3f19df23eb32216ddf233a7c845031f5a4a076bedab5f627ff6e53313"
+    },
+    {
+      "run": "f6f1b255335e9446",
+      "plan": {
+        "tool": "stress",
+        "model": "clean",
+        "columns": "0,20,55",
+        "replacement": "zero"
+      },
+      "test_records": 841,
+      "report_sha256": "34b85ca3f19df23eb32216ddf233a7c845031f5a4a076bedab5f627ff6e53313"
+    },
+    {
+      "run": "f6f1b255335e9446",
+      "plan": {
+        "tool": "stress",
+        "model": "tree",
+        "columns": "0,20,55",
+        "replacement": "median"
+      },
+      "test_records": 841,
+      "report_sha256": "34b85ca3f19df23eb32216ddf233a7c845031f5a4a076bedab5f627ff6e53313"
+    },
+    {
+      "run": "f6f1b255335e9446",
+      "plan": {
+        "tool": "stress",
+        "model": "tree",
+        "columns": "0,20,55",
+        "replacement": "zero"
+      },
+      "test_records": 841,
+      "report_sha256": "34b85ca3f19df23eb32216ddf233a7c845031f5a4a076bedab5f627ff6e53313"
+    },
+    {
+      "run": "f6f1b255335e9446",
+      "plan": {
+        "tool": "stress",
+        "model": "squeezed",
+        "columns": "0,20,55",
+        "replacement": "median"
+      },
+      "test_records": 841,
+      "report_sha256": "34b85ca3f19df23eb32216ddf233a7c845031f5a4a076bedab5f627ff6e53313"
+    },
+    {
+      "run": "f6f1b255335e9446",
+      "plan": {
+        "tool": "stress",
+        "model": "squeezed",
+        "columns": "0,20,55",
+        "replacement": "zero"
+      },
+      "test_records": 841,
+      "report_sha256": "34b85ca3f19df23eb32216ddf233a7c845031f5a4a076bedab5f627ff6e53313"
+    },
+    {
+      "run": "d29faffe7dc43a62",
+      "plan": {
+        "tool": "ensemble",
+        "members": "clean,tree,pgd",
+        "mode": "fit",
+        "attack": "evasion-cleverhans-fgsm-linf"
+      },
+      "test_records": 26,
+      "report_sha256": "59b280417bc9b79431cab39e95022a5cb6f7ff9c0d8fcd5a37b61ab55dbdf5d9"
+    },
+    {
+      "run": "d29faffe7dc43a62",
+      "plan": {
+        "tool": "ensemble",
+        "members": "clean,tree,pgd",
+        "mode": "equal",
+        "attack": "evasion-cleverhans-fgsm-linf"
+      },
+      "test_records": 26,
+      "report_sha256": "59b280417bc9b79431cab39e95022a5cb6f7ff9c0d8fcd5a37b61ab55dbdf5d9"
+    },
+    {
+      "run": "d29faffe7dc43a62",
+      "plan": {
+        "tool": "calibration",
+        "model": "tree",
+        "method": "sigmoid",
+        "bins": 20
+      },
+      "test_records": 26,
+      "report_sha256": "59b280417bc9b79431cab39e95022a5cb6f7ff9c0d8fcd5a37b61ab55dbdf5d9"
+    },
+    {
+      "run": "d29faffe7dc43a62",
+      "plan": {
+        "tool": "calibration",
+        "model": "tree",
+        "method": "isotonic",
+        "bins": 20
+      },
+      "test_records": 26,
+      "report_sha256": "59b280417bc9b79431cab39e95022a5cb6f7ff9c0d8fcd5a37b61ab55dbdf5d9"
+    },
+    {
+      "run": "d29faffe7dc43a62",
+      "plan": {
+        "tool": "calibration",
+        "model": "squeezed",
+        "method": "sigmoid",
+        "bins": 20
+      },
+      "test_records": 26,
+      "report_sha256": "59b280417bc9b79431cab39e95022a5cb6f7ff9c0d8fcd5a37b61ab55dbdf5d9"
+    },
+    {
+      "run": "d29faffe7dc43a62",
+      "plan": {
+        "tool": "calibration",
+        "model": "squeezed",
+        "method": "isotonic",
+        "bins": 20
+      },
+      "test_records": 26,
+      "report_sha256": "59b280417bc9b79431cab39e95022a5cb6f7ff9c0d8fcd5a37b61ab55dbdf5d9"
+    },
+    {
+      "run": "d29faffe7dc43a62",
+      "plan": {
+        "tool": "stress",
+        "model": "clean",
+        "columns": "0,20,55",
+        "replacement": "median"
+      },
+      "test_records": 26,
+      "report_sha256": "59b280417bc9b79431cab39e95022a5cb6f7ff9c0d8fcd5a37b61ab55dbdf5d9"
+    },
+    {
+      "run": "d29faffe7dc43a62",
+      "plan": {
+        "tool": "stress",
+        "model": "clean",
+        "columns": "0,20,55",
+        "replacement": "zero"
+      },
+      "test_records": 26,
+      "report_sha256": "59b280417bc9b79431cab39e95022a5cb6f7ff9c0d8fcd5a37b61ab55dbdf5d9"
+    },
+    {
+      "run": "d29faffe7dc43a62",
+      "plan": {
+        "tool": "stress",
+        "model": "tree",
+        "columns": "0,20,55",
+        "replacement": "median"
+      },
+      "test_records": 26,
+      "report_sha256": "59b280417bc9b79431cab39e95022a5cb6f7ff9c0d8fcd5a37b61ab55dbdf5d9"
+    },
+    {
+      "run": "d29faffe7dc43a62",
+      "plan": {
+        "tool": "stress",
+        "model": "tree",
+        "columns": "0,20,55",
+        "replacement": "zero"
+      },
+      "test_records": 26,
+      "report_sha256": "59b280417bc9b79431cab39e95022a5cb6f7ff9c0d8fcd5a37b61ab55dbdf5d9"
+    },
+    {
+      "run": "d29faffe7dc43a62",
+      "plan": {
+        "tool": "stress",
+        "model": "squeezed",
+        "columns": "0,20,55",
+        "replacement": "median"
+      },
+      "test_records": 26,
+      "report_sha256": "59b280417bc9b79431cab39e95022a5cb6f7ff9c0d8fcd5a37b61ab55dbdf5d9"
+    },
+    {
+      "run": "d29faffe7dc43a62",
+      "plan": {
+        "tool": "stress",
+        "model": "squeezed",
+        "columns": "0,20,55",
+        "replacement": "zero"
+      },
+      "test_records": 26,
+      "report_sha256": "59b280417bc9b79431cab39e95022a5cb6f7ff9c0d8fcd5a37b61ab55dbdf5d9"
+    }
+  ],
+  "predictions_checked": 36482,
+  "csv_rows_checked": 10896,
+  "browser_downloads": [
+    {
+      "tool": "ensemble",
+      "scope": "recipe",
+      "artifact": "reports\\model-lab-browser\\model-ensemble-recipe.json",
+      "sha256": "c9a6e84898dc120b19da3bc50918c3ce54d5a089c8d55af5f33a7519e2aac268",
+      "records": null,
+      "exact_bytes_match_fresh_export": true
+    },
+    {
+      "tool": "ensemble",
+      "scope": "records",
+      "artifact": "reports\\model-lab-browser\\model-ensemble-records.csv",
+      "sha256": "f9f17409f7d74e066b03fb7392dfdf28097a6d3e2069658d59228156544ba5f3",
+      "records": 841,
+      "exact_bytes_match_fresh_export": true
+    },
+    {
+      "tool": "ensemble",
+      "scope": "summary",
+      "artifact": "reports\\model-lab-browser\\model-ensemble-summary.csv",
+      "sha256": "67558a321636aa42df8598cb67af58115dc1412c6b215acbc302016b7013b735",
+      "records": 4,
+      "exact_bytes_match_fresh_export": true
+    },
+    {
+      "tool": "ensemble",
+      "scope": "attacks",
+      "artifact": "reports\\model-lab-browser\\model-ensemble-attacks.csv",
+      "sha256": "ecdba585d191cd882c3e0c4dcd17e01a641ec39f75d39188aa35275545322ed5",
+      "records": 32,
+      "exact_bytes_match_fresh_export": true
+    },
+    {
+      "tool": "calibration",
+      "scope": "recipe",
+      "artifact": "reports\\model-lab-browser\\model-calibration-recipe.json",
+      "sha256": "870cedffd43c2b0827807f17b121b453e6f3eae2b424760f7d4ee867e383cb90",
+      "records": null,
+      "exact_bytes_match_fresh_export": true
+    },
+    {
+      "tool": "calibration",
+      "scope": "records",
+      "artifact": "reports\\model-lab-browser\\model-calibration-records.csv",
+      "sha256": "04766dffba8b8bb4e2e7f9897ac068653dcfb5ee240128504953f71834fa3af3",
+      "records": 841,
+      "exact_bytes_match_fresh_export": true
+    },
+    {
+      "tool": "calibration",
+      "scope": "summary",
+      "artifact": "reports\\model-lab-browser\\model-calibration-summary.csv",
+      "sha256": "1be417416cf9c78e2ed2dcfde000990c7dce1b2393c73c6838522c558bd374c3",
+      "records": 2,
+      "exact_bytes_match_fresh_export": true
+    },
+    {
+      "tool": "calibration",
+      "scope": "bands",
+      "artifact": "reports\\model-lab-browser\\model-calibration-bands.csv",
+      "sha256": "b996f6f5edcbc6f3459a42bda3d0999c0d229044eefbb76c89ac1b6e0a6889aa",
+      "records": 20,
+      "exact_bytes_match_fresh_export": true
+    },
+    {
+      "tool": "stress",
+      "scope": "recipe",
+      "artifact": "reports\\model-lab-browser\\model-stress-recipe.json",
+      "sha256": "c5cbce8b2ae84e7878793111c327c05afb8a33b6a0f66b103ca779ee08607ee3",
+      "records": null,
+      "exact_bytes_match_fresh_export": true
+    },
+    {
+      "tool": "stress",
+      "scope": "records",
+      "artifact": "reports\\model-lab-browser\\model-stress-records.csv",
+      "sha256": "38b25ac6c8f645879989ca49a8c0410168d40015243bdf2acff56d76180fa2cb",
+      "records": 841,
+      "exact_bytes_match_fresh_export": true
+    },
+    {
+      "tool": "stress",
+      "scope": "summary",
+      "artifact": "reports\\model-lab-browser\\model-stress-summary.csv",
+      "sha256": "953cae777c249c35b963bbd5f2002948655e54b4852561333b02ff7e64941f30",
+      "records": 8,
+      "exact_bytes_match_fresh_export": true
+    }
+  ],
+  "browser": {
+    "ensemble": "fitted and equal-share modes; saved-attack replay; 841 test rows; source inspector; next/previous; mistakes filter; too-few-members validation",
+    "calibration": "both fitted methods; 10 and 20 confidence bands; original band 1 selected 402 rows; clear-band restored 841; all outcome filters; all exports",
+    "stress": "training medians and raw zero; rounded-input model; four selected fields including locked column 55; eight real trials; each outcome filter; selected single-55 recipe and records",
+    "combined_median_trial": {
+      "new_mistakes": 8,
+      "fixed_mistakes": 3,
+      "changed_decisions": 11
+    },
+    "desktop_screenshot": "reviewed",
+    "narrow_layout": {
+      "window_width": 402,
+      "page_width": 386,
+      "screenshot": "capture unavailable; DOM dimensions checked; override reset"
+    },
+    "console_warnings_or_errors": []
+  }
+}

@@ -45,10 +45,11 @@ class Campaigns:
         pending.write_text(json.dumps(campaign, indent=2, allow_nan=False), encoding="utf-8")
         pending.replace(directory / "campaign.json")
 
-    def fixed_context(self):
+    def fixed_context(self, cfg=None):
+        cfg = self.reports.cfg if cfg is None else cfg
         editable = set(self.jobs.integer_limits) | set(self.jobs.float_limits) | {"name", "epsilons", "poison_ratios", "root", "report_dir", "dashboard_name"}
-        context = {k: v for k, v in self.reports.cfg.items() if k not in editable}
-        context["data_path"] = str((self.reports.workspace / self.reports.cfg["data_path"]).resolve())
+        context = {k: v for k, v in cfg.items() if k not in editable}
+        context["data_path"] = str((self.reports.workspace / cfg["data_path"]).resolve())
         return context
 
     def create(self, values):
@@ -139,7 +140,7 @@ class Campaigns:
                         entry["status"] = "starting"
                         self.save(campaign)
                         try:
-                            job = self.jobs.launch(entry["values"], campaign={"id": campaign["id"], "index": entry["index"]})
+                            job = self.jobs.launch(entry["values"], campaign={"id": campaign["id"], "index": entry["index"]}, origin=entry.get("origin"))
                             entry.update(status="running", job_id=job["id"])
                         except RuntimeError:
                             entry["status"] = "queued"
@@ -190,6 +191,40 @@ class Campaigns:
     def listing(self):
         with self.lock:
             return json.loads(json.dumps(sorted(self.campaigns.values(), key=lambda c: c["created"], reverse=True)))
+
+    def retry(self, values):
+        if set(values)-{"id", "name", "overrides"}:
+            raise ValueError("Unknown retry setting")
+        if not isinstance(values.get("id"), str):
+            raise ValueError("Choose a saved campaign")
+        with self.lock:
+            self.tick()
+            original = self.campaigns.get(values.get("id"))
+            if original is None or original["status"] in {"running", "pausing"} or any(e["status"] in {"running", "starting"} for e in original["entries"]):
+                raise ValueError("Finish or pause the original campaign before retrying unsuccessful entries")
+            if any(c["status"] in {"running", "pausing"} for c in self.campaigns.values()):
+                raise ValueError("Another campaign is active")
+            if original["fixed_context"] != self.fixed_context():
+                raise ValueError("Fixed data or run settings changed; create a new campaign")
+            selected = [e for e in original["entries"] if e["status"] in {"failed", "cancelled", "interrupted"} and e.get("job_id")]
+            if not selected:
+                raise ValueError("There are no unsuccessful started entries to retry; queued entries are not retries")
+            name = values.get("name", original["name"][:48]+" · retry")
+            overrides = values.get("overrides", {})
+            allowed = (set(self.jobs.integer_limits) | set(self.jobs.float_limits) | {"epsilons", "poison_ratios"})-{ "seed", original["axis"]}
+            if not isinstance(name, str) or not 1 <= len(name.strip()) <= 60 or not isinstance(overrides, dict) or set(overrides)-allowed:
+                raise ValueError("Use a retry name and supported corrections; seed and the varied setting must stay unchanged")
+            entries = []
+            for source in selected:
+                settings = {**source["values"], **overrides, "name": f"{name.strip()[:50]} · {len(entries)+1}/{len(selected)}"}
+                cfg, label = self.jobs.validate(settings)
+                frozen = {k: cfg[k] for k in set(self.jobs.integer_limits) | set(self.jobs.float_limits) | {"epsilons", "poison_ratios"}}
+                frozen["name"] = label
+                entries.append({"index": len(entries), "seed": source["seed"], "variant": source["variant"], "values": frozen, "status": "queued", "job_id": None, "origin": {"kind": "campaign-retry", "campaign": original["id"], "entry": source["index"], "job": source["job_id"]}})
+            fork = {"id": uuid.uuid4().hex, "name": name.strip(), "axis": original["axis"], "variants": list(dict.fromkeys(e["variant"] for e in entries)), "seeds": list(dict.fromkeys(e["seed"] for e in entries)), "fixed_context": self.fixed_context(), "fail_fast": original["fail_fast"], "retry_of": original["id"], "corrections": overrides, "status": "running", "created": self.now(), "updated": self.now(), "message": "Retry fork: original entries and reports are preserved. Only unsuccessful started entries are included.", "entries": entries}
+            self.campaigns[fork["id"]] = fork
+            self.save(fork)
+            return json.loads(json.dumps(fork))
 
     def results(self, campaign_id):
         with self.lock:

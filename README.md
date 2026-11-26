@@ -6,6 +6,24 @@ This is a feature-space research harness. A valid vector is **not proof that a c
 
 ## Setup and reproducible execution
 
+**Model lab** adds three tools to the dashboard:
+
+- **Combine filters:** select 2–8 actual trained models, fit nonnegative weights that sum to one (or choose equal shares), choose a decision threshold, measure test performance, and replay a saved attack through the combined model. Member comparisons use the same threshold-selection records and false-alarm target. Download the real weights, threshold, checkpoint references, source-row split, test scores, and attack scores.
+- **Calibrate confidence:** fit a sigmoid correction or a monotone fitted curve to one model's scores. Compare test score error, log loss, decision results, and observed spam frequency in 5, 10, or 20 confidence bands. Inspect the records in any populated band and export the fitted coefficients or curve knots. The monotone curve uses linear interpolation with clipped end values.
+- **Remove measurements:** choose 1–12 measurements and replace them with training-derived medians or zero in original units. Rerun each field separately and cumulative groups, count new/fixed mistakes, inspect exact replacement values and individual source records, and export any selected trial. Integer measurement medians are rounded to integer values. Locked attack fields remain available for this input-availability diagnostic.
+
+Ensemble weights and confidence corrections fit on one deterministic half of validation records; thresholds use the separate half, with both classes represented in each. Test labels do not fit parameters. The exact source IDs and fitted parameters are exported in the recipe. A false-alarm target constrains the threshold-selection records, not future or held-out error rates. Improvements are not guaranteed. Saved attacks are fixed examples, and missing-input trials are diagnostics rather than newly optimized attacks. These tools leave the original model checkpoints and reports intact.
+
+**Attack tests → Replay and compare saved attacks** runs every trained filter on a saved attack batch, including changed-data and cleaned models. It reports each filter's initially caught records, actual escapes, after-attack catches, newly caught records, and score movement. These are fresh model predictions on fixed saved examples; the tool does not optimize a new attack against each model.
+
+Choose another attack or another run to compare outcomes on shared source rows. Filter for records caught only in either result, caught/missed in both, or changed decisions. Different attack subsets are never paired by position; unmatched rows are counted separately. Each run uses its own verified model, training scale, and decision threshold. **Compare measurements** opens all 57 reconstructed source-unit measurements for both attacks, including changes and locked fields. Export the full filter replay, every matching record, or one record's complete measurement changes. Cross-run differences can reflect training, scaling, thresholds, and attack settings together.
+
+The dashboard now supports **reusable experiment settings**: save the current form or capture a verified report configuration, retain numbered revisions and notes, apply settings to experiments or campaigns, export a revision, and archive/restore presets. Any historical revision can start a fresh complete pipeline. Saves reject outdated revisions; reuse checks that fixed data and execution settings still match. The library is stored in `runs/dashboard-presets.sqlite3`.
+
+**Repeat configuration** in process history works for completed, failed, and stopped processes. Review the original settings, run them again in a new directory, or load them for correction. **Repeat selected run** uses the verified report configuration. Launches check the configuration again, train real models, and record their source preset/revision, process, or report.
+
+**Retry unsuccessful runs** creates a separate campaign containing only failed, stopped, or interrupted entries that actually started. Correct a shared setting while preserving original seeds and the varied setting. Completed runs and entries that never started remain in the original campaign. Both histories and all earlier reports are retained.
+
 ### Local dashboard
 
 ```powershell

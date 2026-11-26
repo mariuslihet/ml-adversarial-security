@@ -1,0 +1,126 @@
+{
+  "checked": "2026-11-26T12:19:49.111084+00:00",
+  "runs": [
+    {
+      "id": "f6f1b255335e9446",
+      "report_sha256": "34b85ca3f19df23eb32216ddf233a7c845031f5a4a076bedab5f627ff6e53313",
+      "checks": [
+        {
+          "attack": "evasion-cleverhans-fgsm-linf",
+          "models": 29,
+          "paired": 32,
+          "pages": 4
+        },
+        {
+          "attack": "evasion-cw-l2",
+          "models": 29,
+          "paired": 32,
+          "pages": 4
+        },
+        {
+          "attack": "evasion-fgsm-linf",
+          "models": 29,
+          "paired": 32,
+          "pages": 4
+        },
+        {
+          "attack": "evasion-hsj-linf",
+          "models": 29,
+          "paired": 32,
+          "pages": 4
+        },
+        {
+          "attack": "evasion-pgd-l2",
+          "models": 29,
+          "paired": 32,
+          "pages": 4
+        },
+        {
+          "attack": "evasion-pgd-linf",
+          "models": 29,
+          "paired": 32,
+          "pages": 4
+        }
+      ]
+    },
+    {
+      "id": "00622d683c96cb18",
+      "report_sha256": "bb8dfea53fcc0355f065290df1cc525ba83375b1ff6dfc7c3322b0f2c2a1a95f",
+      "checks": [
+        {
+          "attack": "evasion-cleverhans-fgsm-linf",
+          "models": 29,
+          "paired": 32,
+          "pages": 4
+        },
+        {
+          "attack": "evasion-cw-l2",
+          "models": 29,
+          "paired": 32,
+          "pages": 4
+        },
+        {
+          "attack": "evasion-fgsm-linf",
+          "models": 29,
+          "paired": 32,
+          "pages": 4
+        },
+        {
+          "attack": "evasion-hsj-linf",
+          "models": 29,
+          "paired": 32,
+          "pages": 4
+        },
+        {
+          "attack": "evasion-pgd-l2",
+          "models": 29,
+          "paired": 32,
+          "pages": 4
+        },
+        {
+          "attack": "evasion-pgd-linf",
+          "models": 29,
+          "paired": 32,
+          "pages": 4
+        }
+      ]
+    }
+  ],
+  "model_attack_checks": 348,
+  "record_measurements_checked": 684,
+  "cross_run_shared_records": 32,
+  "browser": {
+    "all_filter_replay": 29,
+    "outcome_views": {
+      "changed": 14,
+      "first-only": 0,
+      "second-only": 14,
+      "both-caught": 10,
+      "both-missed": 8,
+      "all": 32
+    },
+    "pagination": "next and previous verified",
+    "cross_run_comparison": "32 shared source rows verified",
+    "unmatched_comparison": {
+      "shared": 0,
+      "first_excluded": 32,
+      "second_excluded": 2
+    },
+    "cleanup_model_detail_measurements": 57,
+    "escape_key_closed_dialog": true,
+    "filter_table_disclosure": "opened and closed",
+    "all_three_export_buttons": "clicked",
+    "download": {
+      "artifact": "reports\\browser-attack-replay-records.csv",
+      "records": 32,
+      "sha256": "8a4032fbb0f39ab9e1ffdf3e0468966d83f7ed7bc995680e44b9bf6224d7a7e9",
+      "exact_bytes_match_fresh_export": true
+    },
+    "desktop_and_narrow_screenshots": "visually inspected",
+    "narrow_layout_dimensions": {
+      "window_width": 402,
+      "page_width": 386
+    },
+    "console_warnings_or_errors": []
+  }
+}

@@ -8,6 +8,7 @@ let reportRequest = 0, inspectionRequest = 0, reportsRequest = 0, pollingJobs = 
 try {const draft = JSON.parse(sessionStorage.getItem("filter-run-draft") || "{}"); if (draft && typeof draft === "object" && !Array.isArray(draft)) state.draft = draft;} catch (_) { /* Keep the in-memory draft if browser storage is unavailable. */ }
 const modelNames = {clean: "Original filter", tree: "Tree filter", pgd: "Attack-trained", trades: "Stability-trained", squeezed: "Rounded inputs", "squeezed-bpda": "Rounded inputs"};
 const pages = {overview: ["Overview", "Test results"], attacks: ["Attack tests", "Attack tests"], training: ["Training changes", "Training changes"], details: ["Run details", "About this run"]};
+pages.lab = ["Model lab", "Model lab"];
 pages.runs = ["Run experiments", "Run an experiment"];
 pages.records = ["Record explorer", "Record explorer"];
 pages.compare = ["Compare runs", "Compare runs"];
@@ -137,6 +138,8 @@ function detailsPage() {
 }
 
 function bindContent() {
+  bindModelLab();
+  bindAttackReplay();
   $("#glance-model")?.addEventListener("change", e => {state.glance = e.target.value; $("#glance-body").innerHTML = glanceBody();});
   $("#target-filter")?.addEventListener("change", e => {state.target = e.target.value; render();});
   $("#change-kind")?.addEventListener("change", e => {state.kind = e.target.value; render();});
@@ -174,7 +177,7 @@ function render() {
     content.setAttribute("aria-busy", String(state.loading)); return;
   }
   $("#subtitle").textContent = state.page === "campaigns" ? "Queue actual local experiments and compare their verified results." : state.page === "notebook" ? "Local notes bound to actual records and saved model results." : state.page === "runs" ? "Train the filters, run the attacks, and measure the results on this computer." : `Spambase · ${num(state.report.dataset.split_sizes.test)} test emails · ${num(state.report.counts.attack_samples)} spam emails attacked`;
-  content.innerHTML = ({overview, attacks: attackPage, training: trainingPage, details: detailsPage, runs: runPage, records: recordsPage, compare: comparisonPage, decision: decisionLabPage, disagreements: disagreementPage, importance: importancePage, overlap: overlapPage, slices: slicesPage, shift: shiftPage, budgets: budgetPage, notebook: notebookPage, campaigns: campaignPage}[state.page] || overview)();
+  content.innerHTML = ({overview, attacks: attackPage, training: trainingPage, details: detailsPage, runs: runPage, records: recordsPage, compare: comparisonPage, decision: decisionLabPage, disagreements: disagreementPage, importance: importancePage, overlap: overlapPage, slices: slicesPage, shift: shiftPage, budgets: budgetPage, notebook: notebookPage, campaigns: campaignPage, lab: modelLabPage}[state.page] || overview)();
   content.setAttribute("aria-busy", "false");
   $("#updated").textContent = state.updated ? `Results saved ${new Date(state.updated).toLocaleString(undefined, {month: "short", day: "numeric", hour: "2-digit", minute: "2-digit"})}` : "";
   bindContent();
@@ -300,6 +303,7 @@ async function launchRun(event) {
 }
 
 function bindJobActions() {
+  bindRepeatButtons();
   document.querySelectorAll(".stop-job:not([data-bound])").forEach(b => {b.dataset.bound = "true"; b.addEventListener("click", async () => {b.disabled = true; try {await postJSON("/api/jobs/cancel", {id: b.dataset.id});} catch (e) {showError(e.message);} finally {await pollJobs(); if (b.isConnected) b.disabled = false;}});});
   document.querySelectorAll(".view-job:not([data-bound])").forEach(b => {b.dataset.bound = "true"; b.addEventListener("click", async () => {
     b.disabled = true;

@@ -26,6 +26,7 @@ async function cxLoad() {
     document.querySelectorAll(".campaign-results-open").forEach(button=>button.addEventListener("click",()=>cxResults(button.dataset.id)));
     document.querySelectorAll(".campaign-entry").forEach(button=>button.addEventListener("click",()=>cxEntry(button.dataset.id,Number(button.dataset.index))));
     document.querySelectorAll(".campaign-run-open").forEach(button=>button.addEventListener("click",async()=>{const id=button.dataset.report;location.hash="overview";await reload(id);}));
+    bindRetryControls(campaigns);
   }catch(error){if(request===cx.sequence&&state.page==="campaigns")document.querySelector("#campaign-message").textContent=error.message;}
   finally{cx.polling=false;}
 }
@@ -48,6 +49,7 @@ async function cxEntry(id,index) {
 }
 
 function bindCampaignContent() {
+  bindReuseContent();
   ++cx.sequence;++cx.resultSeq;cx.polling=false;cx.rendered=null;
   const runForm=document.querySelector("#run-form");
   if(runForm){const button=document.createElement("button");button.type="button";button.className="button";button.textContent="Build campaign from these settings";button.addEventListener("click",()=>{if(!runForm.reportValidity())return;cx.base=cxReadRunForm(runForm);delete cx.base.name;location.hash="campaigns";});runForm.querySelector(".form-bottom").append(button);}
