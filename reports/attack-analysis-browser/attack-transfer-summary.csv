@@ -1,0 +1,5 @@
+"model","trials","eligible_trials","caused_errors","unique_sources","eligible_sources","sources_failing_at_least_once","observed_failure_rate","shared_sources","shared_sources_failing","sources_failed_in_every_study","added_beyond_best_single_study"
+"clean","64","56","0","8","7","0","0","8","0","0","0"
+"tree","64","64","10","8","8","2","0.25","8","2","2","0"
+"pgd","64","64","0","8","8","0","0","8","0","0","0"
+"squeezed","64","56","0","8","7","0","0","8","0","0","0"

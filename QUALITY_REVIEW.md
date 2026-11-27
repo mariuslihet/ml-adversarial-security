@@ -73,3 +73,27 @@ Highest-priority improvements: finish the browser/keyboard/download checks when 
 Overall: 3.8 / 5. Accuracy 4: 270 full-suite tests, 21 campaign-specific checks, two final process/recovery regressions, and an actual four-run seed/settings campaign passed; current browser rendering remains unobserved. Completeness 3: real sequential execution, frozen settings, ownership-aware cancellation, pause/restart recovery, verified utility/attack statistics, durable source-bound notes, conflict-checked revisions, and exact budget inspection are implemented; browser acceptance is blocked by Windows error 1920. Clarity 4: the UI distinguishes queued processes from completed verified reports, failed/interrupted results from usable results, undefined rates from zero, user notes from model evidence, and measured levels from exact robustness claims; the expanded controls need a visual usability pass. Actionability 4: campaigns build directly from the existing run form and a completed real four-run campaign remains available, along with an archived measured-record case and reproducible audit script. Conciseness 4: the upgrade adds actual execution/retention capabilities rather than only report views, though the growing sidebar and advanced settings need a focused navigation review.
 
 Highest-priority improvement: complete browser input, keyboard, download, and narrow-width checks when the supported control process works. Self-check: actual process identities, source records, model files, report hashes, and SQLite revisions substantiate the new capabilities; no assertion of a complete browser pass is justified.
+# Adaptive attack delivery review — 27 November 2026
+
+| Dimension | Score | Evidence and limits |
+|---|---|---|
+| Accuracy | 5 / 5 | 369 final suite checks; independent exact replay of 2,240 HTTP query inputs, their model feedback, 127,680 measurements, and 160 final predictions. Server-owned quotas and hidden probabilities tested with actual HTTP requests. |
+| Completeness | 4 / 5 | Real adaptive score/decision searches, multiple edit constraints and seeds, matched source cohorts, four target modes, full per-query inspection and exports. Complete-message construction and remote service behavior are outside this measurement dataset. |
+| Clarity | 4 / 5 | Original errors, attack-caused errors, finite proposal limits, actual query costs, final defender audits, and selected query measurements are distinguished. Tables remain dense but scroll on narrow screens. |
+| Actionability | 5 / 5 | Running dashboard, three browser-completed current studies, independently checked downloads, replay script, and documented controls. |
+| Conciseness | 4 / 5 | One shared workflow and record dialog cover the added capability; detailed evidence is kept in reports. |
+
+Self-check: no search response, model result, request trace, or dataset was mocked. Passing small saved studies supports execution and evidence integrity, not broad model robustness. The next material realism improvement requires complete messages and a verified measurement extraction pipeline; it cannot be obtained by claiming feature vectors are emails. The new browser workflow, desktop/narrow layout, validation errors, history, inspectors, and exports were observed; this review makes no claim of retesting every older page.
+# Three attack analysis tools review — 27 November 2026
+
+Delivered attack transfer, exhaustive valid edit subsets, and combined observed attack coverage in one working dashboard page. Overall: **4.2 / 5**.
+
+| Axis | Score | Evidence and improvement |
+|---|---|---|
+| Accuracy | 4 / 5 | 382 full-suite checks, 20 final feature checks, and exact independent replay of 1,604 reported predictions from nine browser downloads. Results cover fixed saved edits; broader attacker searches would be a separate capability. |
+| Completeness | 4 / 5 | Three working tools, granular inputs, outcome filters, source fingerprints, export controls, protected API, and failure paths. Analyses require downloads for retention across a full page reload; a server-side analysis archive is a possible later improvement. |
+| Clarity | 4 / 5 | Trial and distinct-source counts are separate; valid-subset minimum and observed coverage limits are explicit. More compact filter selection could reduce scrolling when many poisoned/cleaned models exist. |
+| Actionability | 5 / 5 | All three workflows ran in the browser, nine files were verified, exact input inspectors worked, and the dashboard remains available locally. |
+| Conciseness | 4 / 5 | One page reuses existing models, studies, and the record inspector. Dense result tables scroll on narrow screens; group-by-filter summaries limit the initial result size. |
+
+Priority improvements are durable analysis history and more compact filter selection. Neither is presented as already implemented. Self-check: the user asked for three real new capabilities; each executes models and exposes evidence. Fixed-edit replay is not described as a new attack optimizer, and no historical measurements are represented as complete emails or live-service results.

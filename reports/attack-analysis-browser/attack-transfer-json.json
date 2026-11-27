@@ -1,0 +1,7413 @@
+{
+  "tool": "transfer",
+  "created": "2026-11-27T11:59:46.323489+00:00",
+  "report_sha256": "34b85ca3f19df23eb32216ddf233a7c845031f5a4a076bedab5f627ff6e53313",
+  "run": "f6f1b255335e9446",
+  "studies": [
+    {
+      "id": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "name": "Browser paired query and edit study",
+      "evidence_sha256": "6697db392f738451eac0a07a34d9fa8fd7d2aa45f46de2af4844276aa589311d"
+    }
+  ],
+  "summary": [
+    {
+      "model": "clean",
+      "trials": 64,
+      "eligible_trials": 56,
+      "caused_errors": 0,
+      "unique_sources": 8,
+      "eligible_sources": 7,
+      "sources_failing_at_least_once": 0,
+      "observed_failure_rate": 0,
+      "shared_sources": 8,
+      "shared_sources_failing": 0,
+      "sources_failed_in_every_study": 0,
+      "added_beyond_best_single_study": 0
+    },
+    {
+      "model": "tree",
+      "trials": 64,
+      "eligible_trials": 64,
+      "caused_errors": 10,
+      "unique_sources": 8,
+      "eligible_sources": 8,
+      "sources_failing_at_least_once": 2,
+      "observed_failure_rate": 0.25,
+      "shared_sources": 8,
+      "shared_sources_failing": 2,
+      "sources_failed_in_every_study": 2,
+      "added_beyond_best_single_study": 0
+    },
+    {
+      "model": "pgd",
+      "trials": 64,
+      "eligible_trials": 64,
+      "caused_errors": 0,
+      "unique_sources": 8,
+      "eligible_sources": 8,
+      "sources_failing_at_least_once": 0,
+      "observed_failure_rate": 0,
+      "shared_sources": 8,
+      "shared_sources_failing": 0,
+      "sources_failed_in_every_study": 0,
+      "added_beyond_best_single_study": 0
+    },
+    {
+      "model": "squeezed",
+      "trials": 64,
+      "eligible_trials": 56,
+      "caused_errors": 0,
+      "unique_sources": 8,
+      "eligible_sources": 7,
+      "sources_failing_at_least_once": 0,
+      "observed_failure_rate": 0,
+      "shared_sources": 8,
+      "shared_sources_failing": 0,
+      "sources_failed_in_every_study": 0,
+      "added_beyond_best_single_study": 0
+    }
+  ],
+  "rows": [
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 0,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.781999945640564,
+      "after": 0.7805068492889404,
+      "eligible": false,
+      "caused_error": false,
+      "wrong_after": true,
+      "changed_fields": 2,
+      "input_sha256": "d5b0eacd89a0e2c02d11f81f9ae5e756fd9968b0b904bbaa812dca9b4cd87b79",
+      "edits": [
+        [
+          20,
+          3.83
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 1,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9988704323768616,
+      "after": 0.9988259673118591,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "5c38d8f57eb6f18688c599ce31f023dc3539515c7e7abeedc1a7faabec16cd70",
+      "edits": [
+        [
+          6,
+          0
+        ],
+        [
+          8,
+          0.49
+        ],
+        [
+          50,
+          0.048
+        ],
+        [
+          53,
+          0.111
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 2,
+      "source_row": 599,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9118168950080872,
+      "after": 0.9101685881614685,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "0480681bb085e6d75f22fa8efd799b970bd0c4141b59e1b1b4153b8cc110103a",
+      "edits": [
+        [
+          5,
+          1.09
+        ],
+        [
+          34,
+          0.03
+        ],
+        [
+          51,
+          3.33
+        ],
+        [
+          53,
+          0.003
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 3,
+      "source_row": 50,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9726566076278687,
+      "after": 0.9712226986885071,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "43eb265548f605e6dce6255efdd8189615589978533c65830030320531a5d7dd",
+      "edits": [
+        [
+          2,
+          0.24
+        ],
+        [
+          3,
+          0.04
+        ],
+        [
+          22,
+          0.15
+        ],
+        [
+          26,
+          0.02
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 4,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.0019885264337062836,
+      "after": 0.0021284432150423527,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "94cb72c2259075a9de78e2792f578d62027b40d10b3d284d9f8713dec907534e",
+      "edits": [
+        [
+          22,
+          0.05
+        ],
+        [
+          23,
+          0.05
+        ],
+        [
+          25,
+          1.95
+        ],
+        [
+          26,
+          1.95
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 5,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.0017955130897462368,
+      "after": 0.0018483231542631984,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "0af854bcbe90c3c4708047c64f4fc566e6d6b31b3ebb1c1c9fd6e38b0c569def",
+      "edits": [
+        [
+          23,
+          0.04
+        ],
+        [
+          36,
+          1.36
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 6,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.3724520206451416,
+      "after": 0.3724520206451416,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 0,
+      "input_sha256": "b25d66ef2fd9607bb74b44b252fd5ed700f04ed8d16451b53bea10d5b748a4f3",
+      "edits": []
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 7,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.69328373670578,
+      "after": 0.7063133120536804,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 3,
+      "input_sha256": "eae0f8e39a4b148b227630c43eca3109951c0b8a9cc4959eb31291bff3a20868",
+      "edits": [
+        [
+          6,
+          0.03
+        ],
+        [
+          16,
+          0.55
+        ],
+        [
+          23,
+          0.02
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 8,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.781999945640564,
+      "after": 0.7805068492889404,
+      "eligible": false,
+      "caused_error": false,
+      "wrong_after": true,
+      "changed_fields": 2,
+      "input_sha256": "d5b0eacd89a0e2c02d11f81f9ae5e756fd9968b0b904bbaa812dca9b4cd87b79",
+      "edits": [
+        [
+          20,
+          3.83
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 9,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9988704323768616,
+      "after": 0.9988368153572083,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "9d39d3386e98644ece4eaedd66afcb83aeffcacd73dd7f78085bd5eaac8c6143",
+      "edits": [
+        [
+          4,
+          0.04
+        ],
+        [
+          26,
+          0.01
+        ],
+        [
+          50,
+          0.034
+        ],
+        [
+          53,
+          0.125
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 10,
+      "source_row": 599,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9118168950080872,
+      "after": 0.9113726019859314,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "78044132430ca1db22b7ea5ecc7e29422846f63403708d5253466d8280d81a26",
+      "edits": [
+        [
+          18,
+          2.23
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 11,
+      "source_row": 50,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9726566076278687,
+      "after": 0.9710333943367004,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "fcd49c40beb844951fcb40a1ee058b6f5b7752785bc16842e21a54852183ff67",
+      "edits": [
+        [
+          11,
+          0.71
+        ],
+        [
+          26,
+          0.02
+        ],
+        [
+          50,
+          0.043
+        ],
+        [
+          53,
+          0.041
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 12,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.0019885264337062836,
+      "after": 0.002020142273977399,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "8b03633058bf2ff3b8c9d95205bb820d8d4ec5251ac0e14f8c2c5aacfccfb2bf",
+      "edits": [
+        [
+          6,
+          0.02
+        ],
+        [
+          17,
+          1.98
+        ],
+        [
+          23,
+          0.02
+        ],
+        [
+          25,
+          1.98
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 13,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.0017955130897462368,
+      "after": 0.0018739606020972133,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "77d4c795eddf98aa4af1c9cc046995d487d4052e9ac470f8f2a1d36b8b0be9ae",
+      "edits": [
+        [
+          6,
+          0.03
+        ],
+        [
+          14,
+          1.37
+        ],
+        [
+          22,
+          0.02
+        ],
+        [
+          42,
+          1.38
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 14,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.3724520206451416,
+      "after": 0.3724520206451416,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 0,
+      "input_sha256": "b25d66ef2fd9607bb74b44b252fd5ed700f04ed8d16451b53bea10d5b748a4f3",
+      "edits": []
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 15,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.69328373670578,
+      "after": 0.6985299587249756,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "389d0818265b18ab61c5067e3d3cc22184f506d9fba437bcdabd22b7ce9d27c7",
+      "edits": [
+        [
+          16,
+          0.57
+        ],
+        [
+          23,
+          0.05
+        ],
+        [
+          25,
+          0.03
+        ],
+        [
+          35,
+          1.75
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 16,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.781999945640564,
+      "after": 0.7766384482383728,
+      "eligible": false,
+      "caused_error": false,
+      "wrong_after": true,
+      "changed_fields": 2,
+      "input_sha256": "2790818cd89068df955ffb7f5b7baf1c7df5774a54c89c66b65cf85e143f5902",
+      "edits": [
+        [
+          20,
+          3.79
+        ],
+        [
+          29,
+          0.05
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 17,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9988704323768616,
+      "after": 0.9988672733306885,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "08e1f4dc8560a3e412429939855048546f6109398d6e71187f7b3a992e44e080",
+      "edits": [
+        [
+          48,
+          0.006
+        ],
+        [
+          51,
+          0.34
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 18,
+      "source_row": 599,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9118168950080872,
+      "after": 0.9119376540184021,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "2553947be3f1b879c56fe0ccaab3502cbc3bef6c95d8d92d0d8aef08e732d51f",
+      "edits": [
+        [
+          5,
+          1.11
+        ],
+        [
+          30,
+          0.01
+        ],
+        [
+          51,
+          3.331
+        ],
+        [
+          52,
+          0.002
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 19,
+      "source_row": 50,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9726566076278687,
+      "after": 0.9732236862182617,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "b9048000a8b5a9fe1dd72f47451c1784a01a731f326dfd0567229f8ddc4b92ce",
+      "edits": [
+        [
+          14,
+          0.22
+        ],
+        [
+          19,
+          0.04
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 20,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.0019885264337062836,
+      "after": 0.00195618555881083,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 3,
+      "input_sha256": "d461691bd3b12b1d9cf0a15c4653adff996c575f260e9b848746188f247071e3",
+      "edits": [
+        [
+          27,
+          3.95
+        ],
+        [
+          29,
+          2.01
+        ],
+        [
+          39,
+          0.04
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 21,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.0017955130897462368,
+      "after": 0.0018245746614411473,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "791789aea5e32a657ce9269b520791651b88ad0f98ff23e18dd5b3485db34a77",
+      "edits": [
+        [
+          13,
+          0.03
+        ],
+        [
+          36,
+          1.37
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 22,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.3724520206451416,
+      "after": 0.37448403239250183,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "1bd10d70ce23f3a991c9657c1aad571534b98867fa54d7e769ea5057ad86e366",
+      "edits": [
+        [
+          4,
+          4.99
+        ],
+        [
+          14,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 23,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.69328373670578,
+      "after": 0.690716028213501,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "c58ac731f868be19d9ee3bbb0db04c018cdd723664f6f09376fbb7877a92e4dd",
+      "edits": [
+        [
+          45,
+          0.55
+        ],
+        [
+          46,
+          0.05
+        ],
+        [
+          49,
+          0.087
+        ],
+        [
+          52,
+          0.001
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 24,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.781999945640564,
+      "after": 0.7805068492889404,
+      "eligible": false,
+      "caused_error": false,
+      "wrong_after": true,
+      "changed_fields": 2,
+      "input_sha256": "d5b0eacd89a0e2c02d11f81f9ae5e756fd9968b0b904bbaa812dca9b4cd87b79",
+      "edits": [
+        [
+          20,
+          3.83
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 25,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9988704323768616,
+      "after": 0.9988712668418884,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "330cf5f4d6931beb58e6f014360d35eba0fe7edb07c4d592609471bdb2d325b6",
+      "edits": [
+        [
+          11,
+          0.95
+        ],
+        [
+          36,
+          0.01
+        ],
+        [
+          49,
+          0.069
+        ],
+        [
+          52,
+          0.792
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 26,
+      "source_row": 599,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9118168950080872,
+      "after": 0.9110074043273926,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "2f520502767622a1b11e8fb656865fc05c5d1eef48223291809a8f4ee8f6b362",
+      "edits": [
+        [
+          5,
+          1.11
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 27,
+      "source_row": 50,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9726566076278687,
+      "after": 0.9725568294525146,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "40d86729216bffd9806b85c91cab0f9517aec7235ee523cda8fd0f4503511b6e",
+      "edits": [
+        [
+          50,
+          0.002
+        ],
+        [
+          52,
+          0.228
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 28,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.0019885264337062836,
+      "after": 0.00205993908457458,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "fcd868a84339ae11b9184c0a986d4a073293239bcce0f24210faacccf9bfb531",
+      "edits": [
+        [
+          13,
+          0.05
+        ],
+        [
+          25,
+          2.01
+        ],
+        [
+          27,
+          3.99
+        ],
+        [
+          34,
+          1.95
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 29,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.0017955130897462368,
+      "after": 0.0018038059351965785,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "1bd6807551e5e9305ea14301693741ea3c1ee80480f3127b7756b77f60b18908",
+      "edits": [
+        [
+          48,
+          0.002
+        ],
+        [
+          49,
+          0.199
+        ],
+        [
+          51,
+          0.003
+        ],
+        [
+          52,
+          0.001
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 30,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.3724520206451416,
+      "after": 0.37373021245002747,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "99543b46a6924fa85380e92eef0ab9ed2ea76c001c7340841b8bebeb4d230536",
+      "edits": [
+        [
+          4,
+          4.99
+        ],
+        [
+          37,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 31,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.69328373670578,
+      "after": 0.6940721273422241,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "4e820a6760ee71ddf0e57f6d9fe3e7fceebdf5166edfcbba019c9eb7bff7a7dc",
+      "edits": [
+        [
+          49,
+          0.083
+        ],
+        [
+          53,
+          0.005
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 32,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.781999945640564,
+      "after": 0.7682977318763733,
+      "eligible": false,
+      "caused_error": false,
+      "wrong_after": true,
+      "changed_fields": 4,
+      "input_sha256": "ea27aed49c7e01d46eaeef929990ec6df1b71ca5183e120ef438d8d2d709cdac",
+      "edits": [
+        [
+          20,
+          3.75
+        ],
+        [
+          45,
+          0.09
+        ],
+        [
+          52,
+          1.216
+        ],
+        [
+          53,
+          0.003
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 33,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9988704323768616,
+      "after": 0.9987926483154297,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "ee41bb0da5bb02a369b9d675660a6c1b431db232e3aa34e4c96d32a7c7f0d1f4",
+      "edits": [
+        [
+          3,
+          0.05
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          50,
+          0.095
+        ],
+        [
+          53,
+          0.064
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 34,
+      "source_row": 599,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9118168950080872,
+      "after": 0.9113726019859314,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "78044132430ca1db22b7ea5ecc7e29422846f63403708d5253466d8280d81a26",
+      "edits": [
+        [
+          18,
+          2.23
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 35,
+      "source_row": 50,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9726566076278687,
+      "after": 0.972159206867218,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "edb0f960d4066c113560a1a5970ff614b4c7e92705f439b9efc074e0b0622bf7",
+      "edits": [
+        [
+          10,
+          0.47
+        ],
+        [
+          11,
+          0.76
+        ],
+        [
+          12,
+          0.76
+        ],
+        [
+          22,
+          0.11
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 36,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.0019885264337062836,
+      "after": 0.0022082910872995853,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "7b19521cd75e5853f5299f41035d78334e63c2e988d00c5f7a88a0c712ab82fe",
+      "edits": [
+        [
+          22,
+          0.09
+        ],
+        [
+          23,
+          0.05
+        ],
+        [
+          25,
+          1.95
+        ],
+        [
+          26,
+          1.91
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 37,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.0017955130897462368,
+      "after": 0.0019463966600596905,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "213310eeddbe514077e6d6de7259539a6fc039aa0e94511693baec14ad874112",
+      "edits": [
+        [
+          4,
+          0.02
+        ],
+        [
+          6,
+          0.07
+        ],
+        [
+          24,
+          1.38
+        ],
+        [
+          36,
+          1.33
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 38,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.3724520206451416,
+      "after": 0.38853609561920166,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "f0d30dd6864b41e8a5bad6632deeefb8290c793369ed2f1b67fa8dd58ae16d41",
+      "edits": [
+        [
+          4,
+          4.97
+        ],
+        [
+          6,
+          0.03
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 39,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.69328373670578,
+      "after": 0.6785714030265808,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 3,
+      "input_sha256": "b448ab6f535bd2e0fae12a164fdd2558027b166eaa9ecd9aae4d75779eb445cc",
+      "edits": [
+        [
+          16,
+          0.5
+        ],
+        [
+          23,
+          0.02
+        ],
+        [
+          41,
+          0.08
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 40,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.781999945640564,
+      "after": 0.7805068492889404,
+      "eligible": false,
+      "caused_error": false,
+      "wrong_after": true,
+      "changed_fields": 2,
+      "input_sha256": "d5b0eacd89a0e2c02d11f81f9ae5e756fd9968b0b904bbaa812dca9b4cd87b79",
+      "edits": [
+        [
+          20,
+          3.83
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 41,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9988704323768616,
+      "after": 0.998789370059967,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "02121b5321077dca2129931fe225dc85e8a8df48e7cd67cea9d5031443617023",
+      "edits": [
+        [
+          16,
+          0.39
+        ],
+        [
+          26,
+          0.05
+        ],
+        [
+          50,
+          0.056
+        ],
+        [
+          53,
+          0.103
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 42,
+      "source_row": 599,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9118168950080872,
+      "after": 0.9112166166305542,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "8c1f3a0c6dc655cb81e1f8335abc2f9a94eef2d80c4c1be395a5774dc1c167a6",
+      "edits": [
+        [
+          18,
+          2.22
+        ],
+        [
+          45,
+          0.02
+        ],
+        [
+          51,
+          3.331
+        ],
+        [
+          53,
+          0.002
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 43,
+      "source_row": 50,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9726566076278687,
+      "after": 0.9696341156959534,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "23861fa89fce588afa4c55d25093acc6634dda1ac2b78f557f53a9453d785107",
+      "edits": [
+        [
+          11,
+          0.69
+        ],
+        [
+          26,
+          0.04
+        ],
+        [
+          50,
+          0.073
+        ],
+        [
+          53,
+          0.011
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 44,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.0019885264337062836,
+      "after": 0.0020596312824636698,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "d6c92847dfd0d16aa7b7f466fd27bef422016786eebfd975b8739a63d08042be",
+      "edits": [
+        [
+          23,
+          0.08
+        ],
+        [
+          25,
+          1.92
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 45,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.0017955130897462368,
+      "after": 0.0018410051707178354,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "df284956b7be1324515fe371a703b3b3b8aa7b9f1c04b9d41a784e09de21dbfe",
+      "edits": [
+        [
+          6,
+          0.02
+        ],
+        [
+          24,
+          1.38
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 46,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.3724520206451416,
+      "after": 0.3831457793712616,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "848a49c44d19d94aa2563a9a9b4c144e8aa16ec45cb6ba44ec7d49909a52aa7b",
+      "edits": [
+        [
+          4,
+          4.98
+        ],
+        [
+          6,
+          0.02
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 47,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.69328373670578,
+      "after": 0.715772807598114,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "e982a8a70d5d2cbdf41d181f1465993ec3e6ad867291e0a8ed4e733cd305eed1",
+      "edits": [
+        [
+          6,
+          0.03
+        ],
+        [
+          16,
+          0.51
+        ],
+        [
+          21,
+          0.09
+        ],
+        [
+          45,
+          0.57
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 48,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.781999945640564,
+      "after": 0.7791584134101868,
+      "eligible": false,
+      "caused_error": false,
+      "wrong_after": true,
+      "changed_fields": 4,
+      "input_sha256": "ca7bdf0c093dd23c1bdbcb7de1e0e4833e94407a8243b4d3e58a1897e9118ac1",
+      "edits": [
+        [
+          20,
+          3.8
+        ],
+        [
+          25,
+          0.04
+        ],
+        [
+          50,
+          0.004
+        ],
+        [
+          52,
+          1.215
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 49,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9988704323768616,
+      "after": 0.9988613128662109,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 3,
+      "input_sha256": "e093e6f5c16cf1643e47f042566dcdc0b1e3f698a6e6b90faa464fd4cafbc4a8",
+      "edits": [
+        [
+          2,
+          0.42
+        ],
+        [
+          23,
+          0.35
+        ],
+        [
+          38,
+          0.02
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 50,
+      "source_row": 599,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9118168950080872,
+      "after": 0.9118467569351196,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "38309f7d2033f6bd49b2a401b17f18a65786bbf637d47c52380b9f1d333d18f2",
+      "edits": [
+        [
+          11,
+          0.01
+        ],
+        [
+          18,
+          2.23
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 51,
+      "source_row": 50,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9726566076278687,
+      "after": 0.9733095765113831,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "35da7c23b545ededc7a26f5889a04e3bd3c0c8cb9d8a55fd26c756aa7bbcfc45",
+      "edits": [
+        [
+          2,
+          0.22
+        ],
+        [
+          30,
+          0.04
+        ],
+        [
+          48,
+          0
+        ],
+        [
+          53,
+          0.12
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 52,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.0019885264337062836,
+      "after": 0.0019953979644924402,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "453cdc55a01e91e18e834fbb7dba0b84a5e642e672833ed88ab81a019015a8e3",
+      "edits": [
+        [
+          29,
+          1.98
+        ],
+        [
+          38,
+          0.02
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 53,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.0017955130897462368,
+      "after": 0.0017769531114026904,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "8ed8e17f35fabec9d905080bd79f08bee295d223f460819f32a814c6530f10bf",
+      "edits": [
+        [
+          48,
+          0.063
+        ],
+        [
+          50,
+          0.142
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 54,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.3724520206451416,
+      "after": 0.37084364891052246,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "e77baae9c58bfcf2bb4f3a747ec47aee25bc55b6f88303bfac61adf42112a5a7",
+      "edits": [
+        [
+          1,
+          0.01
+        ],
+        [
+          4,
+          4.97
+        ],
+        [
+          40,
+          0.01
+        ],
+        [
+          43,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 55,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.69328373670578,
+      "after": 0.6842799186706543,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "3eb1786a96d6410421098d51a473a4783c4ff8b9a9c6ceffffff0eb2080c6d43",
+      "edits": [
+        [
+          34,
+          0.07
+        ],
+        [
+          45,
+          0.53
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 56,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.781999945640564,
+      "after": 0.7805068492889404,
+      "eligible": false,
+      "caused_error": false,
+      "wrong_after": true,
+      "changed_fields": 2,
+      "input_sha256": "d5b0eacd89a0e2c02d11f81f9ae5e756fd9968b0b904bbaa812dca9b4cd87b79",
+      "edits": [
+        [
+          20,
+          3.83
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 57,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9988704323768616,
+      "after": 0.9988177418708801,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "97ee801f97a75bbb92c86d5d3ecae3fb9c6d78ede6494dfa2968beb496241418",
+      "edits": [
+        [
+          4,
+          0.03
+        ],
+        [
+          34,
+          0.02
+        ],
+        [
+          48,
+          0.099
+        ],
+        [
+          53,
+          0.06
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 58,
+      "source_row": 599,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9118168950080872,
+      "after": 0.9110074043273926,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "2f520502767622a1b11e8fb656865fc05c5d1eef48223291809a8f4ee8f6b362",
+      "edits": [
+        [
+          5,
+          1.11
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 59,
+      "source_row": 50,
+      "actual": 1,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.9726566076278687,
+      "after": 0.9724099040031433,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "0d682301f12a6f49746c9b6dd343c09a5588d20f0a289842241bac0de705011a",
+      "edits": [
+        [
+          6,
+          0.03
+        ],
+        [
+          19,
+          0.03
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 60,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.0019885264337062836,
+      "after": 0.0020493834745138884,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "468031f1efcdb7724840c0632434a581f12bea545084f3eb091ac1ed50c268d5",
+      "edits": [
+        [
+          21,
+          0.08
+        ],
+        [
+          25,
+          1.98
+        ],
+        [
+          34,
+          1.95
+        ],
+        [
+          44,
+          1.99
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 61,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.0017955130897462368,
+      "after": 0.0018410717602819204,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 3,
+      "input_sha256": "9154251d0d226cabe222cf218c31cefc270666b5d432a90b090be885a0d0eaaa",
+      "edits": [
+        [
+          49,
+          0.19
+        ],
+        [
+          50,
+          0.122
+        ],
+        [
+          53,
+          0.098
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 62,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.3724520206451416,
+      "after": 0.37373021245002747,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "99543b46a6924fa85380e92eef0ab9ed2ea76c001c7340841b8bebeb4d230536",
+      "edits": [
+        [
+          4,
+          4.99
+        ],
+        [
+          37,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 63,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "clean",
+      "threshold": 0.818873941898346,
+      "before": 0.69328373670578,
+      "after": 0.6846071481704712,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "dedf29bc7b5668a1a77964c11a2eea5fb59eb0123ee89c6c3766c62875bb3837",
+      "edits": [
+        [
+          16,
+          0.57
+        ],
+        [
+          30,
+          0.08
+        ],
+        [
+          45,
+          0.52
+        ],
+        [
+          47,
+          0.03
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 0,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9497978687286377,
+      "after": 0.6106816530227661,
+      "eligible": true,
+      "caused_error": true,
+      "wrong_after": true,
+      "changed_fields": 2,
+      "input_sha256": "d5b0eacd89a0e2c02d11f81f9ae5e756fd9968b0b904bbaa812dca9b4cd87b79",
+      "edits": [
+        [
+          20,
+          3.83
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 1,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9944363832473755,
+      "after": 0.9907492995262146,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "5c38d8f57eb6f18688c599ce31f023dc3539515c7e7abeedc1a7faabec16cd70",
+      "edits": [
+        [
+          6,
+          0
+        ],
+        [
+          8,
+          0.49
+        ],
+        [
+          50,
+          0.048
+        ],
+        [
+          53,
+          0.111
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 2,
+      "source_row": 599,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.8470214009284973,
+      "after": 0.8141526579856873,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "0480681bb085e6d75f22fa8efd799b970bd0c4141b59e1b1b4153b8cc110103a",
+      "edits": [
+        [
+          5,
+          1.09
+        ],
+        [
+          34,
+          0.03
+        ],
+        [
+          51,
+          3.33
+        ],
+        [
+          53,
+          0.003
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 3,
+      "source_row": 50,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9865891933441162,
+      "after": 0.875925600528717,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "43eb265548f605e6dce6255efdd8189615589978533c65830030320531a5d7dd",
+      "edits": [
+        [
+          2,
+          0.24
+        ],
+        [
+          3,
+          0.04
+        ],
+        [
+          22,
+          0.15
+        ],
+        [
+          26,
+          0.02
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 4,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.003532950533553958,
+      "after": 0.007931702770292759,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "94cb72c2259075a9de78e2792f578d62027b40d10b3d284d9f8713dec907534e",
+      "edits": [
+        [
+          22,
+          0.05
+        ],
+        [
+          23,
+          0.05
+        ],
+        [
+          25,
+          1.95
+        ],
+        [
+          26,
+          1.95
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 5,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.01948120817542076,
+      "after": 0.03068004734814167,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "0af854bcbe90c3c4708047c64f4fc566e6d6b31b3ebb1c1c9fd6e38b0c569def",
+      "edits": [
+        [
+          23,
+          0.04
+        ],
+        [
+          36,
+          1.36
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 6,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.17920862138271332,
+      "after": 0.17920862138271332,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 0,
+      "input_sha256": "b25d66ef2fd9607bb74b44b252fd5ed700f04ed8d16451b53bea10d5b748a4f3",
+      "edits": []
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 7,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.04642842337489128,
+      "after": 0.2072119414806366,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 3,
+      "input_sha256": "eae0f8e39a4b148b227630c43eca3109951c0b8a9cc4959eb31291bff3a20868",
+      "edits": [
+        [
+          6,
+          0.03
+        ],
+        [
+          16,
+          0.55
+        ],
+        [
+          23,
+          0.02
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 8,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9497978687286377,
+      "after": 0.6106816530227661,
+      "eligible": true,
+      "caused_error": true,
+      "wrong_after": true,
+      "changed_fields": 2,
+      "input_sha256": "d5b0eacd89a0e2c02d11f81f9ae5e756fd9968b0b904bbaa812dca9b4cd87b79",
+      "edits": [
+        [
+          20,
+          3.83
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 9,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9944363832473755,
+      "after": 0.959968626499176,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "9d39d3386e98644ece4eaedd66afcb83aeffcacd73dd7f78085bd5eaac8c6143",
+      "edits": [
+        [
+          4,
+          0.04
+        ],
+        [
+          26,
+          0.01
+        ],
+        [
+          50,
+          0.034
+        ],
+        [
+          53,
+          0.125
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 10,
+      "source_row": 599,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.8470214009284973,
+      "after": 0.4364492893218994,
+      "eligible": true,
+      "caused_error": true,
+      "wrong_after": true,
+      "changed_fields": 2,
+      "input_sha256": "78044132430ca1db22b7ea5ecc7e29422846f63403708d5253466d8280d81a26",
+      "edits": [
+        [
+          18,
+          2.23
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 11,
+      "source_row": 50,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9865891933441162,
+      "after": 0.8524524569511414,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "fcd49c40beb844951fcb40a1ee058b6f5b7752785bc16842e21a54852183ff67",
+      "edits": [
+        [
+          11,
+          0.71
+        ],
+        [
+          26,
+          0.02
+        ],
+        [
+          50,
+          0.043
+        ],
+        [
+          53,
+          0.041
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 12,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.003532950533553958,
+      "after": 0.010467342101037502,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "8b03633058bf2ff3b8c9d95205bb820d8d4ec5251ac0e14f8c2c5aacfccfb2bf",
+      "edits": [
+        [
+          6,
+          0.02
+        ],
+        [
+          17,
+          1.98
+        ],
+        [
+          23,
+          0.02
+        ],
+        [
+          25,
+          1.98
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 13,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.01948120817542076,
+      "after": 0.23193375766277313,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "77d4c795eddf98aa4af1c9cc046995d487d4052e9ac470f8f2a1d36b8b0be9ae",
+      "edits": [
+        [
+          6,
+          0.03
+        ],
+        [
+          14,
+          1.37
+        ],
+        [
+          22,
+          0.02
+        ],
+        [
+          42,
+          1.38
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 14,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.17920862138271332,
+      "after": 0.17920862138271332,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 0,
+      "input_sha256": "b25d66ef2fd9607bb74b44b252fd5ed700f04ed8d16451b53bea10d5b748a4f3",
+      "edits": []
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 15,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.04642842337489128,
+      "after": 0.06474966555833817,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "389d0818265b18ab61c5067e3d3cc22184f506d9fba437bcdabd22b7ce9d27c7",
+      "edits": [
+        [
+          16,
+          0.57
+        ],
+        [
+          23,
+          0.05
+        ],
+        [
+          25,
+          0.03
+        ],
+        [
+          35,
+          1.75
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 16,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9497978687286377,
+      "after": 0.9497978687286377,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "2790818cd89068df955ffb7f5b7baf1c7df5774a54c89c66b65cf85e143f5902",
+      "edits": [
+        [
+          20,
+          3.79
+        ],
+        [
+          29,
+          0.05
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 17,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9944363832473755,
+      "after": 0.9944363832473755,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "08e1f4dc8560a3e412429939855048546f6109398d6e71187f7b3a992e44e080",
+      "edits": [
+        [
+          48,
+          0.006
+        ],
+        [
+          51,
+          0.34
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 18,
+      "source_row": 599,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.8470214009284973,
+      "after": 0.8470214009284973,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "2553947be3f1b879c56fe0ccaab3502cbc3bef6c95d8d92d0d8aef08e732d51f",
+      "edits": [
+        [
+          5,
+          1.11
+        ],
+        [
+          30,
+          0.01
+        ],
+        [
+          51,
+          3.331
+        ],
+        [
+          52,
+          0.002
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 19,
+      "source_row": 50,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9865891933441162,
+      "after": 0.9865891933441162,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "b9048000a8b5a9fe1dd72f47451c1784a01a731f326dfd0567229f8ddc4b92ce",
+      "edits": [
+        [
+          14,
+          0.22
+        ],
+        [
+          19,
+          0.04
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 20,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.003532950533553958,
+      "after": 0.003532950533553958,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 3,
+      "input_sha256": "d461691bd3b12b1d9cf0a15c4653adff996c575f260e9b848746188f247071e3",
+      "edits": [
+        [
+          27,
+          3.95
+        ],
+        [
+          29,
+          2.01
+        ],
+        [
+          39,
+          0.04
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 21,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.01948120817542076,
+      "after": 0.01948120817542076,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "791789aea5e32a657ce9269b520791651b88ad0f98ff23e18dd5b3485db34a77",
+      "edits": [
+        [
+          13,
+          0.03
+        ],
+        [
+          36,
+          1.37
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 22,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.17920862138271332,
+      "after": 0.17920862138271332,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "1bd10d70ce23f3a991c9657c1aad571534b98867fa54d7e769ea5057ad86e366",
+      "edits": [
+        [
+          4,
+          4.99
+        ],
+        [
+          14,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 23,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.04642842337489128,
+      "after": 0.04642842337489128,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "c58ac731f868be19d9ee3bbb0db04c018cdd723664f6f09376fbb7877a92e4dd",
+      "edits": [
+        [
+          45,
+          0.55
+        ],
+        [
+          46,
+          0.05
+        ],
+        [
+          49,
+          0.087
+        ],
+        [
+          52,
+          0.001
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 24,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9497978687286377,
+      "after": 0.6106816530227661,
+      "eligible": true,
+      "caused_error": true,
+      "wrong_after": true,
+      "changed_fields": 2,
+      "input_sha256": "d5b0eacd89a0e2c02d11f81f9ae5e756fd9968b0b904bbaa812dca9b4cd87b79",
+      "edits": [
+        [
+          20,
+          3.83
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 25,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9944363832473755,
+      "after": 0.9944363832473755,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "330cf5f4d6931beb58e6f014360d35eba0fe7edb07c4d592609471bdb2d325b6",
+      "edits": [
+        [
+          11,
+          0.95
+        ],
+        [
+          36,
+          0.01
+        ],
+        [
+          49,
+          0.069
+        ],
+        [
+          52,
+          0.792
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 26,
+      "source_row": 599,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.8470214009284973,
+      "after": 0.4364492893218994,
+      "eligible": true,
+      "caused_error": true,
+      "wrong_after": true,
+      "changed_fields": 2,
+      "input_sha256": "2f520502767622a1b11e8fb656865fc05c5d1eef48223291809a8f4ee8f6b362",
+      "edits": [
+        [
+          5,
+          1.11
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 27,
+      "source_row": 50,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9865891933441162,
+      "after": 0.9865891933441162,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "40d86729216bffd9806b85c91cab0f9517aec7235ee523cda8fd0f4503511b6e",
+      "edits": [
+        [
+          50,
+          0.002
+        ],
+        [
+          52,
+          0.228
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 28,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.003532950533553958,
+      "after": 0.003532950533553958,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "fcd868a84339ae11b9184c0a986d4a073293239bcce0f24210faacccf9bfb531",
+      "edits": [
+        [
+          13,
+          0.05
+        ],
+        [
+          25,
+          2.01
+        ],
+        [
+          27,
+          3.99
+        ],
+        [
+          34,
+          1.95
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 29,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.01948120817542076,
+      "after": 0.01948120817542076,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "1bd6807551e5e9305ea14301693741ea3c1ee80480f3127b7756b77f60b18908",
+      "edits": [
+        [
+          48,
+          0.002
+        ],
+        [
+          49,
+          0.199
+        ],
+        [
+          51,
+          0.003
+        ],
+        [
+          52,
+          0.001
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 30,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.17920862138271332,
+      "after": 0.17920862138271332,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "99543b46a6924fa85380e92eef0ab9ed2ea76c001c7340841b8bebeb4d230536",
+      "edits": [
+        [
+          4,
+          4.99
+        ],
+        [
+          37,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 31,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.04642842337489128,
+      "after": 0.038433242589235306,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "4e820a6760ee71ddf0e57f6d9fe3e7fceebdf5166edfcbba019c9eb7bff7a7dc",
+      "edits": [
+        [
+          49,
+          0.083
+        ],
+        [
+          53,
+          0.005
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 32,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9497978687286377,
+      "after": 0.9082518815994263,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "ea27aed49c7e01d46eaeef929990ec6df1b71ca5183e120ef438d8d2d709cdac",
+      "edits": [
+        [
+          20,
+          3.75
+        ],
+        [
+          45,
+          0.09
+        ],
+        [
+          52,
+          1.216
+        ],
+        [
+          53,
+          0.003
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 33,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9944363832473755,
+      "after": 0.9907492995262146,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "ee41bb0da5bb02a369b9d675660a6c1b431db232e3aa34e4c96d32a7c7f0d1f4",
+      "edits": [
+        [
+          3,
+          0.05
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          50,
+          0.095
+        ],
+        [
+          53,
+          0.064
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 34,
+      "source_row": 599,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.8470214009284973,
+      "after": 0.4364492893218994,
+      "eligible": true,
+      "caused_error": true,
+      "wrong_after": true,
+      "changed_fields": 2,
+      "input_sha256": "78044132430ca1db22b7ea5ecc7e29422846f63403708d5253466d8280d81a26",
+      "edits": [
+        [
+          18,
+          2.23
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 35,
+      "source_row": 50,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9865891933441162,
+      "after": 0.9820578098297119,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "edb0f960d4066c113560a1a5970ff614b4c7e92705f439b9efc074e0b0622bf7",
+      "edits": [
+        [
+          10,
+          0.47
+        ],
+        [
+          11,
+          0.76
+        ],
+        [
+          12,
+          0.76
+        ],
+        [
+          22,
+          0.11
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 36,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.003532950533553958,
+      "after": 0.007931702770292759,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "7b19521cd75e5853f5299f41035d78334e63c2e988d00c5f7a88a0c712ab82fe",
+      "edits": [
+        [
+          22,
+          0.09
+        ],
+        [
+          23,
+          0.05
+        ],
+        [
+          25,
+          1.95
+        ],
+        [
+          26,
+          1.91
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 37,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.01948120817542076,
+      "after": 0.25769323110580444,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "213310eeddbe514077e6d6de7259539a6fc039aa0e94511693baec14ad874112",
+      "edits": [
+        [
+          4,
+          0.02
+        ],
+        [
+          6,
+          0.07
+        ],
+        [
+          24,
+          1.38
+        ],
+        [
+          36,
+          1.33
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 38,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.17920862138271332,
+      "after": 0.7233129739761353,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "f0d30dd6864b41e8a5bad6632deeefb8290c793369ed2f1b67fa8dd58ae16d41",
+      "edits": [
+        [
+          4,
+          4.97
+        ],
+        [
+          6,
+          0.03
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 39,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.04642842337489128,
+      "after": 0.06474966555833817,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 3,
+      "input_sha256": "b448ab6f535bd2e0fae12a164fdd2558027b166eaa9ecd9aae4d75779eb445cc",
+      "edits": [
+        [
+          16,
+          0.5
+        ],
+        [
+          23,
+          0.02
+        ],
+        [
+          41,
+          0.08
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 40,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9497978687286377,
+      "after": 0.6106816530227661,
+      "eligible": true,
+      "caused_error": true,
+      "wrong_after": true,
+      "changed_fields": 2,
+      "input_sha256": "d5b0eacd89a0e2c02d11f81f9ae5e756fd9968b0b904bbaa812dca9b4cd87b79",
+      "edits": [
+        [
+          20,
+          3.83
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 41,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9944363832473755,
+      "after": 0.959968626499176,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "02121b5321077dca2129931fe225dc85e8a8df48e7cd67cea9d5031443617023",
+      "edits": [
+        [
+          16,
+          0.39
+        ],
+        [
+          26,
+          0.05
+        ],
+        [
+          50,
+          0.056
+        ],
+        [
+          53,
+          0.103
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 42,
+      "source_row": 599,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.8470214009284973,
+      "after": 0.7875168323516846,
+      "eligible": true,
+      "caused_error": true,
+      "wrong_after": true,
+      "changed_fields": 4,
+      "input_sha256": "8c1f3a0c6dc655cb81e1f8335abc2f9a94eef2d80c4c1be395a5774dc1c167a6",
+      "edits": [
+        [
+          18,
+          2.22
+        ],
+        [
+          45,
+          0.02
+        ],
+        [
+          51,
+          3.331
+        ],
+        [
+          53,
+          0.002
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 43,
+      "source_row": 50,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9865891933441162,
+      "after": 0.8524524569511414,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "23861fa89fce588afa4c55d25093acc6634dda1ac2b78f557f53a9453d785107",
+      "edits": [
+        [
+          11,
+          0.69
+        ],
+        [
+          26,
+          0.04
+        ],
+        [
+          50,
+          0.073
+        ],
+        [
+          53,
+          0.011
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 44,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.003532950533553958,
+      "after": 0.007725833915174007,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "d6c92847dfd0d16aa7b7f466fd27bef422016786eebfd975b8739a63d08042be",
+      "edits": [
+        [
+          23,
+          0.08
+        ],
+        [
+          25,
+          1.92
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 45,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.01948120817542076,
+      "after": 0.23193375766277313,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "df284956b7be1324515fe371a703b3b3b8aa7b9f1c04b9d41a784e09de21dbfe",
+      "edits": [
+        [
+          6,
+          0.02
+        ],
+        [
+          24,
+          1.38
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 46,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.17920862138271332,
+      "after": 0.7233129739761353,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "848a49c44d19d94aa2563a9a9b4c144e8aa16ec45cb6ba44ec7d49909a52aa7b",
+      "edits": [
+        [
+          4,
+          4.98
+        ],
+        [
+          6,
+          0.02
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 47,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.04642842337489128,
+      "after": 0.17956820130348206,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "e982a8a70d5d2cbdf41d181f1465993ec3e6ad867291e0a8ed4e733cd305eed1",
+      "edits": [
+        [
+          6,
+          0.03
+        ],
+        [
+          16,
+          0.51
+        ],
+        [
+          21,
+          0.09
+        ],
+        [
+          45,
+          0.57
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 48,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9497978687286377,
+      "after": 0.9497978687286377,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "ca7bdf0c093dd23c1bdbcb7de1e0e4833e94407a8243b4d3e58a1897e9118ac1",
+      "edits": [
+        [
+          20,
+          3.8
+        ],
+        [
+          25,
+          0.04
+        ],
+        [
+          50,
+          0.004
+        ],
+        [
+          52,
+          1.215
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 49,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9944363832473755,
+      "after": 0.9944363832473755,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 3,
+      "input_sha256": "e093e6f5c16cf1643e47f042566dcdc0b1e3f698a6e6b90faa464fd4cafbc4a8",
+      "edits": [
+        [
+          2,
+          0.42
+        ],
+        [
+          23,
+          0.35
+        ],
+        [
+          38,
+          0.02
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 50,
+      "source_row": 599,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.8470214009284973,
+      "after": 0.8470214009284973,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "38309f7d2033f6bd49b2a401b17f18a65786bbf637d47c52380b9f1d333d18f2",
+      "edits": [
+        [
+          11,
+          0.01
+        ],
+        [
+          18,
+          2.23
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 51,
+      "source_row": 50,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9865891933441162,
+      "after": 0.9865891933441162,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "35da7c23b545ededc7a26f5889a04e3bd3c0c8cb9d8a55fd26c756aa7bbcfc45",
+      "edits": [
+        [
+          2,
+          0.22
+        ],
+        [
+          30,
+          0.04
+        ],
+        [
+          48,
+          0
+        ],
+        [
+          53,
+          0.12
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 52,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.003532950533553958,
+      "after": 0.003532950533553958,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "453cdc55a01e91e18e834fbb7dba0b84a5e642e672833ed88ab81a019015a8e3",
+      "edits": [
+        [
+          29,
+          1.98
+        ],
+        [
+          38,
+          0.02
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 53,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.01948120817542076,
+      "after": 0.01948120817542076,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "8ed8e17f35fabec9d905080bd79f08bee295d223f460819f32a814c6530f10bf",
+      "edits": [
+        [
+          48,
+          0.063
+        ],
+        [
+          50,
+          0.142
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 54,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.17920862138271332,
+      "after": 0.17920862138271332,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "e77baae9c58bfcf2bb4f3a747ec47aee25bc55b6f88303bfac61adf42112a5a7",
+      "edits": [
+        [
+          1,
+          0.01
+        ],
+        [
+          4,
+          4.97
+        ],
+        [
+          40,
+          0.01
+        ],
+        [
+          43,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 55,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.04642842337489128,
+      "after": 0.042672984302043915,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "3eb1786a96d6410421098d51a473a4783c4ff8b9a9c6ceffffff0eb2080c6d43",
+      "edits": [
+        [
+          34,
+          0.07
+        ],
+        [
+          45,
+          0.53
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 56,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9497978687286377,
+      "after": 0.6106816530227661,
+      "eligible": true,
+      "caused_error": true,
+      "wrong_after": true,
+      "changed_fields": 2,
+      "input_sha256": "d5b0eacd89a0e2c02d11f81f9ae5e756fd9968b0b904bbaa812dca9b4cd87b79",
+      "edits": [
+        [
+          20,
+          3.83
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 57,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9944363832473755,
+      "after": 0.9944363832473755,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "97ee801f97a75bbb92c86d5d3ecae3fb9c6d78ede6494dfa2968beb496241418",
+      "edits": [
+        [
+          4,
+          0.03
+        ],
+        [
+          34,
+          0.02
+        ],
+        [
+          48,
+          0.099
+        ],
+        [
+          53,
+          0.06
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 58,
+      "source_row": 599,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.8470214009284973,
+      "after": 0.4364492893218994,
+      "eligible": true,
+      "caused_error": true,
+      "wrong_after": true,
+      "changed_fields": 2,
+      "input_sha256": "2f520502767622a1b11e8fb656865fc05c5d1eef48223291809a8f4ee8f6b362",
+      "edits": [
+        [
+          5,
+          1.11
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 59,
+      "source_row": 50,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9865891933441162,
+      "after": 0.9865891933441162,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "0d682301f12a6f49746c9b6dd343c09a5588d20f0a289842241bac0de705011a",
+      "edits": [
+        [
+          6,
+          0.03
+        ],
+        [
+          19,
+          0.03
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 60,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.003532950533553958,
+      "after": 0.003532950533553958,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "468031f1efcdb7724840c0632434a581f12bea545084f3eb091ac1ed50c268d5",
+      "edits": [
+        [
+          21,
+          0.08
+        ],
+        [
+          25,
+          1.98
+        ],
+        [
+          34,
+          1.95
+        ],
+        [
+          44,
+          1.99
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 61,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.01948120817542076,
+      "after": 0.016048366203904152,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 3,
+      "input_sha256": "9154251d0d226cabe222cf218c31cefc270666b5d432a90b090be885a0d0eaaa",
+      "edits": [
+        [
+          49,
+          0.19
+        ],
+        [
+          50,
+          0.122
+        ],
+        [
+          53,
+          0.098
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 62,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.17920862138271332,
+      "after": 0.17920862138271332,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "99543b46a6924fa85380e92eef0ab9ed2ea76c001c7340841b8bebeb4d230536",
+      "edits": [
+        [
+          4,
+          4.99
+        ],
+        [
+          37,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 63,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.04642842337489128,
+      "after": 0.04752737283706665,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "dedf29bc7b5668a1a77964c11a2eea5fb59eb0123ee89c6c3766c62875bb3837",
+      "edits": [
+        [
+          16,
+          0.57
+        ],
+        [
+          30,
+          0.08
+        ],
+        [
+          45,
+          0.52
+        ],
+        [
+          47,
+          0.03
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 0,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9138787388801575,
+      "after": 0.9134697914123535,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "d5b0eacd89a0e2c02d11f81f9ae5e756fd9968b0b904bbaa812dca9b4cd87b79",
+      "edits": [
+        [
+          20,
+          3.83
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 1,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9986164569854736,
+      "after": 0.9986069798469543,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "5c38d8f57eb6f18688c599ce31f023dc3539515c7e7abeedc1a7faabec16cd70",
+      "edits": [
+        [
+          6,
+          0
+        ],
+        [
+          8,
+          0.49
+        ],
+        [
+          50,
+          0.048
+        ],
+        [
+          53,
+          0.111
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 2,
+      "source_row": 599,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9315722584724426,
+      "after": 0.9313724637031555,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "0480681bb085e6d75f22fa8efd799b970bd0c4141b59e1b1b4153b8cc110103a",
+      "edits": [
+        [
+          5,
+          1.09
+        ],
+        [
+          34,
+          0.03
+        ],
+        [
+          51,
+          3.33
+        ],
+        [
+          53,
+          0.003
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 3,
+      "source_row": 50,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9756686687469482,
+      "after": 0.9753477573394775,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "43eb265548f605e6dce6255efdd8189615589978533c65830030320531a5d7dd",
+      "edits": [
+        [
+          2,
+          0.24
+        ],
+        [
+          3,
+          0.04
+        ],
+        [
+          22,
+          0.15
+        ],
+        [
+          26,
+          0.02
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 4,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.003558567026630044,
+      "after": 0.003606699872761965,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "94cb72c2259075a9de78e2792f578d62027b40d10b3d284d9f8713dec907534e",
+      "edits": [
+        [
+          22,
+          0.05
+        ],
+        [
+          23,
+          0.05
+        ],
+        [
+          25,
+          1.95
+        ],
+        [
+          26,
+          1.95
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 5,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.0112824821844697,
+      "after": 0.011300661601126194,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "0af854bcbe90c3c4708047c64f4fc566e6d6b31b3ebb1c1c9fd6e38b0c569def",
+      "edits": [
+        [
+          23,
+          0.04
+        ],
+        [
+          36,
+          1.36
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 6,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.5947670340538025,
+      "after": 0.5947670340538025,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 0,
+      "input_sha256": "b25d66ef2fd9607bb74b44b252fd5ed700f04ed8d16451b53bea10d5b748a4f3",
+      "edits": []
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 7,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.1788768172264099,
+      "after": 0.18185903131961823,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 3,
+      "input_sha256": "eae0f8e39a4b148b227630c43eca3109951c0b8a9cc4959eb31291bff3a20868",
+      "edits": [
+        [
+          6,
+          0.03
+        ],
+        [
+          16,
+          0.55
+        ],
+        [
+          23,
+          0.02
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 8,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9138787388801575,
+      "after": 0.9134697914123535,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "d5b0eacd89a0e2c02d11f81f9ae5e756fd9968b0b904bbaa812dca9b4cd87b79",
+      "edits": [
+        [
+          20,
+          3.83
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 9,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9986164569854736,
+      "after": 0.998604953289032,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "9d39d3386e98644ece4eaedd66afcb83aeffcacd73dd7f78085bd5eaac8c6143",
+      "edits": [
+        [
+          4,
+          0.04
+        ],
+        [
+          26,
+          0.01
+        ],
+        [
+          50,
+          0.034
+        ],
+        [
+          53,
+          0.125
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 10,
+      "source_row": 599,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9315722584724426,
+      "after": 0.931344211101532,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "78044132430ca1db22b7ea5ecc7e29422846f63403708d5253466d8280d81a26",
+      "edits": [
+        [
+          18,
+          2.23
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 11,
+      "source_row": 50,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9756686687469482,
+      "after": 0.975397527217865,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "fcd49c40beb844951fcb40a1ee058b6f5b7752785bc16842e21a54852183ff67",
+      "edits": [
+        [
+          11,
+          0.71
+        ],
+        [
+          26,
+          0.02
+        ],
+        [
+          50,
+          0.043
+        ],
+        [
+          53,
+          0.041
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 12,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.003558567026630044,
+      "after": 0.003580135991796851,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "8b03633058bf2ff3b8c9d95205bb820d8d4ec5251ac0e14f8c2c5aacfccfb2bf",
+      "edits": [
+        [
+          6,
+          0.02
+        ],
+        [
+          17,
+          1.98
+        ],
+        [
+          23,
+          0.02
+        ],
+        [
+          25,
+          1.98
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 13,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.0112824821844697,
+      "after": 0.011419032700359821,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "77d4c795eddf98aa4af1c9cc046995d487d4052e9ac470f8f2a1d36b8b0be9ae",
+      "edits": [
+        [
+          6,
+          0.03
+        ],
+        [
+          14,
+          1.37
+        ],
+        [
+          22,
+          0.02
+        ],
+        [
+          42,
+          1.38
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 14,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.5947670340538025,
+      "after": 0.5947670340538025,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 0,
+      "input_sha256": "b25d66ef2fd9607bb74b44b252fd5ed700f04ed8d16451b53bea10d5b748a4f3",
+      "edits": []
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 15,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.1788768172264099,
+      "after": 0.1780855357646942,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "389d0818265b18ab61c5067e3d3cc22184f506d9fba437bcdabd22b7ce9d27c7",
+      "edits": [
+        [
+          16,
+          0.57
+        ],
+        [
+          23,
+          0.05
+        ],
+        [
+          25,
+          0.03
+        ],
+        [
+          35,
+          1.75
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 16,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9138787388801575,
+      "after": 0.9129599332809448,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "2790818cd89068df955ffb7f5b7baf1c7df5774a54c89c66b65cf85e143f5902",
+      "edits": [
+        [
+          20,
+          3.79
+        ],
+        [
+          29,
+          0.05
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 17,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9986164569854736,
+      "after": 0.9986166954040527,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "08e1f4dc8560a3e412429939855048546f6109398d6e71187f7b3a992e44e080",
+      "edits": [
+        [
+          48,
+          0.006
+        ],
+        [
+          51,
+          0.34
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 18,
+      "source_row": 599,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9315722584724426,
+      "after": 0.9319126605987549,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "2553947be3f1b879c56fe0ccaab3502cbc3bef6c95d8d92d0d8aef08e732d51f",
+      "edits": [
+        [
+          5,
+          1.11
+        ],
+        [
+          30,
+          0.01
+        ],
+        [
+          51,
+          3.331
+        ],
+        [
+          52,
+          0.002
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 19,
+      "source_row": 50,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9756686687469482,
+      "after": 0.9758297204971313,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "b9048000a8b5a9fe1dd72f47451c1784a01a731f326dfd0567229f8ddc4b92ce",
+      "edits": [
+        [
+          14,
+          0.22
+        ],
+        [
+          19,
+          0.04
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 20,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.003558567026630044,
+      "after": 0.003527887864038348,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 3,
+      "input_sha256": "d461691bd3b12b1d9cf0a15c4653adff996c575f260e9b848746188f247071e3",
+      "edits": [
+        [
+          27,
+          3.95
+        ],
+        [
+          29,
+          2.01
+        ],
+        [
+          39,
+          0.04
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 21,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.0112824821844697,
+      "after": 0.011366777122020721,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "791789aea5e32a657ce9269b520791651b88ad0f98ff23e18dd5b3485db34a77",
+      "edits": [
+        [
+          13,
+          0.03
+        ],
+        [
+          36,
+          1.37
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 22,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.5947670340538025,
+      "after": 0.5961534976959229,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "1bd10d70ce23f3a991c9657c1aad571534b98867fa54d7e769ea5057ad86e366",
+      "edits": [
+        [
+          4,
+          4.99
+        ],
+        [
+          14,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 23,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.1788768172264099,
+      "after": 0.1836906373500824,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "c58ac731f868be19d9ee3bbb0db04c018cdd723664f6f09376fbb7877a92e4dd",
+      "edits": [
+        [
+          45,
+          0.55
+        ],
+        [
+          46,
+          0.05
+        ],
+        [
+          49,
+          0.087
+        ],
+        [
+          52,
+          0.001
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 24,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9138787388801575,
+      "after": 0.9134697914123535,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "d5b0eacd89a0e2c02d11f81f9ae5e756fd9968b0b904bbaa812dca9b4cd87b79",
+      "edits": [
+        [
+          20,
+          3.83
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 25,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9986164569854736,
+      "after": 0.998616099357605,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "330cf5f4d6931beb58e6f014360d35eba0fe7edb07c4d592609471bdb2d325b6",
+      "edits": [
+        [
+          11,
+          0.95
+        ],
+        [
+          36,
+          0.01
+        ],
+        [
+          49,
+          0.069
+        ],
+        [
+          52,
+          0.792
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 26,
+      "source_row": 599,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9315722584724426,
+      "after": 0.9312164187431335,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "2f520502767622a1b11e8fb656865fc05c5d1eef48223291809a8f4ee8f6b362",
+      "edits": [
+        [
+          5,
+          1.11
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 27,
+      "source_row": 50,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9756686687469482,
+      "after": 0.9755557775497437,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "40d86729216bffd9806b85c91cab0f9517aec7235ee523cda8fd0f4503511b6e",
+      "edits": [
+        [
+          50,
+          0.002
+        ],
+        [
+          52,
+          0.228
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 28,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.003558567026630044,
+      "after": 0.0035921037197113037,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "fcd868a84339ae11b9184c0a986d4a073293239bcce0f24210faacccf9bfb531",
+      "edits": [
+        [
+          13,
+          0.05
+        ],
+        [
+          25,
+          2.01
+        ],
+        [
+          27,
+          3.99
+        ],
+        [
+          34,
+          1.95
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 29,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.0112824821844697,
+      "after": 0.011319505050778389,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "1bd6807551e5e9305ea14301693741ea3c1ee80480f3127b7756b77f60b18908",
+      "edits": [
+        [
+          48,
+          0.002
+        ],
+        [
+          49,
+          0.199
+        ],
+        [
+          51,
+          0.003
+        ],
+        [
+          52,
+          0.001
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 30,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.5947670340538025,
+      "after": 0.5959505438804626,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "99543b46a6924fa85380e92eef0ab9ed2ea76c001c7340841b8bebeb4d230536",
+      "edits": [
+        [
+          4,
+          4.99
+        ],
+        [
+          37,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 31,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.1788768172264099,
+      "after": 0.17851486802101135,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "4e820a6760ee71ddf0e57f6d9fe3e7fceebdf5166edfcbba019c9eb7bff7a7dc",
+      "edits": [
+        [
+          49,
+          0.083
+        ],
+        [
+          53,
+          0.005
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 32,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9138787388801575,
+      "after": 0.9095731973648071,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "ea27aed49c7e01d46eaeef929990ec6df1b71ca5183e120ef438d8d2d709cdac",
+      "edits": [
+        [
+          20,
+          3.75
+        ],
+        [
+          45,
+          0.09
+        ],
+        [
+          52,
+          1.216
+        ],
+        [
+          53,
+          0.003
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 33,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9986164569854736,
+      "after": 0.9986035227775574,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "ee41bb0da5bb02a369b9d675660a6c1b431db232e3aa34e4c96d32a7c7f0d1f4",
+      "edits": [
+        [
+          3,
+          0.05
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          50,
+          0.095
+        ],
+        [
+          53,
+          0.064
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 34,
+      "source_row": 599,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9315722584724426,
+      "after": 0.931344211101532,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "78044132430ca1db22b7ea5ecc7e29422846f63403708d5253466d8280d81a26",
+      "edits": [
+        [
+          18,
+          2.23
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 35,
+      "source_row": 50,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9756686687469482,
+      "after": 0.9755236506462097,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "edb0f960d4066c113560a1a5970ff614b4c7e92705f439b9efc074e0b0622bf7",
+      "edits": [
+        [
+          10,
+          0.47
+        ],
+        [
+          11,
+          0.76
+        ],
+        [
+          12,
+          0.76
+        ],
+        [
+          22,
+          0.11
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 36,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.003558567026630044,
+      "after": 0.0036609387025237083,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "7b19521cd75e5853f5299f41035d78334e63c2e988d00c5f7a88a0c712ab82fe",
+      "edits": [
+        [
+          22,
+          0.09
+        ],
+        [
+          23,
+          0.05
+        ],
+        [
+          25,
+          1.95
+        ],
+        [
+          26,
+          1.91
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 37,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.0112824821844697,
+      "after": 0.011871346272528172,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "213310eeddbe514077e6d6de7259539a6fc039aa0e94511693baec14ad874112",
+      "edits": [
+        [
+          4,
+          0.02
+        ],
+        [
+          6,
+          0.07
+        ],
+        [
+          24,
+          1.38
+        ],
+        [
+          36,
+          1.33
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 38,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.5947670340538025,
+      "after": 0.6071739792823792,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "f0d30dd6864b41e8a5bad6632deeefb8290c793369ed2f1b67fa8dd58ae16d41",
+      "edits": [
+        [
+          4,
+          4.97
+        ],
+        [
+          6,
+          0.03
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 39,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.1788768172264099,
+      "after": 0.17574568092823029,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 3,
+      "input_sha256": "b448ab6f535bd2e0fae12a164fdd2558027b166eaa9ecd9aae4d75779eb445cc",
+      "edits": [
+        [
+          16,
+          0.5
+        ],
+        [
+          23,
+          0.02
+        ],
+        [
+          41,
+          0.08
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 40,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9138787388801575,
+      "after": 0.9134697914123535,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "d5b0eacd89a0e2c02d11f81f9ae5e756fd9968b0b904bbaa812dca9b4cd87b79",
+      "edits": [
+        [
+          20,
+          3.83
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 41,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9986164569854736,
+      "after": 0.9985849857330322,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "02121b5321077dca2129931fe225dc85e8a8df48e7cd67cea9d5031443617023",
+      "edits": [
+        [
+          16,
+          0.39
+        ],
+        [
+          26,
+          0.05
+        ],
+        [
+          50,
+          0.056
+        ],
+        [
+          53,
+          0.103
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 42,
+      "source_row": 599,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9315722584724426,
+      "after": 0.9312941431999207,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "8c1f3a0c6dc655cb81e1f8335abc2f9a94eef2d80c4c1be395a5774dc1c167a6",
+      "edits": [
+        [
+          18,
+          2.22
+        ],
+        [
+          45,
+          0.02
+        ],
+        [
+          51,
+          3.331
+        ],
+        [
+          53,
+          0.002
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 43,
+      "source_row": 50,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9756686687469482,
+      "after": 0.9751572608947754,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "23861fa89fce588afa4c55d25093acc6634dda1ac2b78f557f53a9453d785107",
+      "edits": [
+        [
+          11,
+          0.69
+        ],
+        [
+          26,
+          0.04
+        ],
+        [
+          50,
+          0.073
+        ],
+        [
+          53,
+          0.011
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 44,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.003558567026630044,
+      "after": 0.0035289425868541002,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "d6c92847dfd0d16aa7b7f466fd27bef422016786eebfd975b8739a63d08042be",
+      "edits": [
+        [
+          23,
+          0.08
+        ],
+        [
+          25,
+          1.92
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 45,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.0112824821844697,
+      "after": 0.011493404395878315,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "df284956b7be1324515fe371a703b3b3b8aa7b9f1c04b9d41a784e09de21dbfe",
+      "edits": [
+        [
+          6,
+          0.02
+        ],
+        [
+          24,
+          1.38
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 46,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.5947670340538025,
+      "after": 0.6030528545379639,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "848a49c44d19d94aa2563a9a9b4c144e8aa16ec45cb6ba44ec7d49909a52aa7b",
+      "edits": [
+        [
+          4,
+          4.98
+        ],
+        [
+          6,
+          0.02
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 47,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.1788768172264099,
+      "after": 0.1816568374633789,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "e982a8a70d5d2cbdf41d181f1465993ec3e6ad867291e0a8ed4e733cd305eed1",
+      "edits": [
+        [
+          6,
+          0.03
+        ],
+        [
+          16,
+          0.51
+        ],
+        [
+          21,
+          0.09
+        ],
+        [
+          45,
+          0.57
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 48,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9138787388801575,
+      "after": 0.9132800698280334,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "ca7bdf0c093dd23c1bdbcb7de1e0e4833e94407a8243b4d3e58a1897e9118ac1",
+      "edits": [
+        [
+          20,
+          3.8
+        ],
+        [
+          25,
+          0.04
+        ],
+        [
+          50,
+          0.004
+        ],
+        [
+          52,
+          1.215
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 49,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9986164569854736,
+      "after": 0.9986050724983215,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 3,
+      "input_sha256": "e093e6f5c16cf1643e47f042566dcdc0b1e3f698a6e6b90faa464fd4cafbc4a8",
+      "edits": [
+        [
+          2,
+          0.42
+        ],
+        [
+          23,
+          0.35
+        ],
+        [
+          38,
+          0.02
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 50,
+      "source_row": 599,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9315722584724426,
+      "after": 0.9314966797828674,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "38309f7d2033f6bd49b2a401b17f18a65786bbf637d47c52380b9f1d333d18f2",
+      "edits": [
+        [
+          11,
+          0.01
+        ],
+        [
+          18,
+          2.23
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 51,
+      "source_row": 50,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9756686687469482,
+      "after": 0.975409984588623,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "35da7c23b545ededc7a26f5889a04e3bd3c0c8cb9d8a55fd26c756aa7bbcfc45",
+      "edits": [
+        [
+          2,
+          0.22
+        ],
+        [
+          30,
+          0.04
+        ],
+        [
+          48,
+          0
+        ],
+        [
+          53,
+          0.12
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 52,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.003558567026630044,
+      "after": 0.0035585297737270594,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "453cdc55a01e91e18e834fbb7dba0b84a5e642e672833ed88ab81a019015a8e3",
+      "edits": [
+        [
+          29,
+          1.98
+        ],
+        [
+          38,
+          0.02
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 53,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.0112824821844697,
+      "after": 0.011327731423079967,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "8ed8e17f35fabec9d905080bd79f08bee295d223f460819f32a814c6530f10bf",
+      "edits": [
+        [
+          48,
+          0.063
+        ],
+        [
+          50,
+          0.142
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 54,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.5947670340538025,
+      "after": 0.5979953408241272,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "e77baae9c58bfcf2bb4f3a747ec47aee25bc55b6f88303bfac61adf42112a5a7",
+      "edits": [
+        [
+          1,
+          0.01
+        ],
+        [
+          4,
+          4.97
+        ],
+        [
+          40,
+          0.01
+        ],
+        [
+          43,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 55,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.1788768172264099,
+      "after": 0.1833081692457199,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "3eb1786a96d6410421098d51a473a4783c4ff8b9a9c6ceffffff0eb2080c6d43",
+      "edits": [
+        [
+          34,
+          0.07
+        ],
+        [
+          45,
+          0.53
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 56,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9138787388801575,
+      "after": 0.9134697914123535,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "d5b0eacd89a0e2c02d11f81f9ae5e756fd9968b0b904bbaa812dca9b4cd87b79",
+      "edits": [
+        [
+          20,
+          3.83
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 57,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9986164569854736,
+      "after": 0.9986336827278137,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "97ee801f97a75bbb92c86d5d3ecae3fb9c6d78ede6494dfa2968beb496241418",
+      "edits": [
+        [
+          4,
+          0.03
+        ],
+        [
+          34,
+          0.02
+        ],
+        [
+          48,
+          0.099
+        ],
+        [
+          53,
+          0.06
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 58,
+      "source_row": 599,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9315722584724426,
+      "after": 0.9312164187431335,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "2f520502767622a1b11e8fb656865fc05c5d1eef48223291809a8f4ee8f6b362",
+      "edits": [
+        [
+          5,
+          1.11
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 59,
+      "source_row": 50,
+      "actual": 1,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.9756686687469482,
+      "after": 0.9755685925483704,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "0d682301f12a6f49746c9b6dd343c09a5588d20f0a289842241bac0de705011a",
+      "edits": [
+        [
+          6,
+          0.03
+        ],
+        [
+          19,
+          0.03
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 60,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.003558567026630044,
+      "after": 0.003573380643501878,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "468031f1efcdb7724840c0632434a581f12bea545084f3eb091ac1ed50c268d5",
+      "edits": [
+        [
+          21,
+          0.08
+        ],
+        [
+          25,
+          1.98
+        ],
+        [
+          34,
+          1.95
+        ],
+        [
+          44,
+          1.99
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 61,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.0112824821844697,
+      "after": 0.011324954219162464,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 3,
+      "input_sha256": "9154251d0d226cabe222cf218c31cefc270666b5d432a90b090be885a0d0eaaa",
+      "edits": [
+        [
+          49,
+          0.19
+        ],
+        [
+          50,
+          0.122
+        ],
+        [
+          53,
+          0.098
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 62,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.5947670340538025,
+      "after": 0.5959505438804626,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "99543b46a6924fa85380e92eef0ab9ed2ea76c001c7340841b8bebeb4d230536",
+      "edits": [
+        [
+          4,
+          4.99
+        ],
+        [
+          37,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 63,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "pgd",
+      "threshold": 0.8286198377609253,
+      "before": 0.1788768172264099,
+      "after": 0.18348318338394165,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "dedf29bc7b5668a1a77964c11a2eea5fb59eb0123ee89c6c3766c62875bb3837",
+      "edits": [
+        [
+          16,
+          0.57
+        ],
+        [
+          30,
+          0.08
+        ],
+        [
+          45,
+          0.52
+        ],
+        [
+          47,
+          0.03
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 0,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.7818871140480042,
+      "after": 0.7818871140480042,
+      "eligible": false,
+      "caused_error": false,
+      "wrong_after": true,
+      "changed_fields": 2,
+      "input_sha256": "d5b0eacd89a0e2c02d11f81f9ae5e756fd9968b0b904bbaa812dca9b4cd87b79",
+      "edits": [
+        [
+          20,
+          3.83
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 1,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9988922476768494,
+      "after": 0.9988471269607544,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "5c38d8f57eb6f18688c599ce31f023dc3539515c7e7abeedc1a7faabec16cd70",
+      "edits": [
+        [
+          6,
+          0
+        ],
+        [
+          8,
+          0.49
+        ],
+        [
+          50,
+          0.048
+        ],
+        [
+          53,
+          0.111
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 2,
+      "source_row": 599,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9105964303016663,
+      "after": 0.9096462726593018,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "0480681bb085e6d75f22fa8efd799b970bd0c4141b59e1b1b4153b8cc110103a",
+      "edits": [
+        [
+          5,
+          1.09
+        ],
+        [
+          34,
+          0.03
+        ],
+        [
+          51,
+          3.33
+        ],
+        [
+          53,
+          0.003
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 3,
+      "source_row": 50,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9727711081504822,
+      "after": 0.9715737104415894,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "43eb265548f605e6dce6255efdd8189615589978533c65830030320531a5d7dd",
+      "edits": [
+        [
+          2,
+          0.24
+        ],
+        [
+          3,
+          0.04
+        ],
+        [
+          22,
+          0.15
+        ],
+        [
+          26,
+          0.02
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 4,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.001997733488678932,
+      "after": 0.002138296840712428,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "94cb72c2259075a9de78e2792f578d62027b40d10b3d284d9f8713dec907534e",
+      "edits": [
+        [
+          22,
+          0.05
+        ],
+        [
+          23,
+          0.05
+        ],
+        [
+          25,
+          1.95
+        ],
+        [
+          26,
+          1.95
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 5,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.0017942350823432207,
+      "after": 0.0018604421056807041,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "0af854bcbe90c3c4708047c64f4fc566e6d6b31b3ebb1c1c9fd6e38b0c569def",
+      "edits": [
+        [
+          23,
+          0.04
+        ],
+        [
+          36,
+          1.36
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 6,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.37265220284461975,
+      "after": 0.37265220284461975,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 0,
+      "input_sha256": "b25d66ef2fd9607bb74b44b252fd5ed700f04ed8d16451b53bea10d5b748a4f3",
+      "edits": []
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 7,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.6923873424530029,
+      "after": 0.7060482501983643,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 3,
+      "input_sha256": "eae0f8e39a4b148b227630c43eca3109951c0b8a9cc4959eb31291bff3a20868",
+      "edits": [
+        [
+          6,
+          0.03
+        ],
+        [
+          16,
+          0.55
+        ],
+        [
+          23,
+          0.02
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 8,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.7818871140480042,
+      "after": 0.7818871140480042,
+      "eligible": false,
+      "caused_error": false,
+      "wrong_after": true,
+      "changed_fields": 2,
+      "input_sha256": "d5b0eacd89a0e2c02d11f81f9ae5e756fd9968b0b904bbaa812dca9b4cd87b79",
+      "edits": [
+        [
+          20,
+          3.83
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 9,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9988922476768494,
+      "after": 0.9988478422164917,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "9d39d3386e98644ece4eaedd66afcb83aeffcacd73dd7f78085bd5eaac8c6143",
+      "edits": [
+        [
+          4,
+          0.04
+        ],
+        [
+          26,
+          0.01
+        ],
+        [
+          50,
+          0.034
+        ],
+        [
+          53,
+          0.125
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 10,
+      "source_row": 599,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9105964303016663,
+      "after": 0.9105964303016663,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "78044132430ca1db22b7ea5ecc7e29422846f63403708d5253466d8280d81a26",
+      "edits": [
+        [
+          18,
+          2.23
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 11,
+      "source_row": 50,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9727711081504822,
+      "after": 0.9716570973396301,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "fcd49c40beb844951fcb40a1ee058b6f5b7752785bc16842e21a54852183ff67",
+      "edits": [
+        [
+          11,
+          0.71
+        ],
+        [
+          26,
+          0.02
+        ],
+        [
+          50,
+          0.043
+        ],
+        [
+          53,
+          0.041
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 12,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.001997733488678932,
+      "after": 0.001997733488678932,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "8b03633058bf2ff3b8c9d95205bb820d8d4ec5251ac0e14f8c2c5aacfccfb2bf",
+      "edits": [
+        [
+          6,
+          0.02
+        ],
+        [
+          17,
+          1.98
+        ],
+        [
+          23,
+          0.02
+        ],
+        [
+          25,
+          1.98
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 13,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.0017942350823432207,
+      "after": 0.0018814157228916883,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "77d4c795eddf98aa4af1c9cc046995d487d4052e9ac470f8f2a1d36b8b0be9ae",
+      "edits": [
+        [
+          6,
+          0.03
+        ],
+        [
+          14,
+          1.37
+        ],
+        [
+          22,
+          0.02
+        ],
+        [
+          42,
+          1.38
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 14,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.37265220284461975,
+      "after": 0.37265220284461975,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 0,
+      "input_sha256": "b25d66ef2fd9607bb74b44b252fd5ed700f04ed8d16451b53bea10d5b748a4f3",
+      "edits": []
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 15,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.6923873424530029,
+      "after": 0.6960646510124207,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "389d0818265b18ab61c5067e3d3cc22184f506d9fba437bcdabd22b7ce9d27c7",
+      "edits": [
+        [
+          16,
+          0.57
+        ],
+        [
+          23,
+          0.05
+        ],
+        [
+          25,
+          0.03
+        ],
+        [
+          35,
+          1.75
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 16,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.7818871140480042,
+      "after": 0.7761470079421997,
+      "eligible": false,
+      "caused_error": false,
+      "wrong_after": true,
+      "changed_fields": 2,
+      "input_sha256": "2790818cd89068df955ffb7f5b7baf1c7df5774a54c89c66b65cf85e143f5902",
+      "edits": [
+        [
+          20,
+          3.79
+        ],
+        [
+          29,
+          0.05
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 17,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9988922476768494,
+      "after": 0.998885452747345,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "08e1f4dc8560a3e412429939855048546f6109398d6e71187f7b3a992e44e080",
+      "edits": [
+        [
+          48,
+          0.006
+        ],
+        [
+          51,
+          0.34
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 18,
+      "source_row": 599,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9105964303016663,
+      "after": 0.9114254117012024,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "2553947be3f1b879c56fe0ccaab3502cbc3bef6c95d8d92d0d8aef08e732d51f",
+      "edits": [
+        [
+          5,
+          1.11
+        ],
+        [
+          30,
+          0.01
+        ],
+        [
+          51,
+          3.331
+        ],
+        [
+          52,
+          0.002
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 19,
+      "source_row": 50,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9727711081504822,
+      "after": 0.9734795093536377,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "b9048000a8b5a9fe1dd72f47451c1784a01a731f326dfd0567229f8ddc4b92ce",
+      "edits": [
+        [
+          14,
+          0.22
+        ],
+        [
+          19,
+          0.04
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 20,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.001997733488678932,
+      "after": 0.001970305573195219,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 3,
+      "input_sha256": "d461691bd3b12b1d9cf0a15c4653adff996c575f260e9b848746188f247071e3",
+      "edits": [
+        [
+          27,
+          3.95
+        ],
+        [
+          29,
+          2.01
+        ],
+        [
+          39,
+          0.04
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 21,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.0017942350823432207,
+      "after": 0.0018428978510200977,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "791789aea5e32a657ce9269b520791651b88ad0f98ff23e18dd5b3485db34a77",
+      "edits": [
+        [
+          13,
+          0.03
+        ],
+        [
+          36,
+          1.37
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 22,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.37265220284461975,
+      "after": 0.37265220284461975,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "1bd10d70ce23f3a991c9657c1aad571534b98867fa54d7e769ea5057ad86e366",
+      "edits": [
+        [
+          4,
+          4.99
+        ],
+        [
+          14,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 23,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.6923873424530029,
+      "after": 0.6879074573516846,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "c58ac731f868be19d9ee3bbb0db04c018cdd723664f6f09376fbb7877a92e4dd",
+      "edits": [
+        [
+          45,
+          0.55
+        ],
+        [
+          46,
+          0.05
+        ],
+        [
+          49,
+          0.087
+        ],
+        [
+          52,
+          0.001
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 24,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.7818871140480042,
+      "after": 0.7818871140480042,
+      "eligible": false,
+      "caused_error": false,
+      "wrong_after": true,
+      "changed_fields": 2,
+      "input_sha256": "d5b0eacd89a0e2c02d11f81f9ae5e756fd9968b0b904bbaa812dca9b4cd87b79",
+      "edits": [
+        [
+          20,
+          3.83
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 25,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9988922476768494,
+      "after": 0.9988922476768494,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "330cf5f4d6931beb58e6f014360d35eba0fe7edb07c4d592609471bdb2d325b6",
+      "edits": [
+        [
+          11,
+          0.95
+        ],
+        [
+          36,
+          0.01
+        ],
+        [
+          49,
+          0.069
+        ],
+        [
+          52,
+          0.792
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 26,
+      "source_row": 599,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9105964303016663,
+      "after": 0.9105964303016663,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "2f520502767622a1b11e8fb656865fc05c5d1eef48223291809a8f4ee8f6b362",
+      "edits": [
+        [
+          5,
+          1.11
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 27,
+      "source_row": 50,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9727711081504822,
+      "after": 0.9726753234863281,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "40d86729216bffd9806b85c91cab0f9517aec7235ee523cda8fd0f4503511b6e",
+      "edits": [
+        [
+          50,
+          0.002
+        ],
+        [
+          52,
+          0.228
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 28,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.001997733488678932,
+      "after": 0.0020738441962748766,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "fcd868a84339ae11b9184c0a986d4a073293239bcce0f24210faacccf9bfb531",
+      "edits": [
+        [
+          13,
+          0.05
+        ],
+        [
+          25,
+          2.01
+        ],
+        [
+          27,
+          3.99
+        ],
+        [
+          34,
+          1.95
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 29,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.0017942350823432207,
+      "after": 0.0018069519428536296,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "1bd6807551e5e9305ea14301693741ea3c1ee80480f3127b7756b77f60b18908",
+      "edits": [
+        [
+          48,
+          0.002
+        ],
+        [
+          49,
+          0.199
+        ],
+        [
+          51,
+          0.003
+        ],
+        [
+          52,
+          0.001
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 30,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.37265220284461975,
+      "after": 0.37265220284461975,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "99543b46a6924fa85380e92eef0ab9ed2ea76c001c7340841b8bebeb4d230536",
+      "edits": [
+        [
+          4,
+          4.99
+        ],
+        [
+          37,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 31,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.6923873424530029,
+      "after": 0.6933938264846802,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "4e820a6760ee71ddf0e57f6d9fe3e7fceebdf5166edfcbba019c9eb7bff7a7dc",
+      "edits": [
+        [
+          49,
+          0.083
+        ],
+        [
+          53,
+          0.005
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 32,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.7818871140480042,
+      "after": 0.7675009965896606,
+      "eligible": false,
+      "caused_error": false,
+      "wrong_after": true,
+      "changed_fields": 4,
+      "input_sha256": "ea27aed49c7e01d46eaeef929990ec6df1b71ca5183e120ef438d8d2d709cdac",
+      "edits": [
+        [
+          20,
+          3.75
+        ],
+        [
+          45,
+          0.09
+        ],
+        [
+          52,
+          1.216
+        ],
+        [
+          53,
+          0.003
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 33,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9988922476768494,
+      "after": 0.9988125562667847,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "ee41bb0da5bb02a369b9d675660a6c1b431db232e3aa34e4c96d32a7c7f0d1f4",
+      "edits": [
+        [
+          3,
+          0.05
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          50,
+          0.095
+        ],
+        [
+          53,
+          0.064
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 34,
+      "source_row": 599,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9105964303016663,
+      "after": 0.9105964303016663,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "78044132430ca1db22b7ea5ecc7e29422846f63403708d5253466d8280d81a26",
+      "edits": [
+        [
+          18,
+          2.23
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 35,
+      "source_row": 50,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9727711081504822,
+      "after": 0.9718347191810608,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "edb0f960d4066c113560a1a5970ff614b4c7e92705f439b9efc074e0b0622bf7",
+      "edits": [
+        [
+          10,
+          0.47
+        ],
+        [
+          11,
+          0.76
+        ],
+        [
+          12,
+          0.76
+        ],
+        [
+          22,
+          0.11
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 36,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.001997733488678932,
+      "after": 0.0022390319500118494,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "7b19521cd75e5853f5299f41035d78334e63c2e988d00c5f7a88a0c712ab82fe",
+      "edits": [
+        [
+          22,
+          0.09
+        ],
+        [
+          23,
+          0.05
+        ],
+        [
+          25,
+          1.95
+        ],
+        [
+          26,
+          1.91
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 37,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.0017942350823432207,
+      "after": 0.0019174863118678331,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "213310eeddbe514077e6d6de7259539a6fc039aa0e94511693baec14ad874112",
+      "edits": [
+        [
+          4,
+          0.02
+        ],
+        [
+          6,
+          0.07
+        ],
+        [
+          24,
+          1.38
+        ],
+        [
+          36,
+          1.33
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 38,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.37265220284461975,
+      "after": 0.3956109285354614,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "f0d30dd6864b41e8a5bad6632deeefb8290c793369ed2f1b67fa8dd58ae16d41",
+      "edits": [
+        [
+          4,
+          4.97
+        ],
+        [
+          6,
+          0.03
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 39,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.6923873424530029,
+      "after": 0.6664699912071228,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 3,
+      "input_sha256": "b448ab6f535bd2e0fae12a164fdd2558027b166eaa9ecd9aae4d75779eb445cc",
+      "edits": [
+        [
+          16,
+          0.5
+        ],
+        [
+          23,
+          0.02
+        ],
+        [
+          41,
+          0.08
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 40,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.7818871140480042,
+      "after": 0.7818871140480042,
+      "eligible": false,
+      "caused_error": false,
+      "wrong_after": true,
+      "changed_fields": 2,
+      "input_sha256": "d5b0eacd89a0e2c02d11f81f9ae5e756fd9968b0b904bbaa812dca9b4cd87b79",
+      "edits": [
+        [
+          20,
+          3.83
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 41,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9988922476768494,
+      "after": 0.9988161325454712,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "02121b5321077dca2129931fe225dc85e8a8df48e7cd67cea9d5031443617023",
+      "edits": [
+        [
+          16,
+          0.39
+        ],
+        [
+          26,
+          0.05
+        ],
+        [
+          50,
+          0.056
+        ],
+        [
+          53,
+          0.103
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 42,
+      "source_row": 599,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9105964303016663,
+      "after": 0.9105964303016663,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "8c1f3a0c6dc655cb81e1f8335abc2f9a94eef2d80c4c1be395a5774dc1c167a6",
+      "edits": [
+        [
+          18,
+          2.22
+        ],
+        [
+          45,
+          0.02
+        ],
+        [
+          51,
+          3.331
+        ],
+        [
+          53,
+          0.002
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 43,
+      "source_row": 50,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9727711081504822,
+      "after": 0.9697078466415405,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "23861fa89fce588afa4c55d25093acc6634dda1ac2b78f557f53a9453d785107",
+      "edits": [
+        [
+          11,
+          0.69
+        ],
+        [
+          26,
+          0.04
+        ],
+        [
+          50,
+          0.073
+        ],
+        [
+          53,
+          0.011
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 44,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.001997733488678932,
+      "after": 0.002087418921291828,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "d6c92847dfd0d16aa7b7f466fd27bef422016786eebfd975b8739a63d08042be",
+      "edits": [
+        [
+          23,
+          0.08
+        ],
+        [
+          25,
+          1.92
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 45,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.0017942350823432207,
+      "after": 0.0018211051356047392,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "df284956b7be1324515fe371a703b3b3b8aa7b9f1c04b9d41a784e09de21dbfe",
+      "edits": [
+        [
+          6,
+          0.02
+        ],
+        [
+          24,
+          1.38
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 46,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.37265220284461975,
+      "after": 0.37514689564704895,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "848a49c44d19d94aa2563a9a9b4c144e8aa16ec45cb6ba44ec7d49909a52aa7b",
+      "edits": [
+        [
+          4,
+          4.98
+        ],
+        [
+          6,
+          0.02
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 47,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.6923873424530029,
+      "after": 0.7240058779716492,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "e982a8a70d5d2cbdf41d181f1465993ec3e6ad867291e0a8ed4e733cd305eed1",
+      "edits": [
+        [
+          6,
+          0.03
+        ],
+        [
+          16,
+          0.51
+        ],
+        [
+          21,
+          0.09
+        ],
+        [
+          45,
+          0.57
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 48,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.7818871140480042,
+      "after": 0.7799789905548096,
+      "eligible": false,
+      "caused_error": false,
+      "wrong_after": true,
+      "changed_fields": 4,
+      "input_sha256": "ca7bdf0c093dd23c1bdbcb7de1e0e4833e94407a8243b4d3e58a1897e9118ac1",
+      "edits": [
+        [
+          20,
+          3.8
+        ],
+        [
+          25,
+          0.04
+        ],
+        [
+          50,
+          0.004
+        ],
+        [
+          52,
+          1.215
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 49,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9988922476768494,
+      "after": 0.9988777041435242,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 3,
+      "input_sha256": "e093e6f5c16cf1643e47f042566dcdc0b1e3f698a6e6b90faa464fd4cafbc4a8",
+      "edits": [
+        [
+          2,
+          0.42
+        ],
+        [
+          23,
+          0.35
+        ],
+        [
+          38,
+          0.02
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 50,
+      "source_row": 599,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9105964303016663,
+      "after": 0.9105964303016663,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "38309f7d2033f6bd49b2a401b17f18a65786bbf637d47c52380b9f1d333d18f2",
+      "edits": [
+        [
+          11,
+          0.01
+        ],
+        [
+          18,
+          2.23
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 51,
+      "source_row": 50,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9727711081504822,
+      "after": 0.9733507037162781,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "35da7c23b545ededc7a26f5889a04e3bd3c0c8cb9d8a55fd26c756aa7bbcfc45",
+      "edits": [
+        [
+          2,
+          0.22
+        ],
+        [
+          30,
+          0.04
+        ],
+        [
+          48,
+          0
+        ],
+        [
+          53,
+          0.12
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 52,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.001997733488678932,
+      "after": 0.001997733488678932,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "453cdc55a01e91e18e834fbb7dba0b84a5e642e672833ed88ab81a019015a8e3",
+      "edits": [
+        [
+          29,
+          1.98
+        ],
+        [
+          38,
+          0.02
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 53,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.0017942350823432207,
+      "after": 0.0017794991144910455,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "8ed8e17f35fabec9d905080bd79f08bee295d223f460819f32a814c6530f10bf",
+      "edits": [
+        [
+          48,
+          0.063
+        ],
+        [
+          50,
+          0.142
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 54,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.37265220284461975,
+      "after": 0.37514689564704895,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "e77baae9c58bfcf2bb4f3a747ec47aee25bc55b6f88303bfac61adf42112a5a7",
+      "edits": [
+        [
+          1,
+          0.01
+        ],
+        [
+          4,
+          4.97
+        ],
+        [
+          40,
+          0.01
+        ],
+        [
+          43,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 55,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.6923873424530029,
+      "after": 0.6859602332115173,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "3eb1786a96d6410421098d51a473a4783c4ff8b9a9c6ceffffff0eb2080c6d43",
+      "edits": [
+        [
+          34,
+          0.07
+        ],
+        [
+          45,
+          0.53
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 56,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.7818871140480042,
+      "after": 0.7818871140480042,
+      "eligible": false,
+      "caused_error": false,
+      "wrong_after": true,
+      "changed_fields": 2,
+      "input_sha256": "d5b0eacd89a0e2c02d11f81f9ae5e756fd9968b0b904bbaa812dca9b4cd87b79",
+      "edits": [
+        [
+          20,
+          3.83
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 57,
+      "source_row": 1140,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9988922476768494,
+      "after": 0.9988473653793335,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "97ee801f97a75bbb92c86d5d3ecae3fb9c6d78ede6494dfa2968beb496241418",
+      "edits": [
+        [
+          4,
+          0.03
+        ],
+        [
+          34,
+          0.02
+        ],
+        [
+          48,
+          0.099
+        ],
+        [
+          53,
+          0.06
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 58,
+      "source_row": 599,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9105964303016663,
+      "after": 0.9105964303016663,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "2f520502767622a1b11e8fb656865fc05c5d1eef48223291809a8f4ee8f6b362",
+      "edits": [
+        [
+          5,
+          1.11
+        ],
+        [
+          26,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 59,
+      "source_row": 50,
+      "actual": 1,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.9727711081504822,
+      "after": 0.9737111330032349,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "0d682301f12a6f49746c9b6dd343c09a5588d20f0a289842241bac0de705011a",
+      "edits": [
+        [
+          6,
+          0.03
+        ],
+        [
+          19,
+          0.03
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 60,
+      "source_row": 3710,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.001997733488678932,
+      "after": 0.002074358519166708,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "468031f1efcdb7724840c0632434a581f12bea545084f3eb091ac1ed50c268d5",
+      "edits": [
+        [
+          21,
+          0.08
+        ],
+        [
+          25,
+          1.98
+        ],
+        [
+          34,
+          1.95
+        ],
+        [
+          44,
+          1.99
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 61,
+      "source_row": 2476,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.0017942350823432207,
+      "after": 0.0018447504844516516,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 3,
+      "input_sha256": "9154251d0d226cabe222cf218c31cefc270666b5d432a90b090be885a0d0eaaa",
+      "edits": [
+        [
+          49,
+          0.19
+        ],
+        [
+          50,
+          0.122
+        ],
+        [
+          53,
+          0.098
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 62,
+      "source_row": 2416,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.37265220284461975,
+      "after": 0.37265220284461975,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 2,
+      "input_sha256": "99543b46a6924fa85380e92eef0ab9ed2ea76c001c7340841b8bebeb4d230536",
+      "edits": [
+        [
+          4,
+          4.99
+        ],
+        [
+          37,
+          0.01
+        ]
+      ]
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 63,
+      "source_row": 2140,
+      "actual": 0,
+      "model": "squeezed",
+      "threshold": 0.8262262344360352,
+      "before": 0.6923873424530029,
+      "after": 0.6751343607902527,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 4,
+      "input_sha256": "dedf29bc7b5668a1a77964c11a2eea5fb59eb0123ee89c6c3766c62875bb3837",
+      "edits": [
+        [
+          16,
+          0.57
+        ],
+        [
+          30,
+          0.08
+        ],
+        [
+          45,
+          0.52
+        ],
+        [
+          47,
+          0.03
+        ]
+      ]
+    }
+  ],
+  "defender_predictions": 512,
+  "invalid_subsets": 0,
+  "notes": "Fresh defender audits of fixed saved edits, not additional attacker queries. Trial counts include repeats; unique-source rates count each record once. Reduction is exhaustive only over subsets of the selected final edits, not all possible edits. Coverage is observed on selected records, not a population robustness estimate.",
+  "result_sha256": "97f5574c17e76f34b2c6425ef07bbe77eadc6cdd36deb897ad9ac91eda768b7b"
+}

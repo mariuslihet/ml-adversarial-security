@@ -4,6 +4,26 @@ An entirely local Python experiment system for evasion, training-data poisoning,
 
 This is a feature-space research harness. A valid vector is **not proof that a corresponding email can be constructed**. It does not modify live mail systems, reconstruct messages, or establish deployment readiness. The dataset is historical; results do not establish performance on present-day spam, malware, or network intrusion traffic.
 
+## Adaptive attack studies
+
+**Attack analysis** adds three tools for saved adaptive studies:
+
+- **Attack transfer:** choose a study and up to eight trained filters. Rerun every retained edited input and its original against each filter at that filter's own threshold. Inspect newly caused mistakes, existing mistakes, individual scores, distinct failing source records, and exact inputs. A failure against the original target does not imply transfer to other filters.
+- **Edit reduction:** select one recorded trial. Test every subset of its final changed measurements, up to twelve fields (4,096 combinations). Reject subsets that violate the trial's original precision, distance, locked-field, or paired-total rules. Rerun the frozen target, including ensembles, confidence corrections, and detectors. Report the fewest retained fields among valid successful subsets and all equally small solutions. This minimum applies only to subsets of these exact saved edits, not other edit values or the entire input space.
+- **Combined attack coverage:** combine up to eight studies from the same verified source run. Rerun their edits against selected filters, count each source record once, and report the failures found beyond the strongest individual selected study. Shared source counts are explicit; different source cohorts are not assumed to be matched. The combined rate describes the selected evidence, not population robustness.
+
+All three tools export measured summaries, every evaluated input (including exact sparse edits and input digest), and complete JSON evidence with a result fingerprint and source-study fingerprints. Their prediction counts are separate defender evaluations, not attacker-query costs. The UI keeps the last analysis while navigating within this session; download evidence to retain the analysis across a full page reload. Analyses above 32,768 individual defender predictions are rejected. These tools use verified existing attacks; they do not claim to optimize new attacks against each selected defender.
+
+Open **Adaptive attacks** in the local dashboard to generate fresh attacks against the selected saved filter, a newly fitted ensemble, a confidence-corrected filter, or the original filter with its unusual-input detector. These attacks send real HTTP requests to a private prediction server on this computer. The server enforces each trial's query allowance and input rules; decision-only attackers receive the decision without a probability. They do not receive model weights or free final-check feedback through this interface. The search assumes knowledge of the measurement schema and training scale.
+
+Cross multiple change limits, attacker seeds, and feedback types on identical source records. Both goals are supported: make spam pass and make regular email get flagged. Sampling spans four score bands of the original filter, using the same reference across target types. Originally wrong decisions are counted separately from errors caused by an attack. Study summaries report actual query use, variation across seeds, and errors discovered at recorded query allowances. No interpolation supplies missing outcomes.
+
+Choose how many fields may change, word or punctuation fields, individual or combined distance limits, and either independent changes or paired changes that preserve frequency totals. Word values retain two decimal places, punctuation values three, and capital-run measurements remain locked. The server rejects invalid changes before inference. A finite proposal limit prevents endless searches when valid distinct edits are scarce; reaching it is reported separately from exhausting the model query budget. A search finding no error does not prove robustness, and the smallest successful edit found is not a proven minimum.
+
+Inspect any trial's final retained input **or any individual submitted API query**. Each request records exact sparse edits, a server-returned input digest, the feedback actually disclosed, distance, and local HTTP timing. Download the measured summary, all trial records, query curves, all 57 selected-input measurements, or the complete evidence. Saved studies pin source data, checkpoints, target parameters, validation roles, loaded implementation hashes, and runtime versions; changed or damaged evidence is rejected. Ensemble weights and confidence corrections fit on validation records separated from threshold selection. Test labels are used to measure attack outcomes, not fit those defenses.
+
+These are new locally implemented query searches; the existing ART and CleverHans attacks remain available in **Attack tests**. Local HTTP timing is not remote-service latency. This feature does not establish present-day mail performance or whether edited measurements correspond to a constructible complete message.
+
 ## Setup and reproducible execution
 
 **Model lab** adds three tools to the dashboard:

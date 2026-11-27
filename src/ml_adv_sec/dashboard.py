@@ -280,8 +280,12 @@ def handler_for(reports, jobs=None):
     jobs.campaign_manager = campaigns
     from .dashboard_presets import ExperimentPresets
     presets = ExperimentPresets(jobs, campaigns, views)
+    from .dashboard_adaptive import AdaptiveTests
+    adaptive = AdaptiveTests(views)
+    from .dashboard_attack_analysis import AttackAnalysis
+    attack_analysis = AttackAnalysis(adaptive)
     token = secrets.token_urlsafe(32)
-    static = {"/": ("index.html", "text/html"), "/app.js": ("app.js", "text/javascript"), "/features.js": ("features.js", "text/javascript"), "/analysis.js": ("analysis.js", "text/javascript"), "/research.js": ("research.js", "text/javascript"), "/segments.js": ("segments.js", "text/javascript"), "/investigations.js": ("investigations.js", "text/javascript"), "/campaigns.js": ("campaigns.js", "text/javascript"), "/presets.js": ("presets.js", "text/javascript"), "/replay.js": ("replay.js", "text/javascript"), "/lab.js": ("lab.js", "text/javascript"), "/style.css": ("style.css", "text/css")}
+    static = {"/": ("index.html", "text/html"), "/app.js": ("app.js", "text/javascript"), "/features.js": ("features.js", "text/javascript"), "/analysis.js": ("analysis.js", "text/javascript"), "/research.js": ("research.js", "text/javascript"), "/segments.js": ("segments.js", "text/javascript"), "/investigations.js": ("investigations.js", "text/javascript"), "/campaigns.js": ("campaigns.js", "text/javascript"), "/presets.js": ("presets.js", "text/javascript"), "/replay.js": ("replay.js", "text/javascript"), "/lab.js": ("lab.js", "text/javascript"), "/adaptive.js": ("adaptive.js", "text/javascript"), "/attack-analysis.js": ("attack-analysis.js", "text/javascript"), "/style.css": ("style.css", "text/css")}
 
     class Handler(BaseHTTPRequestHandler):
         def do_GET(self):
@@ -292,6 +296,19 @@ def handler_for(reports, jobs=None):
             def q(name, default=""):
                 return query.get(name, [default])[0]
             try:
+                if route in {"/api/adaptive-tests", "/api/adaptive-test", "/api/adaptive-test.json", "/api/adaptive-test.csv", "/api/adaptive-record"}:
+                    try:
+                        if route == "/api/adaptive-tests":
+                            result = adaptive.listing()
+                        elif route == "/api/adaptive-record":
+                            result = adaptive.record(q("id"), int(q("index", "-1")), int(q("query")) if q("query") else None)
+                        elif route.endswith(".csv"):
+                            return self.respond(adaptive.export(q("id"), q("scope", "records"), int(q("index", "-1")), int(q("query")) if q("query") else None), "text/csv", filename="adaptive-tests.csv")
+                        else:
+                            result = adaptive.read(q("id"), traces=route.endswith(".json"))
+                    except ValueError as exc:
+                        return self.respond(json.dumps({"error": str(exc)}).encode(), "application/json", 400)
+                    return self.respond(json.dumps(result, allow_nan=False).encode(), "application/json", filename="adaptive-test-evidence.json" if route.endswith(".json") else None)
                 if route == "/api/model-lab-options":
                     return self.respond(json.dumps(views.lab_options(q("run"), q("report_sha256")), allow_nan=False).encode(), "application/json")
                 if route in {"/api/model-lab", "/api/model-lab.csv", "/api/model-lab-recipe"}:
@@ -429,7 +446,11 @@ def handler_for(reports, jobs=None):
                 if not isinstance(values, dict):
                     raise ValueError("Send run settings as an object")
                 route = urlsplit(self.path).path
-                if route == "/api/presets/save":
+                if route == "/api/attack-analysis":
+                    result = attack_analysis.run(values)
+                elif route == "/api/adaptive-tests":
+                    result = adaptive.run(values)
+                elif route == "/api/presets/save":
                     result = presets.save(values)
                 elif route == "/api/presets/run":
                     result = presets.run(values)

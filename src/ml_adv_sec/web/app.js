@@ -9,6 +9,8 @@ try {const draft = JSON.parse(sessionStorage.getItem("filter-run-draft") || "{}"
 const modelNames = {clean: "Original filter", tree: "Tree filter", pgd: "Attack-trained", trades: "Stability-trained", squeezed: "Rounded inputs", "squeezed-bpda": "Rounded inputs"};
 const pages = {overview: ["Overview", "Test results"], attacks: ["Attack tests", "Attack tests"], training: ["Training changes", "Training changes"], details: ["Run details", "About this run"]};
 pages.lab = ["Model lab", "Model lab"];
+pages["attack-analysis"] = ["Attack analysis", "Attack analysis"];
+pages.adaptive = ["Adaptive attacks", "Adaptive attack tests"];
 pages.runs = ["Run experiments", "Run an experiment"];
 pages.records = ["Record explorer", "Record explorer"];
 pages.compare = ["Compare runs", "Compare runs"];
@@ -138,6 +140,8 @@ function detailsPage() {
 }
 
 function bindContent() {
+  bindAdaptiveContent();
+  bindAttackAnalysis();
   bindModelLab();
   bindAttackReplay();
   $("#glance-model")?.addEventListener("change", e => {state.glance = e.target.value; $("#glance-body").innerHTML = glanceBody();});
@@ -177,7 +181,7 @@ function render() {
     content.setAttribute("aria-busy", String(state.loading)); return;
   }
   $("#subtitle").textContent = state.page === "campaigns" ? "Queue actual local experiments and compare their verified results." : state.page === "notebook" ? "Local notes bound to actual records and saved model results." : state.page === "runs" ? "Train the filters, run the attacks, and measure the results on this computer." : `Spambase · ${num(state.report.dataset.split_sizes.test)} test emails · ${num(state.report.counts.attack_samples)} spam emails attacked`;
-  content.innerHTML = ({overview, attacks: attackPage, training: trainingPage, details: detailsPage, runs: runPage, records: recordsPage, compare: comparisonPage, decision: decisionLabPage, disagreements: disagreementPage, importance: importancePage, overlap: overlapPage, slices: slicesPage, shift: shiftPage, budgets: budgetPage, notebook: notebookPage, campaigns: campaignPage, lab: modelLabPage}[state.page] || overview)();
+  content.innerHTML = ({overview, attacks: attackPage, training: trainingPage, details: detailsPage, runs: runPage, records: recordsPage, compare: comparisonPage, decision: decisionLabPage, disagreements: disagreementPage, importance: importancePage, overlap: overlapPage, slices: slicesPage, shift: shiftPage, budgets: budgetPage, notebook: notebookPage, campaigns: campaignPage, lab: modelLabPage, adaptive: adaptivePage, "attack-analysis": attackAnalysisPage}[state.page] || overview)();
   content.setAttribute("aria-busy", "false");
   $("#updated").textContent = state.updated ? `Results saved ${new Date(state.updated).toLocaleString(undefined, {month: "short", day: "numeric", hour: "2-digit", minute: "2-digit"})}` : "";
   bindContent();

@@ -1,0 +1,163 @@
+{
+  "analyses": [
+    {
+      "tool": "transfer",
+      "predictions": 512,
+      "rows": 256,
+      "result_sha256": "97f5574c17e76f34b2c6425ef07bbe77eadc6cdd36deb897ad9ac91eda768b7b",
+      "summary": [
+        {
+          "model": "clean",
+          "trials": 64,
+          "eligible_trials": 56,
+          "caused_errors": 0,
+          "unique_sources": 8,
+          "eligible_sources": 7,
+          "sources_failing_at_least_once": 0,
+          "observed_failure_rate": 0,
+          "shared_sources": 8,
+          "shared_sources_failing": 0,
+          "sources_failed_in_every_study": 0,
+          "added_beyond_best_single_study": 0
+        },
+        {
+          "model": "tree",
+          "trials": 64,
+          "eligible_trials": 64,
+          "caused_errors": 10,
+          "unique_sources": 8,
+          "eligible_sources": 8,
+          "sources_failing_at_least_once": 2,
+          "observed_failure_rate": 0.25,
+          "shared_sources": 8,
+          "shared_sources_failing": 2,
+          "sources_failed_in_every_study": 2,
+          "added_beyond_best_single_study": 0
+        },
+        {
+          "model": "pgd",
+          "trials": 64,
+          "eligible_trials": 64,
+          "caused_errors": 0,
+          "unique_sources": 8,
+          "eligible_sources": 8,
+          "sources_failing_at_least_once": 0,
+          "observed_failure_rate": 0,
+          "shared_sources": 8,
+          "shared_sources_failing": 0,
+          "sources_failed_in_every_study": 0,
+          "added_beyond_best_single_study": 0
+        },
+        {
+          "model": "squeezed",
+          "trials": 64,
+          "eligible_trials": 56,
+          "caused_errors": 0,
+          "unique_sources": 8,
+          "eligible_sources": 7,
+          "sources_failing_at_least_once": 0,
+          "observed_failure_rate": 0,
+          "shared_sources": 8,
+          "shared_sources_failing": 0,
+          "sources_failed_in_every_study": 0,
+          "added_beyond_best_single_study": 0
+        }
+      ]
+    },
+    {
+      "tool": "reduction",
+      "predictions": 4,
+      "rows": 2,
+      "result_sha256": "d38afcd252825b0b3b4e117a40bcbe88655ac1d2cf4636accab9f9f961c3772b",
+      "summary": [
+        {
+          "model": "tree",
+          "valid_subsets": 2,
+          "invalid_subsets": 2,
+          "successful_subsets": 1,
+          "minimum_retained_fields": 2,
+          "equally_small_successes": 1
+        }
+      ]
+    },
+    {
+      "tool": "coverage",
+      "predictions": 1088,
+      "rows": 544,
+      "result_sha256": "16c2e2b8e82ef188b92d62b8e26bfd97d553ec37a2e68621ddfefc6276cce28c",
+      "summary": [
+        {
+          "model": "clean",
+          "trials": 136,
+          "eligible_trials": 120,
+          "caused_errors": 0,
+          "unique_sources": 15,
+          "eligible_sources": 14,
+          "sources_failing_at_least_once": 0,
+          "observed_failure_rate": 0,
+          "shared_sources": 0,
+          "shared_sources_failing": 0,
+          "sources_failed_in_every_study": 0,
+          "added_beyond_best_single_study": 0
+        },
+        {
+          "model": "tree",
+          "trials": 136,
+          "eligible_trials": 136,
+          "caused_errors": 13,
+          "unique_sources": 15,
+          "eligible_sources": 15,
+          "sources_failing_at_least_once": 2,
+          "observed_failure_rate": 0.13333333333333333,
+          "shared_sources": 0,
+          "shared_sources_failing": 0,
+          "sources_failed_in_every_study": 0,
+          "added_beyond_best_single_study": 0
+        },
+        {
+          "model": "pgd",
+          "trials": 136,
+          "eligible_trials": 136,
+          "caused_errors": 0,
+          "unique_sources": 15,
+          "eligible_sources": 15,
+          "sources_failing_at_least_once": 0,
+          "observed_failure_rate": 0,
+          "shared_sources": 0,
+          "shared_sources_failing": 0,
+          "sources_failed_in_every_study": 0,
+          "added_beyond_best_single_study": 0
+        },
+        {
+          "model": "squeezed",
+          "trials": 136,
+          "eligible_trials": 120,
+          "caused_errors": 0,
+          "unique_sources": 15,
+          "eligible_sources": 14,
+          "sources_failing_at_least_once": 0,
+          "observed_failure_rate": 0,
+          "shared_sources": 0,
+          "shared_sources_failing": 0,
+          "sources_failed_in_every_study": 0,
+          "added_beyond_best_single_study": 0
+        }
+      ]
+    }
+  ],
+  "model_predictions_replayed": 1604,
+  "raw_measurements_checked": 45714,
+  "browser_files_verified": 9,
+  "browser_checks": [
+    "All three real-model workflows completed",
+    "Nine browser downloads independently verified",
+    "Outcome filters and both pagination directions",
+    "Exact 57-field evaluated input inspector and modal close",
+    "Multiple-study and empty-filter validation errors",
+    "Source studies and result fingerprint disclosure",
+    "Desktop and narrow screenshots inspected",
+    "Narrow page width 398 within viewport 414; pagination worked",
+    "Viewport restored",
+    "No observed browser console errors"
+  ]
+}

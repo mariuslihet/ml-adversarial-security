@@ -1,0 +1,78 @@
+{
+  "studies": [
+    {
+      "id": "22f520ab36424f7d927d5c262aa88646",
+      "name": "Verified detector API study",
+      "target": "detector",
+      "trials": 8,
+      "http_queries": 128,
+      "errors_caused": 0,
+      "evidence_sha256": "6eee70f80a2a77b36935d67b607510958f5cbe9050633a3cabd53fc1f6da828b"
+    },
+    {
+      "id": "77ad0d128f734a3dab66551a674fa187",
+      "name": "Verified adaptive ensemble study",
+      "target": "ensemble",
+      "trials": 64,
+      "http_queries": 2048,
+      "errors_caused": 0,
+      "evidence_sha256": "0924af1b9137cdb0fc471f2e54fde1b2bb491cdb4d185f2ec7044c975dda3156"
+    },
+    {
+      "id": "923d858c08ae48ada2b04c6a46c8fe95",
+      "name": "Verified fitted confidence API study",
+      "target": "calibrated",
+      "trials": 8,
+      "http_queries": 64,
+      "errors_caused": 0,
+      "evidence_sha256": "567554263c75d3bcca676b1332bd512b1489f9ce02248144b8fb588d71c6d93d"
+    }
+  ],
+  "offline_query_predictions": 2240,
+  "final_prediction_checks": 160,
+  "measurement_values_checked": 127680,
+  "browser_downloads": [
+    {
+      "file": "adaptive-test-evidence.json",
+      "bytes": 702422,
+      "route": "/api/adaptive-test.json?id=77ad0d128f734a3dab66551a674fa187"
+    },
+    {
+      "file": "adaptive-summary.csv",
+      "bytes": 1918,
+      "route": "/api/adaptive-test.csv?id=77ad0d128f734a3dab66551a674fa187&scope=summary"
+    },
+    {
+      "file": "adaptive-records.csv",
+      "bytes": 20700,
+      "route": "/api/adaptive-test.csv?id=77ad0d128f734a3dab66551a674fa187&scope=records"
+    },
+    {
+      "file": "adaptive-queries.csv",
+      "bytes": 6235,
+      "route": "/api/adaptive-test.csv?id=77ad0d128f734a3dab66551a674fa187&scope=queries"
+    },
+    {
+      "file": "adaptive-changes (1).csv",
+      "bytes": 13410,
+      "route": "/api/adaptive-test.csv?id=77ad0d128f734a3dab66551a674fa187&scope=changes&index=0&query=2"
+    }
+  ],
+  "browser_checks": [
+    "Three target modes completed from the form",
+    "Ensemble defaults survived target switching",
+    "Study history refresh, open, and load settings",
+    "Per-query input selector and 57 exact measurements",
+    "Five browser downloads matched saved exports byte for byte",
+    "Paired one-field edits rejected",
+    "Oversized query plans rejected",
+    "Empty attacker selection rejected",
+    "Pagination and outcome/class filters",
+    "Desktop screenshot inspected",
+    "No browser console errors observed",
+    "Narrow screenshot inspected; contained horizontal table scrolling",
+    "Narrow pagination worked with page width 398 and viewport width 414",
+    "Viewport reset after responsive check",
+    "Measured query curves and frozen target panels opened"
+  ]
+}

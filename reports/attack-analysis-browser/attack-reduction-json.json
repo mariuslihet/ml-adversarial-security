@@ -1,0 +1,75 @@
+{
+  "tool": "reduction",
+  "created": "2026-11-27T12:00:01.490352+00:00",
+  "report_sha256": "34b85ca3f19df23eb32216ddf233a7c845031f5a4a076bedab5f627ff6e53313",
+  "run": "f6f1b255335e9446",
+  "studies": [
+    {
+      "id": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "name": "Browser paired query and edit study",
+      "evidence_sha256": "6697db392f738451eac0a07a34d9fa8fd7d2aa45f46de2af4844276aa589311d"
+    }
+  ],
+  "summary": [
+    {
+      "model": "tree",
+      "valid_subsets": 2,
+      "invalid_subsets": 2,
+      "successful_subsets": 1,
+      "minimum_retained_fields": 2,
+      "equally_small_successes": 1
+    }
+  ],
+  "rows": [
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 0,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9497978687286377,
+      "after": 0.9497978687286377,
+      "eligible": true,
+      "caused_error": false,
+      "wrong_after": false,
+      "changed_fields": 0,
+      "input_sha256": "238d35f56ff229050963776d8589b7ee89362d4eee5fc96e96eec2e5f9a47ac2",
+      "edits": [],
+      "retained_columns": []
+    },
+    {
+      "study": "1d9579dea55f40c0b0ef5377fc72d4e8",
+      "trial": 0,
+      "source_row": 1491,
+      "actual": 1,
+      "model": "tree",
+      "threshold": 0.7913776636123657,
+      "before": 0.9497978687286377,
+      "after": 0.6106816530227661,
+      "eligible": true,
+      "caused_error": true,
+      "wrong_after": true,
+      "changed_fields": 2,
+      "input_sha256": "d5b0eacd89a0e2c02d11f81f9ae5e756fd9968b0b904bbaa812dca9b4cd87b79",
+      "edits": [
+        [
+          20,
+          3.83
+        ],
+        [
+          26,
+          0.01
+        ]
+      ],
+      "retained_columns": [
+        20,
+        26
+      ]
+    }
+  ],
+  "defender_predictions": 4,
+  "invalid_subsets": 2,
+  "notes": "Fresh defender audits of fixed saved edits, not additional attacker queries. Trial counts include repeats; unique-source rates count each record once. Reduction is exhaustive only over subsets of the selected final edits, not all possible edits. Coverage is observed on selected records, not a population robustness estimate.",
+  "result_sha256": "d38afcd252825b0b3b4e117a40bcbe88655ac1d2cf4636accab9f9f961c3772b"
+}
